@@ -1,9 +1,12 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    './src/**/*.{html,js}',
+    './docs/**/*.{html,js}',
+  ],
   theme: {
     extend: {},
   },
   plugins: [
     require('tailwind-scrollbar'),
   ],
-}
+};

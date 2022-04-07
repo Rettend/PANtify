@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- npm install -D tailwindcss -->
+<!-- npx tailwindcss init -->
+<!-- npm install --save-dev tailwind-scrollbar -->
+<!-- npx tailwindcss -i ./src/input.css -o ./docs/output.css --watch -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +11,10 @@
     <!-- PANtify is a webapp used for a guess-the-music game -->
     <title>PANtify</title>
     <!-- We use tailwind -->
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="output.css" rel="stylesheet">
 </head>
 
-<body class="bg-neutral-800 mb-64 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-purple-800 scrollbar-thumb-purple-600 hover:scrollbar-track-purple-900 hover:scrollbar-thumb-purple-700">
+<body style="background-color: red;" class="bg-neutral-800 mb-64 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-purple-800 scrollbar-thumb-purple-600 hover:scrollbar-track-purple-900 hover:scrollbar-thumb-purple-700">
     <div class="flex justify-center w-full">
         <h1 class="cursor-pointer w-1/5 p-4 mx-auto text-white text-8xl m-10 mb-20 text-center font-bold underline decoration-indigo-600 bg-indigo-800 rounded-2xl">
             PANtify

@@ -18,39 +18,42 @@
 <body class="bg-neutral-800 mb-64 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-purple-800 scrollbar-thumb-purple-600 hover:scrollbar-track-purple-900 hover:scrollbar-thumb-purple-700">
     <div class="flex justify-center w-full">
         <div class="flex flex-col hide justify-center bg-blue-900/50 w-1/3 m-8 rounded-2xl">
-            <div class="flex justify-center w-full p-4 mx-auto">
-                <h2 class="bg-blue-800 text-white m-auto p-4 rounded-xl font-bold text-2xl h-fit">
+            <div class="flex flex-col w-full p-4 m-auto">
+                <h2 class="bg-blue-800 hover:text-white text-white/0 transition-all cursor-pointer my-auto p-5 rounded-t-xl font-bold text-2xl h-full">
                     <span>Artist:</span> <span>Title</span>
+                </h2>
+                <h2 class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 rounded-b-xl font-bold text-xl h-full">
+                    Genre: <span></span>
                 </h2>
             </div>
         </div>
-        <h1 class="cursor-pointer w-96 p-4 mx-auto text-white text-8xl m-10 mb-20 text-center font-bold underline decoration-indigo-600 bg-indigo-800 rounded-2xl">
+        <h1 class="bg-indigo-800 hover:bg-indigo-700 cursor-pointer w-96 p-4 mx-auto text-white transition-all text-8xl m-10 mb-20 text-center font-bold underline decoration-indigo-600 hover:decoration-indigo-500 rounded-2xl">
             PANtify
         </h1>
         <div class="flex justify-center bg-purple-900/50 w-1/3 m-8 rounded-2xl">
             <div class="flex justify-center w-full p-4 mx-auto">
                 <div class="m-auto">
-                    <button class="bg-purple-700 hover:bg-purple-600 text-white m-auto p-8 rounded-t-xl font-bold text-2xl h-fit uppercase">
+                    <button class="bg-purple-700 hover:bg-purple-600 text-white transition-all m-auto p-8 rounded-t-xl font-bold text-2xl h-fit uppercase">
                         Easy
                     </button>
-                    <div class="bg-purple-900/50 text-white m-auto text-center p-1 mt-2 rounded-t-l rounded-b-xl font-bold text-xl h-fit">
-                        ×1
+                    <div class="bg-purple-900/50 text-white m-auto text-center p-1 mt-2 rounded-b-xl font-bold text-xl h-fit">
+                        x1 <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
                 </div>
                 <div class="m-auto">
-                    <button class="bg-fuchsia-700 hover:bg-fuchsia-600 text-white m-auto p-10 rounded-t-xl font-bold text-2xl h-fit uppercase">
+                    <button class="bg-fuchsia-700 hover:bg-fuchsia-600 text-white transition-all m-auto p-10 rounded-t-xl font-bold text-2xl h-fit uppercase">
                         Hard
                     </button>
-                    <div class="bg-fuchsia-900/50 text-white m-auto text-center p-1 mt-2 rounded-t-l rounded-b-xl font-bold text-xl h-fit">
-                        ×1.5
+                    <div class="bg-fuchsia-900/50 text-white m-auto text-center p-1 mt-2 rounded-b-xl font-bold text-xl h-fit">
+                        x1.5 <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
                 </div>
                 <div class="m-auto">
-                    <button class="bg-pink-700 hover:bg-pink-600 text-white m-auto p-12 rounded-t-xl font-bold text-2xl h-fit uppercase">
+                    <button class="bg-pink-700 hover:bg-pink-600 text-white transition-all m-auto p-12 rounded-t-xl font-bold text-2xl h-fit uppercase">
                         Extreme
                     </button>
-                    <div class="bg-pink-900/50 text-white m-auto text-center p-1 mt-2 rounded-t-l rounded-b-xl font-bold text-xl h-fit">
-                        ×2
+                    <div class="bg-pink-900/50 text-white m-auto text-center p-1 mt-2 rounded-b-xl font-bold text-xl h-fit">
+                        x2 <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
                 </div>
             </div>
@@ -62,15 +65,15 @@
                 <div class="w-1/5">
                     <div class="flex flex-auto justify-center">
                         <div>
-                            <button class="bg-blue-700 hover:bg-blue-600 text-white text-8xl font-bold py-2 px-4 w-64 h-80 rounded-3xl">
+                            <button class="bg-blue-700 hover:bg-blue-600 text-white transition-all text-8xl font-bold py-2 px-4 w-64 h-80 rounded-t-3xl">
                                 2s
                             </button>
                             <div class="flex justify-center">
-                                <div class="bg-fuchsia-900/50 text-white m-auto grow text-center p-1 mt-2 rounded-t-l rounded-b-xl font-bold text-xl h-fit">
-                                    +5/10
+                                <div class="bg-blue-900/50 text-white grow text-center p-1 my-2 mr-1 rounded-bl-3xl font-bold text-xl h-fit">
+                                    +5 <i class="fa-solid fa-star-half-stroke"></i>
                                 </div>
-                                <div class="bg-fuchsia-900/50 text-white m-auto grow text-center p-1 mt-2 rounded-t-l rounded-b-xl font-bold text-xl h-fit">
-                                    ×1.5
+                                <div class="bg-blue-900/50 text-white grow text-center p-1 my-2 ml-1 rounded-br-3xl font-bold text-xl h-fit">
+                                    +10 <i class="fa-solid fa-star-half-stroke"></i>
                                 </div>
                             </div>
                         </div>
@@ -83,9 +86,19 @@
                 </div>
                 <div class="w-1/5">
                     <div class="flex justify-center">
-                        <button class="bg-indigo-700 hover:bg-indigo-600 text-white text-8xl font-bold py-2 px-4 w-64 h-80 rounded-3xl">
-                            5s
-                        </button>
+                        <div>
+                            <button class="bg-indigo-700 hover:bg-indigo-600 text-white transition-all text-8xl font-bold py-2 px-4 w-64 h-80 rounded-t-3xl">
+                                5s
+                            </button>
+                            <div class="flex justify-center">
+                                <div class="bg-indigo-900/50 text-white grow text-center p-1 my-2 mr-1 rounded-bl-3xl font-bold text-xl h-fit">
+                                    +10 <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <div class="bg-indigo-900/50 text-white grow text-center p-1 my-2 ml-1 rounded-br-3xl font-bold text-xl h-fit">
+                                    +20 <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="w-1/5">
@@ -95,20 +108,37 @@
                 </div>
                 <div class="w-1/5">
                     <div class="flex justify-center">
-                        <button class="bg-purple-700 hover:bg-purple-600 text-white text-8xl font-bold py-2 px-4 w-64 h-80 rounded-3xl">
-                            10s
-                        </button>
+                        <div>
+                            <button class="bg-purple-700 hover:bg-purple-600 text-white transition-all text-8xl font-bold py-2 px-4 w-64 h-80 rounded-t-3xl">
+                                10s
+                            </button>
+                            <div class="flex justify-center">
+                                <div class="bg-purple-900/50 text-white grow text-center p-1 my-2 mr-1 rounded-bl-3xl font-bold text-xl h-fit">
+                                    +30 <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <div class="bg-purple-900/50 text-white grow text-center p-1 my-2 ml-1 rounded-br-3xl font-bold text-xl h-fit">
+                                    +50 <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center mx-auto mt-20 w-1/2 m-4">
-                <button class="bg-indigo-600 hover:bg-indigo-500 text-white text-5xl py-4 px-4 w-1/3 rounded-3xl">
+                <button class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all text-5xl py-4 px-4 w-80 rounded-3xl">
                     <i class="fa-solid fa-circle-check"></i> CORRECT
                 </button>
             </div>
+            <div class="bg-indigo-900/50 mx-auto absolute left-0 right-0 top-0 w-80 my-5 h-64 rounded-t-3xl -z-50"></div>
+            <div class="bg-indigo-900/50 mx-auto relative left-0 right-0 -top-40 w-96 my-5 h-44 rounded-b-3xl -z-50"></div>
         </div>
     </div>
-
+    <iframe
+  frameborder="0"
+  width="400"
+  height="200"
+  src="https://drive.google.com/file/d/1e7kpr4D_Yl0a3KyO_ksJQzRP8k7XVebW/preview">
+</iframe>
 
     <script src="code.js"></script>
     <script src="https://kit.fontawesome.com/51c1754dfd.js" crossorigin="anonymous"></script>

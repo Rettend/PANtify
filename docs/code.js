@@ -3,23 +3,62 @@
 //     return "야~ 무슨 생각을 하고 있니? ";
 // };
 
+const songsEasy = [
+    ["ACDC", "Highway to Hell", "Easy"],
+];
 
+const songsHard = [
+    ["Hanson", "MMMBop", "Hard"],
+    ["KALEO", "Broken Bones", "Hard"],
+]
 
-// const songs = {"ACDC": "Highway to Hell", "Hanson": "MMMBop", "KALEO": "Broken Bones" };
-const songs = ["ACDC;Highway to Hell", "Hanson;MMMBop", "KALEO;Broken Bones"];
+const songsExtreme = [
+    ["Harley Poe", "Eat Shit and Die", "Extreme"],
+]
+
 const x = document.getElementById("audio");
 const songArtist = document.getElementById("songArtist");
 const songTitle = document.getElementById("songTitle");
-// TODO: create JSON instead of array
+const logo = document.getElementById("logo");
 
+// Format: "artist;title"
 
-function playAudio() {
-    const random = Math.floor(Math.random() * songs.length); // define random number
-    let song = songs[random]; // choose a song randomly from the array
-    console.log([random, songs[random]]); // debug only - print the random number and the song
-    let songInfo = song.split(";"); // split the song into artist and title
-    songArtist.innerHTML = songInfo[0]; // set the artist
-    songTitle.innerHTML = songInfo[1]; // set the title
-    x.src = "songs/" + song + ".mp3"; // set the source of the audio element to the song
-    x.play(); // play the song
+var aDifficulty = null;
+
+function setDifficulty(difficulty) {
+    aDifficulty = difficulty;
+    console.log(aDifficulty);
+}
+
+var song = null;
+
+function newSong() {
+    if (aDifficulty == 1) {
+        const random = Math.floor(Math.random() * songsEasy.length);
+        song = songsEasy[random];
+    }
+    else if (aDifficulty == 2) {
+        const random = Math.floor(Math.random() * songsHard.length);
+        song = songsHard[random];
+    }
+    else if (aDifficulty == 3) {
+        const random = Math.floor(Math.random() * songsExtreme.length);
+        song = songsExtreme[random];
+    }
+
+    if (song == null) {
+        alert("Válassz egy nehézséget!");
+        return;
+    }
+    else {
+        console.log(song);
+
+        songArtist.innerHTML = song[0];
+        songTitle.innerHTML = song[1];
+    }
+}
+
+function playSong(duration) {
+    x.src = "songs/" + song[0] + ";" + song[1] + ".mp3";
+    x.play();
 }

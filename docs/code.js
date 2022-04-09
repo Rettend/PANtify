@@ -4,16 +4,24 @@
 // };
 
 const songsEasy = [
-    ["ACDC", "Highway to Hell", "Easy"],
-];
+    ["ACDC", "Highway to Hell"],
+    ["Avicii", "The nights"],
+    ["Ed Sheeran", "Bad Habits"],
+]
 
 const songsHard = [
-    ["Hanson", "MMMBop", "Hard"],
-    ["KALEO", "Broken Bones", "Hard"],
+    ["Hanson", "MMMBop"],
+    ["KALEO", "Broken Bones"],
+    ["David Bowie", "Starman"],
+    ["Mountain", "Mississippi Queen"],
 ]
 
 const songsExtreme = [
-    ["Harley Poe", "Eat Shit and Die", "Extreme"],
+    ["Harley Poe", "Eat Shit and Die"],
+    ["ALESTORM", "Treasure Chest Party Quest"],
+    ["Anthrax", "Got The Time"],
+    ["Cypress Hill", "Lowrider"],
+    ["The Dead South", "In Hell I'll Be In Good Company"],
 ]
 
 const x = document.getElementById("audio");
@@ -47,7 +55,7 @@ function newSong() {
     }
 
     if (song == null) {
-        alert("Válassz egy nehézséget!");
+        alert("조심하세요!!!!!!\nVálassz egy nehézséget!");
         return;
     }
     else {
@@ -59,6 +67,6 @@ function newSong() {
 }
 
 function playSong(duration) {
-    x.src = "songs/" + song[0] + ";" + song[1] + ".mp3";
+    x.src = "songs/" + song[0] + ";" + song[1] + ";" + duration + ".mp3";
     x.play();
 }

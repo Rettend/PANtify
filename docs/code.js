@@ -3,20 +3,20 @@
 //     return "야~ 무슨 생각을 하고 있니? ";
 // };
 
-const songsEasy = [
+let songsEasy = [
     ["ACDC", "Highway to Hell"],
     ["Avicii", "The nights"],
     ["Ed Sheeran", "Bad Habits"],
 ]
 
-const songsHard = [
+let songsHard = [
     ["Hanson", "MMMBop"],
     ["KALEO", "Broken Bones"],
     ["David Bowie", "Starman"],
     ["Mountain", "Mississippi Queen"],
 ]
 
-const songsExtreme = [
+let songsExtreme = [
     ["Harley Poe", "Eat Shit and Die"],
     ["ALESTORM", "Treasure Chest Party Quest"],
     ["Anthrax", "Got The Time"],
@@ -28,6 +28,18 @@ const x = document.getElementById("audio");
 const songArtist = document.getElementById("songArtist");
 const songTitle = document.getElementById("songTitle");
 const logo = document.getElementById("logo");
+const result = document.getElementById("result");
+const osztály = document.getElementById("osztály");
+const cDifficulty = document.getElementById("cDifficulty");
+const cDuration = document.getElementById("cDuration");
+
+const easyLeft = document.getElementById("easyLeft");
+easyLeft.innerHTML = songsEasy.length;
+const hardLeft = document.getElementById("hardLeft");
+hardLeft.innerHTML = songsHard.length;
+const extremeLeft = document.getElementById("extremeLeft");
+extremeLeft.innerHTML = songsExtreme.length;
+
 
 // Format: "artist;title"
 
@@ -35,38 +47,83 @@ var aDifficulty = null;
 
 function setDifficulty(difficulty) {
     aDifficulty = difficulty;
-    console.log(aDifficulty);
+    cDifficulty.innerHTML = difficulty;
 }
 
 var song = null;
+var aOsztály = null;
 
 function newSong() {
-    if (aDifficulty == 1) {
-        const random = Math.floor(Math.random() * songsEasy.length);
-        song = songsEasy[random];
-    }
-    else if (aDifficulty == 2) {
-        const random = Math.floor(Math.random() * songsHard.length);
-        song = songsHard[random];
-    }
-    else if (aDifficulty == 3) {
-        const random = Math.floor(Math.random() * songsExtreme.length);
-        song = songsExtreme[random];
-    }
-
-    if (song == null) {
-        alert("조심하세요!!!!!!\nVálassz egy nehézséget!");
+    aOsztály = osztály.value;
+    if (aOsztály == "") {
+        alert("Nincs megadva osztály!");
         return;
     }
     else {
-        console.log(song);
-
-        songArtist.innerHTML = song[0];
-        songTitle.innerHTML = song[1];
+        if (aDifficulty == 1) {
+            const random = Math.floor(Math.random() * songsEasy.length);
+            song = songsEasy[random];
+            songsEasy = songsEasy.filter(x => x !== song);
+            easyLeft.innerHTML = songsEasy.length;
+        }
+        else if (aDifficulty == 2) {
+            const random = Math.floor(Math.random() * songsHard.length);
+            song = songsHard[random];
+            songsHard = songsHard.filter(x => x !== song);
+            hardLeft.innerHTML = songsHard.length;
+        }
+        else if (aDifficulty == 3) {
+            const random = Math.floor(Math.random() * songsExtreme.length);
+            song = songsExtreme[random];
+            songsExtreme = songsExtreme.filter(x => x !== song);
+            extremeLeft.innerHTML = songsExtreme.length;
+        }
+    
+        if (song == null) {
+            alert("조심하세요!!!!!\n얼굴만 보면 몰라..\nVálassz egy nehézséget!\nVagy már nincs hátralévő zene.");
+            return;
+        }
+        else {
+            songArtist.innerHTML = song[0];
+            songTitle.innerHTML = song[1];
+        }
     }
 }
 
+var aDuration = null;
+
 function playSong(duration) {
+    aDuration = duration;
+    cDuration.innerHTML = duration;
     x.src = "songs/" + song[0] + ";" + song[1] + ";" + duration + ".mp3";
     x.play();
+}
+
+var aBaseScore = 0;
+
+function setBaseScore(baseScore) {
+    aBaseScore = baseScore;
+}
+
+function end(state) {
+    var score = 0;
+    if (state == 0 && song != null && aOsztály != null) {
+        score = 0;
+    }
+    else if (aBaseScore == 0 || aDuration == 0) {
+        alert("Nem volt lejátszva zene!");
+        return;
+    }
+    else {
+        score = aBaseScore * aDifficulty;
+    }
+    var row = result.insertRow(result.rows.length);
+    var cell0 = row.insertCell(0);
+    cell0.innerHTML = aOsztály;
+    var cell1 = row.insertCell(1);
+    cell1.innerHTML = score;
+    var cell2 = row.insertCell(2);
+    cell2.innerHTML = song[0] + " - " + song[1];
+    var cell3 = row.insertCell(3);
+    cell3.innerHTML = aDifficulty;
 }

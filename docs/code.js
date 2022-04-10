@@ -7,6 +7,9 @@ let songsEasy = [
     ["ACDC", "Highway to Hell"],
     ["Avicii", "The nights"],
     ["Ed Sheeran", "Bad Habits"],
+    ["The Rolling Stones", "Paint It, Black"],
+    ["The White Stripes", "Seven Nation Army"],
+    ["Imagine Dragons", "Whatever It Takes"],
 ]
 
 let songsHard = [
@@ -14,6 +17,11 @@ let songsHard = [
     ["KALEO", "Broken Bones"],
     ["David Bowie", "Starman"],
     ["Mountain", "Mississippi Queen"],
+    ["Ozzy Osbourne", "Crazy Train"],
+    ["Imagine Dragons", "One Day"],
+    ["Eric Clapton", "Change The World"],
+    ["Electric Light Orchestra (ELO)", "Mr. Blue Sky"],
+    ["Red Hot Chili Peppers", "Dark Necessities"],
 ]
 
 let songsExtreme = [
@@ -22,6 +30,7 @@ let songsExtreme = [
     ["Anthrax", "Got The Time"],
     ["Cypress Hill", "Lowrider"],
     ["The Dead South", "In Hell I'll Be In Good Company"],
+    ["Chumbawamba", "Tubthumping"],
 ]
 
 const x = document.getElementById("audio");

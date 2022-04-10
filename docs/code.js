@@ -1,7 +1,7 @@
 // Window leave confirmation
-// window.onbeforeunload = function (e) {
-//     return "야~ 무슨 생각을 하고 있니? ";
-// };
+window.onbeforeunload = function (e) {
+    return "야~ 무슨 생각을 하고 있니? ";
+};
 
 let songsEasy = [
     ["ACDC", "Highway to Hell"],
@@ -10,6 +10,7 @@ let songsEasy = [
     ["The Rolling Stones", "Paint It, Black"],
     ["The White Stripes", "Seven Nation Army"],
     ["Imagine Dragons", "Whatever It Takes"],
+    ["BTS", "Dynamite"],
 ]
 
 let songsHard = [
@@ -22,6 +23,9 @@ let songsHard = [
     ["Eric Clapton", "Change The World"],
     ["Electric Light Orchestra (ELO)", "Mr. Blue Sky"],
     ["Red Hot Chili Peppers", "Dark Necessities"],
+    ["Coldplay ft. BTS", "My Universe"],
+    ["Emberek", "Forog a Föld"],
+    ["Dire Straits", "Sultans Of Swing"],
 ]
 
 let songsExtreme = [
@@ -31,6 +35,12 @@ let songsExtreme = [
     ["Cypress Hill", "Lowrider"],
     ["The Dead South", "In Hell I'll Be In Good Company"],
     ["Chumbawamba", "Tubthumping"],
+    ["JUNNY", "MOVIE"],
+    ["ACDC", "Fire Your Guns"],
+    ["Yunsae", "Warm Puppy"],
+    ["Bomba Estéreo", "Soy Yo"],
+    ["League of Legends ft. Jasmine Clarke", "Seraphine"],
+    ["La Coka Nostra ft. Snoop Dogg", "Bang Bang"],
 ]
 
 const x = document.getElementById("audio");

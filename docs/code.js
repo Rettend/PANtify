@@ -44,22 +44,18 @@ extremeLeft.innerHTML = songsExtreme.length;
 // Format: "artist;title"
 
 var aDifficulty = null;
-
-function setDifficulty(difficulty) {
-    aDifficulty = difficulty;
-    cDifficulty.innerHTML = difficulty;
-}
-
 var song = null;
 var aOsztály = null;
 
-function newSong() {
+function newSong(difficulty) {
     aOsztály = osztály.value;
     if (aOsztály == "") {
         alert("Nincs megadva osztály!");
         return;
     }
     else {
+        aDifficulty = difficulty;
+        cDifficulty.innerHTML = difficulty;
         if (aDifficulty == 1) {
             const random = Math.floor(Math.random() * songsEasy.length);
             song = songsEasy[random];
@@ -78,9 +74,9 @@ function newSong() {
             songsExtreme = songsExtreme.filter(x => x !== song);
             extremeLeft.innerHTML = songsExtreme.length;
         }
-    
+
         if (song == null) {
-            alert("조심하세요!!!!!\n얼굴만 보면 몰라..\nVálassz egy nehézséget!\nVagy már nincs hátralévő zene.");
+            alert("조심하세요!!!!!\n얼굴만 보면 몰라..\nMár nincs hátralévő zene!!!");
             return;
         }
         else {
@@ -90,19 +86,31 @@ function newSong() {
     }
 }
 
-var aDuration = null;
+var aDuration = 0;
 
 function playSong(duration) {
-    aDuration = duration;
-    cDuration.innerHTML = duration;
-    x.src = "songs/" + song[0] + ";" + song[1] + ";" + duration + ".mp3";
-    x.play();
+    if (song == null) {
+        alert("Nincs kiválasztva zene!");
+        return;
+    }
+    else {
+        aDuration = duration;
+        cDuration.innerHTML = duration;
+        x.src = "songs/" + song[0] + ";" + song[1] + ";" + duration + ".mp3";
+        x.play();
+    }
 }
 
 var aBaseScore = 0;
 
 function setBaseScore(baseScore) {
-    aBaseScore = baseScore;
+    if (aDuration == 0) {
+        alert("Nem volt lejátszva zene!");
+        return;
+    }
+    else {
+        aBaseScore = baseScore;
+    }
 }
 
 function end(state) {
@@ -111,7 +119,7 @@ function end(state) {
         score = 0;
     }
     else if (aBaseScore == 0 || aDuration == 0) {
-        alert("Nem volt lejátszva zene!");
+        alert("Nincs megadva pontszám!");
         return;
     }
     else {
@@ -126,4 +134,7 @@ function end(state) {
     cell2.innerHTML = song[0] + " - " + song[1];
     var cell3 = row.insertCell(3);
     cell3.innerHTML = aDifficulty;
+    aBaseScore = 0;
+    aDuration = 0;
+    cDuration.innerHTML = 0;
 }

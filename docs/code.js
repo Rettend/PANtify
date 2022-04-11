@@ -11,6 +11,13 @@ let songsEasy = [
     ["The White Stripes", "Seven Nation Army"],
     ["Imagine Dragons", "Whatever It Takes"],
     ["BTS", "Dynamite"],
+    ["Queen", "Under Pressure"],
+    ["Queen", "Another One Bites the Dust"],
+    ["Rag'n'Bone Man", "Human"],
+    ["Adele", "Rolling in the Deep"],
+    ["Panic! At The Disco", "High Hopes"],
+    ["Eric Clapton", "Change The World"],
+    ["Red Hot Chili Peppers", "Dark Necessities"],
 ]
 
 let songsHard = [
@@ -20,12 +27,18 @@ let songsHard = [
     ["Mountain", "Mississippi Queen"],
     ["Ozzy Osbourne", "Crazy Train"],
     ["Imagine Dragons", "One Day"],
-    ["Eric Clapton", "Change The World"],
     ["Electric Light Orchestra (ELO)", "Mr. Blue Sky"],
-    ["Red Hot Chili Peppers", "Dark Necessities"],
     ["Coldplay ft. BTS", "My Universe"],
     ["Emberek", "Forog a Föld"],
     ["Dire Straits", "Sultans Of Swing"],
+    ["SHAUN ft. Conor Maynard", "Way Back Home"],
+    ["Jackson Browne", "Running on Empty"],
+    ["Paul Simon ft. Garfunkel", "The Sound of Silence"],
+    ["Bag Raiders", "Shooting Stars"],
+    ["SABATON", "Stormtroopers"],
+    ["Sigala ft. Ella Eyre, Meghan Trainor", "Just Got Paid"],
+    ["K'NAAN", "Wavin' Flag"],
+    ["TheFatRat", "Unity"],
 ]
 
 let songsExtreme = [
@@ -39,8 +52,14 @@ let songsExtreme = [
     ["ACDC", "Fire Your Guns"],
     ["Yunsae", "Warm Puppy"],
     ["Bomba Estéreo", "Soy Yo"],
+    ["Rusted Root", "Send Me On My Way"],
     ["League of Legends ft. Jasmine Clarke", "Seraphine"],
     ["La Coka Nostra ft. Snoop Dogg", "Bang Bang"],
+    ["Yogscast (Lewis & Simon)", "Diggy Diggy Hole"],
+    ["Jamiroquai", "Virtual Insanity"],
+    ["Baha Men", "Rat Race"],
+    ["Emir Kusturica", "Bubamara"],
+    ["IU ft. SUGA", "eight"],
 ]
 
 const x = document.getElementById("audio");

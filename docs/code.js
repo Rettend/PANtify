@@ -100,13 +100,13 @@ function newSong(difficulty) {
             songsEasy = songsEasy.filter(x => x !== song);
             easyLeft.innerHTML = songsEasy.length;
         }
-        else if (aDifficulty == 2) {
+        else if (aDifficulty == 3) {
             const random = Math.floor(Math.random() * songsHard.length);
             song = songsHard[random];
             songsHard = songsHard.filter(x => x !== song);
             hardLeft.innerHTML = songsHard.length;
         }
-        else if (aDifficulty == 3) {
+        else if (aDifficulty == 5) {
             const random = Math.floor(Math.random() * songsExtreme.length);
             song = songsExtreme[random];
             songsExtreme = songsExtreme.filter(x => x !== song);

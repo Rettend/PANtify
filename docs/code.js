@@ -58,7 +58,6 @@ let songsExtreme = [
     ["Yogscast (Lewis & Simon)", "Diggy Diggy Hole"],
     ["Jamiroquai", "Virtual Insanity"],
     ["Baha Men", "Rat Race"],
-    ["Emir Kusturica", "Bubamara"],
     ["IU ft. SUGA", "eight"],
 ]
 

@@ -16,11 +16,11 @@ let songsEasy = [
     ["Rag'n'Bone Man", "Human"],
     ["Adele", "Rolling in the Deep"],
     ["Panic! At The Disco", "High Hopes"],
-    ["Eric Clapton", "Change The World"],
     ["Red Hot Chili Peppers", "Dark Necessities"],
 ]
 
 let songsHard = [
+    ["Eric Clapton", "Change The World"],
     ["Hanson", "MMMBop"],
     ["KALEO", "Broken Bones"],
     ["David Bowie", "Starman"],
@@ -38,10 +38,10 @@ let songsHard = [
     ["SABATON", "Stormtroopers"],
     ["Sigala ft. Ella Eyre, Meghan Trainor", "Just Got Paid"],
     ["K'NAAN", "Wavin' Flag"],
-    ["TheFatRat", "Unity"],
 ]
 
 let songsExtreme = [
+    ["TheFatRat", "Unity"],
     ["Harley Poe", "Eat Shit and Die"],
     ["ALESTORM", "Treasure Chest Party Quest"],
     ["Anthrax", "Got The Time"],
@@ -69,6 +69,9 @@ const result = document.getElementById("result");
 const osztály = document.getElementById("osztály");
 const cDifficulty = document.getElementById("cDifficulty");
 const cDuration = document.getElementById("cDuration");
+const endModal = document.getElementById("endModal");
+const endArtits = document.getElementById("endArtits");
+const endTitle = document.getElementById("endTitle");
 
 const easyLeft = document.getElementById("easyLeft");
 easyLeft.innerHTML = songsEasy.length;
@@ -155,15 +158,18 @@ function setBaseScore(baseScore) {
 
 function end(state) {
     var score = 0;
-    if (state == 0 && song != null && aOsztály != null) {
-        score = 0;
-    }
-    else if (aBaseScore == 0 || aDuration == 0) {
+    
+    if (aBaseScore == 0 || aDuration == 0) {
         alert("Nincs megadva pontszám!");
         return;
     }
     else {
-        score = aBaseScore * aDifficulty;
+        if (state == 0 && song != null && aOsztály != null) {
+            score = 0;
+        }
+        else if (state == 1 && song != null && aOsztály != null) {
+            score = aBaseScore * aDifficulty;
+        }
     }
     var row = result.insertRow(result.rows.length);
     var cell0 = row.insertCell(0);
@@ -177,4 +183,15 @@ function end(state) {
     aBaseScore = 0;
     aDuration = 0;
     cDuration.innerHTML = 0;
+
+    endModal.style.display = "block";
+    endArtist.innerHTML = song[0];
+    endTitle.innerHTML = song[1];
+    document.body.style.overflowY = "hidden";
+    window.scrollTo(0, 0);
+}
+
+function closeModal() {
+    endModal.style.display = "none";
+    document.body.style.overflowY = "scroll";
 }

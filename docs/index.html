@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png">
     <!-- PANtify is a webapp used for a guess-the-music game -->
     <title>PANtify</title>
@@ -16,8 +17,8 @@
 </head>
 
 <body class="bg-neutral-800 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-purple-800 scrollbar-thumb-purple-600 hover:scrollbar-track-purple-900 hover:scrollbar-thumb-purple-700">
-    <div class="flex justify-center w-full">
-        <div class="flex flex-col justify-center bg-blue-900/50 w-1/3 m-8 rounded-2xl">
+    <div class="flex flex-col md:flex-row justify-center w-full">
+        <div class="flex flex-col justify-center bg-blue-900/50 w-full md:w-1/3 md:m-8 m-0 md:rounded-2xl">
             <div class="flex flex-col w-full p-4 m-auto">
                 <h2 class="bg-blue-800 hover:text-white text-white/0 transition-all cursor-pointer my-auto p-5 rounded-t-xl font-bold text-2xl h-full">
                     <span id="songArtist">Artist</span>: <span id="songTitle">Title</span>
@@ -27,13 +28,13 @@
                 </h2>
             </div>
         </div>
-        <h1 class="bg-indigo-800 w-96 p-4 mx-auto text-white text-8xl m-10 mb-20 text-center font-bold underline decoration-indigo-600 rounded-2xl">
+        <h1 id="logo" class="bg-indigo-800 w-full md:w-96 p-4 mx-auto text-white text-8xl md:m-10 mt-0 mb-10 md:mb-10 h-fit text-center -order-1 md:order-1 font-bold underline  decoration-indigo-600 md:rounded-2xl">
             PANtify
         </h1>
-        <div class="flex justify-center bg-purple-900/50 w-1/3 m-8 rounded-2xl">
+        <div class="flex justify-center bg-purple-900/50 w-full md:w-1/3 order-2 m-0 md:m-8 md:rounded-2xl">
             <div class="flex justify-center w-full p-4 mx-auto">
                 <div class="m-auto">
-                    <button onclick="newSong(1)" class="bg-purple-700 hover:bg-purple-600 text-white transition-all m-auto p-8 rounded-t-xl font-bold text-2xl h-fit uppercase">
+                    <button onclick="newSong(1)" class="bg-purple-700 hover:bg-purple-600 text-white transition-all m-auto p-4 py-8 md:p-8 rounded-t-xl font-bold text-2xl h-fit uppercase">
                         Easy
                     </button>
                     <div class="bg-purple-900/50 text-white m-auto text-center p-1 mt-2 rounded-b-xl font-bold text-xl h-fit">
@@ -41,7 +42,7 @@
                     </div>
                 </div>
                 <div class="m-auto">
-                    <button onclick="newSong(3)" class="bg-fuchsia-700 hover:bg-fuchsia-600 text-white transition-all m-auto p-10 rounded-t-xl font-bold text-2xl h-fit uppercase">
+                    <button onclick="newSong(3)" class="bg-fuchsia-700 hover:bg-fuchsia-600 text-white transition-all m-auto p-4 py-8 md:p-10 rounded-t-xl font-bold text-2xl h-fit uppercase">
                         Hard
                     </button>
                     <div class="bg-fuchsia-900/50 text-white m-auto text-center p-1 mt-2 rounded-b-xl font-bold text-xl h-fit">
@@ -49,7 +50,7 @@
                     </div>
                 </div>
                 <div class="m-auto">
-                    <button onclick="newSong(5)" class="bg-pink-700 hover:bg-pink-600 text-white transition-all m-auto p-12 rounded-t-xl font-bold text-2xl h-fit uppercase">
+                    <button onclick="newSong(5)" class="bg-pink-700 hover:bg-pink-600 text-white transition-all m-auto p-4 py-8 md:p-12 rounded-t-xl font-bold text-2xl h-fit uppercase">
                         Extreme
                     </button>
                     <div class="bg-pink-900/50 text-white m-auto text-center p-1 mt-2 rounded-b-xl font-bold text-xl h-fit">
@@ -59,65 +60,65 @@
             </div>
         </div>
     </div>
-    <input id="osztály" class="absolute top-52 left-0 right-0 justify-center w-64 mx-auto text-center placeholder:font-bold placeholder:text-indigo-600 text-indigo-600 font-bold bg-white rounded-md p-2 text-lg" placeholder="IDE EGY OSZTÁLYT (12A)" type="text" name="osztály" />
+    <input id="osztály" class="absolute top-32 md:top-52 left-0 right-0 justify-center w-64 mx-auto text-center placeholder:font-bold placeholder:text-indigo-600 text-indigo-600 font-bold bg-white rounded-md p-2 text-lg" placeholder="IDE EGY OSZTÁLYT (12A)" type="text" name="osztály" />
     <div class="flex justify-center">
         <div class="w-screen">
-            <div class="flex justify-center bg-gradient-to-r from-blue-900/50 via-indigo-900/50 to-purple-900/50 rounded-2xl p-4 m-8">
-                <div class="w-1/5">
+            <div class="flex justify-center bg-gradient-to-r from-blue-900/50 via-indigo-900/50 to-purple-900/50 rounded-none md:rounded-2xl p-4 m-0 mt-0 md:m-8">
+                <div class="w-1/3 md:w-1/5 m-1">
                     <div class="flex flex-auto justify-center">
                         <div>
-                            <button onclick="playSong(5)" class="bg-blue-700 hover:bg-blue-600 text-white transition-all text-8xl font-bold py-2 px-4 w-64 h-80 rounded-t-3xl">
+                            <button onclick="playSong(5)" class="bg-blue-700 hover:bg-blue-600 text-white transition-all text-5xl md:text-8xl font-bold py-2 px-4 w-full md:w-64 h-fit md:h-80 rounded-t-lg md:rounded-t-3xl">
                                 5s<br><i class="fa-solid fa-circle-play mt-5"></i>
                             </button>
                             <div class="flex justify-center">
-                                <button onclick="setBaseScore(25)" class="bg-blue-900/50 hover:bg-blue-800 transition-all text-white grow text-center p-1 my-2 mr-1 rounded-bl-3xl font-bold text-2xl h-fit">
+                                <button onclick="setBaseScore(25)" class="bg-blue-900/50 hover:bg-blue-800 transition-all text-white grow text-center p-1 my-1 md:my-2 md:mr-1 rounded-bl-3xl font-bold text-1xl md:text-2xl h-fit">
                                     +25 <i class="fa-solid fa-star-half-stroke"></i>
                                 </button>
-                                <button onclick="setBaseScore(42)" class="bg-blue-900/50 hover:bg-blue-800 transition-all text-white grow text-center p-1 my-2 ml-1 rounded-br-3xl font-bold text-2xl h-fit">
+                                <button onclick="setBaseScore(42)" class="bg-blue-900/50 hover:bg-blue-800 transition-all text-white grow text-center p-1 my-1 md:my-2 md:ml-1 rounded-br-3xl font-bold text-1xl md:text-2xl h-fit">
                                     +42 <i class="fa-solid fa-star-half-stroke"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-1/5">
-                    <div class="flex justify-center w-64 h-80 mx-auto">
+                <div class="w-1/5 hidden md:block">
+                    <div class="justify-center w-64 h-80 mx-auto md:flex hidden">
                         <i class="fa-solid fa-forward text-blue-500/75 text-9xl m-auto"></i>
                     </div>
                 </div>
-                <div class="w-1/5">
+                <div class="w-1/3 md:w-1/5 m-1">
                     <div class="flex justify-center">
                         <div>
-                            <button onclick="playSong(10)" class="bg-indigo-700 hover:bg-indigo-600 text-white transition-all text-8xl font-bold py-2 px-4 w-64 h-80 rounded-t-3xl">
+                            <button onclick="playSong(10)" class="bg-indigo-700 hover:bg-indigo-600 text-white transition-all text-5xl md:text-8xl font-bold py-2 px-4 w-full md:w-64 h-fit md:h-80 rounded-t-lg md:rounded-t-3xl">
                                 10s<br><i class="fa-solid fa-circle-play mt-5"></i>
                             </button>
                             <div class="flex justify-center">
-                                <button onclick="setBaseScore(20)" class="bg-indigo-900/50 hover:bg-indigo-800 transition-all text-white grow text-center p-1 my-2 mr-1 rounded-bl-3xl font-bold text-2xl h-fit">
+                                <button onclick="setBaseScore(20)" class="bg-indigo-900/50 hover:bg-indigo-800 transition-all text-white grow text-center p-1 my-1 md:my-2 md:mr-1 rounded-bl-3xl font-bold text-1xl md:text-2xl h-fit">
                                     +20 <i class="fa-solid fa-star-half-stroke"></i>
                                 </button>
-                                <button onclick="setBaseScore(35)" class="bg-indigo-900/50 hover:bg-indigo-800 transition-all text-white grow text-center p-1 my-2 ml-1 rounded-br-3xl font-bold text-2xl h-fit">
+                                <button onclick="setBaseScore(35)" class="bg-indigo-900/50 hover:bg-indigo-800 transition-all text-white grow text-center p-1 my-1 md:my-2 md:ml-1 rounded-br-3xl font-bold text-1xl md:text-2xl h-fit">
                                     +35 <i class="fa-solid fa-star-half-stroke"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-1/5">
-                    <div class="flex justify-center w-64 h-80 mx-auto">
+                <div class="w-1/5 hidden md:block">
+                    <div class="md:flex hidden justify-center w-64 h-80 mx-auto">
                         <i class="fa-solid fa-forward text-violet-500/75 text-9xl m-auto"></i>
                     </div>
                 </div>
-                <div class="w-1/5">
+                <div class="w-1/3 md:w-1/5 m-1">
                     <div class="flex justify-center">
                         <div>
-                            <button onclick="playSong(15)" class="bg-purple-700 hover:bg-purple-600 text-white transition-all text-8xl font-bold py-2 px-4 w-64 h-80 rounded-t-3xl">
+                            <button onclick="playSong(15)" class="bg-purple-700 hover:bg-purple-600 text-white transition-all text-5xl md:text-8xl font-bold py-2 px-4 w-full md:w-64 h-fit md:h-80 rounded-t-lg md:rounded-t-3xl">
                                 15s<br><i class="fa-solid fa-circle-play mt-5"></i>
                             </button>
                             <div class="flex justify-center">
-                                <button onclick="setBaseScore(12)" class="bg-purple-900/50 hover:bg-purple-800 transition-all text-white grow text-center p-1 my-2 mr-1 rounded-bl-3xl font-bold text-2xl h-fit">
+                                <button onclick="setBaseScore(12)" class="bg-purple-900/50 hover:bg-purple-800 transition-all text-white grow text-center p-1 my-1 md:my-2 md:mr-1 rounded-bl-3xl font-bold text-1xl md:text-2xl h-fit">
                                     +12 <i class="fa-solid fa-star-half-stroke"></i>
                                 </button>
-                                <button onclick="setBaseScore(15)" class="bg-purple-900/50 hover:bg-purple-800 transition-all text-white grow text-center p-1 my-2 ml-1 rounded-br-3xl font-bold text-2xl h-fit">
+                                <button onclick="setBaseScore(15)" class="bg-purple-900/50 hover:bg-purple-800 transition-all text-white grow text-center p-1 my-1 md:my-2 md:ml-1 rounded-br-3xl font-bold text-1xl md:text-2xl h-fit">
                                     +15 <i class="fa-solid fa-star-half-stroke"></i>
                                 </button>
                             </div>
@@ -125,8 +126,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center w-full -mt-10">
-                <div class="flex justify-center bg-blue-900/50 m-8 w-1/6 rounded-2xl h-fit">
+            <div class="flex flex-col md:flex-row justify-center w-full mt-0 md:-mt-10">
+                <div class="m-0 md:m-8 w-full md:w-1/6 flex justify-center bg-blue-900/50 rounded-none md:rounded-2xl h-fit order-3 md:order-1">
                     <div class="flex flex-col w-full p-4">
                         <h3 class="bg-blue-800 text-white my-auto p-5 rounded-t-xl font-bold text-2xl h-fit">
                             Hátralévő zenék
@@ -142,24 +143,24 @@
                         </p>
                     </div>
                 </div>
-                <div class="w-1/6 mr-16">
+                <div class="w-full md:w-1/6 order-4 md:order-2">
                     <a href="PANtify template sheet.xlsx" download>
-                        <button class="bg-blue-900 hover:bg-blue-800 text-white transition-all text-3xl font-bold m-8 p-4 rounded-3xl">
+                        <button class="bg-blue-900 hover:bg-blue-800 text-white transition-all text-3xl w-full md:w-fit font-bold m-0 md:m-8 p-4 rounded-none md:rounded-3xl">
                             <i class="fa-solid fa-download text-white text-4xl m-auto"></i> Pontozótábla
                         </button>
                     </a>
                 </div>
-                <div class="w-1/3">
-                    <div class="bg-indigo-900/50 mt-6 w-fit h-36 rounded-b-3xl">
-                        <button onclick="end(1)" class="bg-green-600 hover:bg-green-500 mt-6 text-white font-bold transition-all w-fit text-4xl mx-5 py-4 px-4 rounded-3xl">
-                            <i class="fa-solid fa-circle-check"></i> HELYES
+                <div class="w-full md:w-1/3 order-1 md:order-3">
+                    <div class="flex justify-center flex-col md:flex-row bg-indigo-900/50 m-0 md:mt-6 w-full h-36 mx-auto rounded-none md:rounded-b-3xl">
+                        <button onclick="end(1)" class="bg-green-600 hover:bg-green-500 m-2 md:mt-6 text-white font-bold transition-all h-fit text-4xl py-2 px-6 md:p-4 rounded-3xl mx-auto whitespace-nowrap">
+                            <i class="fa-solid fa-circle-check mr-4"></i>HELYES
                         </button>
-                        <button onclick="end(0)" class="bg-red-600 hover:bg-red-500 mt-6 text-white font-bold transition-all w-fit text-4xl mx-5 py-4 px-4 rounded-3xl">
-                            <i class="fa-solid fa-square-xmark"></i> NEM AZ
+                        <button onclick="end(0)" class="bg-red-600 hover:bg-red-500 m-2 md:mt-6 text-white  font-bold transition-all h-fit text-4xl py-2 px-6 md:p-4 rounded-3xl mx-auto whitespace-nowrap">
+                            <i class="fa-solid fa-square-xmark mr-4"></i>NEM AZ
                         </button>
                     </div>
                 </div>
-                <div class="flex justify-center bg-purple-900/50 w-1/3 m-8 rounded-2xl h-96">
+                <div class="w-full md:w-1/3 flex justify-center bg-purple-900/50 m-0 md:m-8 rounded-none md:rounded-2xl h-96 order-2 md:order-4">
                     <div class="flex flex-col w-full p-4 overflow-y-auto scrollbar-thin scrollbar-track-purple-800 scrollbar-thumb-purple-600 hover:scrollbar-track-purple-900 hover:scrollbar-thumb-purple-700">
                         <h3 class="bg-purple-800 sticky top-0 text-white p-5 rounded-t-xl font-bold text-2xl w-full h-fit">
                             Eredmény
@@ -168,56 +169,72 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-indigo-900/50 mx-auto absolute left-0 right-0 top-0 w-80 my-5 h-64 rounded-t-3xl -z-50"></div>
+            <div class="bg-indigo-900/50 md:block hidden mx-auto absolute left-0 right-0 top-0 w-80 my-5 h-64 rounded-t-3xl -z-50"></div>
         </div>
     </div>
-    <div class="flex justify-center">
-
-    </div>
-    <div class="bg-gradient-to-r from-blue-900/50 via-indigo-900/50 to-purple-900/50 p-4 pb-64 pt-10">
+    <div class="bg-gradient-to-r from-blue-800/70 via-indigo-800/70 to-purple-800/70 pb-64 pt-10">
         <h1 class="text-white text-5xl font-bold text-center underline uppercase">A játék menete</h1>
-        <div class="flex justify-center pt-8">
-            <div class="m-auto w-1/5 flex justify-center bg-blue-900 mx-2 p-3 rounded-t-2xl">
-                <div class="bg-white font-bold w-fit h-fit my-auto text-blue-900 p-5 text-7xl rounded-full ">1</div>
-                <h3 class="text-4xl font-bold text-white my-auto ml-5">Írd be az osztályt</h3>
+        <div class="flex flex-col md:flex-row justify-center mt-8">
+            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">1</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Írd be az osztályt</h3>
+                </div>
+                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+                    <p class="text-xl text-white ml-5">...a logó alatti mezőbe, miután megmutattad a játékosoknak a játék menetét (ezt az útmutatót azért nem kell felolvasni). <br><span class="font-bold">A számok sokfélék, talán lesz 1-2 amit valaki ismer..</span></p>
+                </div>
             </div>
-            <div class="m-auto w-1/5 flex justify-center bg-blue-900 mx-2 p-3 rounded-t-2xl">
-                <div class="bg-white font-bold w-fit h-fit my-auto text-blue-900 p-5 text-7xl rounded-full ">2</div>
-                <h3 class="text-4xl font-bold text-white my-auto ml-5">Válassz nehézséget</h3>
+            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">2</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Válassz nehézséget</h3>
+                </div>
+                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+                    <p class="text-xl text-white ml-5">...fent, jobb oldalon. Ekkor ki lesz választva egy zene amit bal-fent láthatsz ha ráviszed az egeret. Főleg angol zenék vannak. <br><span class="underline">Könnyű:</span> ismert számok, nagyrészt milliárdos megtekintéssel. <br><span class="underline">Nehéz:</span> kevésbé ismert előadók legnépszerűbb számai. <br><span class="underline">Extrém:</span> 😘.</p>
+                </div>
             </div>
-            <div class="m-auto w-1/5 flex justify-center bg-indigo-900 mx-2 p-3 rounded-t-2xl">
-                <div class="bg-white font-bold w-fit h-fit my-auto text-indigo-900 p-5 text-7xl rounded-full ">3</div>
-                <h3 class="text-4xl font-bold text-white my-auto ml-5">Hallgass bele a zenébe</h3>
+            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">3</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Hallgass bele a zenébe</h3>
+                </div>
+                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+                    <p class="text-xl text-white ml-5">Egymás után kell végigmenni az 5, 10 és 15 másodperces részeken.<br><span class="font-bold">Minden egyes</span> lejátszás után lehet 10mp-et gondolkodni és egyszer tippelni (emberenként) <span class="font-bold">kézfeltartással</span> és a zene címét és/vagy az előadót bemondva. <br><span class="underline">5s rész:</span> A zene eleje, általában ének nélkül. <br><span class="underline">10s rész:</span> A zene refrén előtti része. <br><span class="underline">15s rész:</span> Refrén (meglepően sok zenében kimondják a címét btw).</p>
+                </div>
             </div>
-            <div class="m-auto w-1/5 flex justify-center bg-violet-900 mx-2 p-3 rounded-t-2xl">
-                <div class="bg-white font-bold w-fit h-fit my-auto text-violet-900 p-5 text-7xl rounded-full ">4</div>
-                <h3 class="text-4xl font-bold text-white my-auto ml-5">Pontozd le</h3>
+            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">4</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Pontozd le</h3>
+                </div>
+                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+                    <p class="text-xl text-white ml-5">Ha több előadó is van elég az egyiket eltalálni ("ft." az elválasztás). Amelyik résznél találják ki a zenét, az alatt kell rákattintani a pont hozzáadására. Az első szám a cím <span class="font-bold">vagy</span> a szerző felismeréséért járó pontot mutatja, a második számú összeg pedig mindkettő kitalálásáért jár. <br>A végén menj rá a <span class="bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-circle-check"></i></span> gombra, hogy felvedd a táblázatba a pontot. <br> Ha a 3. meghallgatás után sem találják ki, akkor a <span class="bg-red-600 hover:bg-red-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-square-xmark"></i></span> gombra menj, ami 0 pontot fog felvenni.</p>
+                </div>
             </div>
-            <div class="m-auto w-1/5 flex justify-center bg-purple-900 mx-2 p-3 rounded-t-2xl">
-                <div class="bg-white font-bold w-fit h-fit my-auto text-purple-900 p-5 text-7xl rounded-full ">5</div>
-                <h3 class="text-4xl font-bold text-white my-auto ml-5">Vedd fel a táblázatba</h3>
+            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">5</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Vedd fel a táblázatba</h3>
+                </div>
+                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+                    <p class="text-xl text-white ml-5">Ha például az 1. meghallgatásnál kitalálják a zene címét, akkor 25 pontot kapnának, ilyenkor választhatnak, hogy tovább akarnak-e menni (ha úgy gondolják, hogy abból ki tudják találni az előadót is), mivel ha már továbbmennek, akkor a második meghallgatás után, az, hogy kitalálták a címet már csak 20 pontot fog érni, a harmadik után meg csak 12-t. <br>A hátralévő zenékre figyelni kell, ha elfogynak újra kell tölteni az oldalt. De azelőtt másold be a táblázatot az Excelbe! GLHF! A zenéknél le lehet játszani a 15s-es részt ünneplésként ha előbb kitalálják :)</p>
+                </div>
             </div>
-        </div>
-        <div class="flex pt-8 -mt-4">
-            <div class="w-1/5 flex bg-blue-900 m-2 py-3 px-1 mt-0 rounded-b-2xl h-fit">
-                <p class="text-xl text-white ml-5">...a logó alatti mezőbe, miután megmutattad a játékosoknak a játék menetét (ezt az útmutatót azért nem kell felolvasni). <br><span class="font-bold">A számok sokfélék, talán lesz 1-2 amit valaki ismer..</span></p>
-            </div>
-            <div class="w-1/5 flex bg-blue-900 m-2 py-3 px-1 mt-0 rounded-b-2xl h-fit">
-                <p class="text-xl text-white ml-5">...fent, jobb oldalon. Ekkor ki lesz választva egy zene amit bal-fent láthatsz ha ráviszed az egeret. Főleg angol zenék vannak. <br><span class="underline">Könnyű:</span> ismert számok, nagyrészt milliárdos megtekintéssel. <br><span class="underline">Nehéz:</span> kevésbé ismert előadók legnépszerűbb számai. <br><span class="underline">Extrém:</span> 😘.</p>
-            </div>
-            <div class="w-1/5 flex bg-indigo-900 m-2 py-3 px-1 mt-0 rounded-b-2xl h-fit">
-                <p class="text-xl text-white ml-5">Egymás után kell végigmenni az 5, 10 és 15 másodperces részeken.<br><span class="font-bold">Minden egyes</span> lejátszás után lehet 10mp-et gondolkodni és egyszer tippelni (emberenként) <span class="font-bold">kézfeltartással</span> és a zene címét és/vagy az előadót bemondva. <br><span class="underline">5s rész:</span> A zene eleje, általában ének nélkül (csak az ismeri fel aki sokszor hallgatja a számot). <br><span class="underline">10s rész:</span> A zene refrén előtti része. <br><span class="underline">15s rész:</span>Refrén (meglepően sok zenében kimondják a címét btw).</p>
-            </div>
-            <div class="w-1/5 flex bg-violet-900 m-2 py-3 px-1 mt-0 rounded-b-2xl h-fit">
-                <p class="text-xl text-white ml-5">Ha több előadó is van elég az egyiket eltalálni ("ft." az elválasztás). Amelyik résznél találják ki a zenét, az alatt kell rákattintani a pont hozzáadására. Az első szám a cím <span class="font-bold">vagy</span> a szerző felismeréséért járó pontot mutatja, a második számú összeg pedig mindkettő kitalálásáért jár. <br>A végén menj rá a <span class="bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-circle-check"></i></span> gombra, hogy felvedd a táblázatba a pontot. <br> Ha a 3. meghallgatás után sem találják ki, akkor a <span class="bg-red-600 hover:bg-red-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-square-xmark"></i></span> gombra menj, ami 0 pontot fog felvenni.</p>
-            </div>
-            <div class="w-1/5 flex bg-purple-900 m-2 py-3 px-1 mt-0 rounded-b-2xl h-fit">
-                <p class="text-xl text-white ml-5">Ha például az 1. meghallgatásnál kitalálják a zene címét, akkor 25 pontot kapnának, ilyenkor választhatnak, hogy tovább akarnak-e menni (ha úgy gondolják, hogy abból ki tudják találni az előadót is), mivel ha már továbbmennek, akkor a második meghallgatás után, az, hogy kitalálták a címet már csak 20 pontot fog érni, a harmadik után meg csak 12-t. <br>A hátralévő zenékre figyelni kell, ha elfogynak újra kell tölteni az oldalt. De azelőtt másold be a táblázatot az Excelbe! GLHF! A zenéknél le lehet játszani a 15s-es részt ünneplésként ha előbb kitalálják :)</p>
-            </div>
+
+
+
+
         </div>
         <div style="letter-spacing: 5px;" class="text-transparent hover:text-white transition-all w-fit absolute cursor-default mx-auto left-0 right-0 text-center font-thin mt-48 text-xl">인간이 지구에서 만든</div>
     </div>
 
+    <div id="endModal" class="flxe absolute hidden h-screen w-full top-0 left-0 right-0 m-0 bg-gradient-to-r from-blue-800 via-indigo-800 to-purple-800 z-10">
+        <h2 id="endArtist" class="absolute top-48 font-bold left-0 right-0 w-fit mx-auto text-4xl md:text-8xl text-black/50">Artist</h2>
+        <h2 id="endTitle" class="absolute top-96 font-bold left-0 right-0 w-fit mx-auto text-5xl md:text-9xl text-white">Title</h2>
+        <button onclick="closeModal()" class="absolute top-0 right-0 text-6xl text-black/50 transition-all hover:text-white m-4">
+            <i class="fa-solid fa-xmark mr-4"></i>
+        </button>
+    </div>
 
     <audio id="audio">
         <source src="" type="audio/mpeg">

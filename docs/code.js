@@ -1,7 +1,7 @@
-// Window leave confirmation
-window.onbeforeunload = function (e) {
-    return "야~ 무슨 생각을 하고 있니? ";
-};
+// // Window leave confirmation
+// window.onbeforeunload = function (e) {
+//     return "야~ 무슨 생각을 하고 있니? ";
+// };
 
 let songsEasy = [
     ["ACDC", "Highway to Hell"],
@@ -111,9 +111,12 @@ function newSong(difficulty) {
             songsExtreme = songsExtreme.filter(x => x !== song);
             extremeLeft.innerHTML = songsExtreme.length;
         }
-
+        if (songsEasy.length == 0 && songsHard.length == 0 && songsExtreme.length == 0) {
+            alert("조심하세요!!!!!\n그들은 저에게 페이지를 새로고침하라고 했어요..\nNincs több zene!");
+            return;
+        }
         if (song == null) {
-            alert("조심하세요!!!!!\n얼굴만 보면 몰라..\nMár nincs hátralévő zene!!!");
+            alert("Már nincs hátralévő zene ebben a nehézségben!!");
             return;
         }
         else {

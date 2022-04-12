@@ -191,6 +191,11 @@ function end(state) {
     window.scrollTo(0, 0);
 }
 
+function celebrate() {
+    x.src = "songs/" + song[0] + ";" + song[1] + ";" + 15 + ".mp3";
+    x.play();
+}
+
 function closeModal() {
     endModal.style.display = "none";
     document.body.style.overflowY = "scroll";

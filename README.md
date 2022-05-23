@@ -4,7 +4,7 @@
 - scoring fix
 - moooooore music
 - AI 👀?
-- add volume management
+- add volume management with scrolling
 - warnings instead of js alerts
 - feat (ft.) to parenthes and fade them with js (0.8 opacity idk)
 - music visualization (in notes):

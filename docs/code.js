@@ -38,10 +38,10 @@ let songsHard = [
     ["SABATON", "Stormtroopers"],
     ["Sigala ft. Ella Eyre, Meghan Trainor", "Just Got Paid"],
     ["K'NAAN", "Wavin' Flag"],
+    ["TheFatRat", "Unity"],
 ]
 
 let songsExtreme = [
-    ["TheFatRat", "Unity"],
     ["Harley Poe", "Eat Shit and Die"],
     ["ALESTORM", "Treasure Chest Party Quest"],
     ["Anthrax", "Got The Time"],

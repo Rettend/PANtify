@@ -1,7 +1,8 @@
 // // Window leave confirmation
 // window.onbeforeunload = function (e) {
-//     return "야~ 무슨 생각을 하고 있니? ";
+//     return "";
 // };
+
 
 let songsEasy = [
     ["ACDC", "Highway to Hell"],
@@ -17,6 +18,18 @@ let songsEasy = [
     ["Adele", "Rolling in the Deep"],
     ["Panic! At The Disco", "High Hopes"],
     ["Red Hot Chili Peppers", "Dark Necessities"],
+    ["Marshmello (ft. Khalid)", "Silence"],
+    ["Alessia Cara", "Scars To Your Beautiful"],
+    ["Calvin Harris (ft. Pharrel Williams, Katy Perry, Big Sean)", "Feels"],
+    ["Eminem (ft. Nate Dogg)", "'Till I Collapse"],
+    ["The Weeknd", "Save Your Tears"],
+    ["Eminem", "Without Me"],
+    ["Aerosmith", "I Don't Want to Miss a Thing"],
+    ["Guns 'N Roses", "Paradise City"],
+    ["Alan Walker", "Alone"],
+    ["Post Malone", "Circles"],
+    ["Zedd (ft. Maren Morris, Grey)", "The Middle"],
+
 ]
 
 let songsHard = [
@@ -28,17 +41,18 @@ let songsHard = [
     ["Ozzy Osbourne", "Crazy Train"],
     ["Imagine Dragons", "One Day"],
     ["Electric Light Orchestra (ELO)", "Mr. Blue Sky"],
-    ["Coldplay ft. BTS", "My Universe"],
+    ["Coldplay (ft. BTS)", "My Universe"],
     ["Emberek", "Forog a Föld"],
     ["Dire Straits", "Sultans Of Swing"],
-    ["SHAUN ft. Conor Maynard", "Way Back Home"],
+    ["SHAUN (ft. Conor Maynard)", "Way Back Home"],
     ["Jackson Browne", "Running on Empty"],
-    ["Paul Simon ft. Garfunkel", "The Sound of Silence"],
+    ["Paul Simon (ft. Garfunkel)", "The Sound of Silence"],
     ["Bag Raiders", "Shooting Stars"],
     ["SABATON", "Stormtroopers"],
-    ["Sigala ft. Ella Eyre, Meghan Trainor", "Just Got Paid"],
+    ["Sigala (ft. Ella Eyre, Meghan Trainor)", "Just Got Paid"],
     ["K'NAAN", "Wavin' Flag"],
     ["TheFatRat", "Unity"],
+    ["Klaus Badelt (Pirates of the Caribbean)", "He's a Pirate"],
 ]
 
 let songsExtreme = [
@@ -53,17 +67,20 @@ let songsExtreme = [
     ["Yunsae", "Warm Puppy"],
     ["Bomba Estéreo", "Soy Yo"],
     ["Rusted Root", "Send Me On My Way"],
-    ["League of Legends ft. Jasmine Clarke", "Seraphine"],
-    ["La Coka Nostra ft. Snoop Dogg", "Bang Bang"],
+    ["League of Legends (ft. Jasmine Clarke)", "Seraphine"],
+    ["La Coka Nostra (ft. Snoop Dogg)", "Bang Bang"],
     ["Yogscast (Lewis & Simon)", "Diggy Diggy Hole"],
     ["Jamiroquai", "Virtual Insanity"],
     ["Baha Men", "Rat Race"],
-    ["IU ft. SUGA", "eight"],
+    ["IU (ft. SUGA)", "eight"],
+    ["ACDC", "For Those About to Rock"],
 ]
 
+
+const pokemonCount = 3;
 const x = document.getElementById("audio");
-const songArtist = document.getElementById("songArtist");
 const songTitle = document.getElementById("songTitle");
+const songArtist = document.getElementById("songArtist");
 const logo = document.getElementById("logo");
 const result = document.getElementById("result");
 const osztály = document.getElementById("osztály");
@@ -72,20 +89,28 @@ const cDuration = document.getElementById("cDuration");
 const endModal = document.getElementById("endModal");
 const endArtits = document.getElementById("endArtits");
 const endTitle = document.getElementById("endTitle");
+const easyScore = document.getElementById("easyScore");
+const hardScore = document.getElementById("hardScore");
+const extremeScore = document.getElementById("extremeScore");
+const easyAbsLeft = songsEasy.length;
+const hardAbsLeft = songsHard.length;
+const extremeAbsLeft = songsExtreme.length;
 
 const easyLeft = document.getElementById("easyLeft");
-easyLeft.innerHTML = songsEasy.length;
+easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
 const hardLeft = document.getElementById("hardLeft");
-hardLeft.innerHTML = songsHard.length;
+hardLeft.innerHTML = hardAbsLeft + " / " + songsHard.length;
 const extremeLeft = document.getElementById("extremeLeft");
-extremeLeft.innerHTML = songsExtreme.length;
+extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
 
 
-// Format: "artist;title"
+// Format: "artist;title;genre1;genre2"
 
 var aDifficulty = null;
 var song = null;
 var aOsztály = null;
+
+var lastArtist = null;
 
 function newSong(difficulty) {
     aOsztály = osztály.value;
@@ -94,28 +119,47 @@ function newSong(difficulty) {
         return;
     }
     else {
+        let easyS = 20;
+        let hardS = 15;
+        let extremeS = 12;
         aDifficulty = difficulty;
         cDifficulty.innerHTML = difficulty;
         if (aDifficulty == 1) {
-            const random = Math.floor(Math.random() * songsEasy.length);
-            song = songsEasy[random];
+            do {
+                const random = Math.floor(Math.random() * songsEasy.length);
+                song = songsEasy[random];
+                var currentArtist = song[0].split('(ft. ')[0];
+            } while (lastArtist != currentArtist);
+            var lastArtist = currentArtist;
             songsEasy = songsEasy.filter(x => x !== song);
-            easyLeft.innerHTML = songsEasy.length;
+            easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
         }
         else if (aDifficulty == 3) {
-            const random = Math.floor(Math.random() * songsHard.length);
-            song = songsHard[random];
+            do {
+                const random = Math.floor(Math.random() * songsHard.length);
+                song = songsHard[random];
+                var currentArtist = song[0].split('(ft. ')[0];
+            } while (lastArtist != currentArtist);
+            var lastArtist = currentArtist;
             songsHard = songsHard.filter(x => x !== song);
-            hardLeft.innerHTML = songsHard.length;
+            hardLeft.innerHTML = hardAbsLeft + " / " + songsHard.length;
         }
         else if (aDifficulty == 5) {
-            const random = Math.floor(Math.random() * songsExtreme.length);
-            song = songsExtreme[random];
+            do {
+                const random = Math.floor(Math.random() * songsExtreme.length);
+                song = songsExtreme[random];
+                var currentArtist = song[0].split('(ft. ')[0];
+            } while (lastArtist != currentArtist);
+
+            var lastArtist = currentArtist;
             songsExtreme = songsExtreme.filter(x => x !== song);
-            extremeLeft.innerHTML = songsExtreme.length;
+            extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
         }
+        easyScore.innerHTML = easyS * aDifficulty;
+        hardScore.innerHTML = hardS * aDifficulty;
+        extremeScore.innerHTML = extremeS * aDifficulty;
         if (songsEasy.length == 0 && songsHard.length == 0 && songsExtreme.length == 0) {
-            alert("조심하세요!!!!!\n그들은 저에게 페이지를 새로고침하라고 했어요..\nNincs több zene!");
+            alert("Nincs több zene!");
             return;
         }
         if (song == null) {
@@ -123,7 +167,18 @@ function newSong(difficulty) {
             return;
         }
         else {
-            songArtist.innerHTML = song[0];
+            if (song[0].indexOf('(ft. ') !== -1) {
+                const featSpan = document.createElement("span");
+                featSpan.style.fontWeight = "normal";
+                let featArtists = song[0].substring(song[0].indexOf('(ft. '));
+                songArtist.innerHTML = song[0].split('(ft. ')[0];
+                featSpan.appendChild(document.createTextNode(featArtists));
+                const div = document.getElementById("songArtist");
+                div.appendChild(featSpan);
+            }
+            else {
+                songArtist.innerHTML = song[0];
+            }
             songTitle.innerHTML = song[1];
         }
     }

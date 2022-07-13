@@ -104,13 +104,9 @@ const extremeLeft = document.getElementById("extremeLeft");
 extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
 
 
-// Format: "artist;title;genre1;genre2"
-
 var aDifficulty = null;
 var song = null;
 var aOsztály = null;
-
-var lastArtist = null;
 
 function newSong(difficulty) {
     aOsztály = osztály.value;
@@ -122,38 +118,26 @@ function newSong(difficulty) {
         let easyS = 20;
         let hardS = 15;
         let extremeS = 12;
+        
         aDifficulty = difficulty;
         cDifficulty.innerHTML = difficulty;
         if (aDifficulty == 1) {
-            do {
-                const random = Math.floor(Math.random() * songsEasy.length);
-                song = songsEasy[random];
-                var currentArtist = song[0].split('(ft. ')[0];
-            } while (lastArtist != currentArtist);
-            var lastArtist = currentArtist;
+            let random = Math.floor(Math.random() * songsEasy.length);
+            song = songsEasy[random];
             songsEasy = songsEasy.filter(x => x !== song);
             easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
         }
         else if (aDifficulty == 3) {
-            do {
-                const random = Math.floor(Math.random() * songsHard.length);
-                song = songsHard[random];
-                var currentArtist = song[0].split('(ft. ')[0];
-            } while (lastArtist != currentArtist);
-            var lastArtist = currentArtist;
+            let random = Math.floor(Math.random() * songsHard.length);
+            song = songsHard[random];
             songsHard = songsHard.filter(x => x !== song);
-            hardLeft.innerHTML = hardAbsLeft + " / " + songsHard.length;
+            easyLeft.innerHTML = easyAbsLeft + " / " + songsHard.length;
         }
         else if (aDifficulty == 5) {
-            do {
-                const random = Math.floor(Math.random() * songsExtreme.length);
-                song = songsExtreme[random];
-                var currentArtist = song[0].split('(ft. ')[0];
-            } while (lastArtist != currentArtist);
-
-            var lastArtist = currentArtist;
+            let random = Math.floor(Math.random() * songsExtreme.length);
+            song = songsExtreme[random];
             songsExtreme = songsExtreme.filter(x => x !== song);
-            extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
+            easyLeft.innerHTML = easyAbsLeft + " / " + songsExtreme.length;
         }
         easyScore.innerHTML = easyS * aDifficulty;
         hardScore.innerHTML = hardS * aDifficulty;

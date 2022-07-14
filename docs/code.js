@@ -3,6 +3,22 @@
 //     return "";
 // };
 
+const songs = [
+    {
+        "artist": "ACDC",
+        "song": "Highway to Hell",
+        "text": ["ACDC1", "ACDC2", "ACDC3"],
+        "streamCount": 1010569617,
+        "coverImage": "cover images/ACDC;Highway to Hell.jpg"
+    }, {
+        "artist": "Avicii",
+        "song": "The nights",
+        "text": ["Avicii1", "Avicii2", "Avicii3"],
+        "streamCount": 1116498715,
+        "coverImage": "cover images/Avicii;The nights.png"
+    }];
+
+console.log(songs[0].artist);
 
 let songsEasy = [
     ["ACDC", "Highway to Hell"],
@@ -104,6 +120,78 @@ const extremeLeft = document.getElementById("extremeLeft");
 extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
 
 
+var abrSymbols = ["", "k", "M", "B", "T"];
+function abr(number) {
+
+    // what tier? (determines SI symbol)
+    var tier = Math.log10(Math.abs(number)) / 3 | 0;
+
+    // if zero, we don't need a suffix
+    if (tier == 0) return number;
+
+    // get suffix and determine scale
+    var suffix = abrSymbols[tier];
+    var scale = Math.pow(10, tier * 3);
+
+    // scale the number
+    var scaled = number / scale;
+
+    // format number and add suffix
+    return scaled.toFixed(0) + suffix;
+}
+
+
+var slider = document.getElementById('slider');
+var difficultyLabel = document.getElementById('difficultyLabel');
+noUiSlider.create(slider, {
+    start: [800000000, 2000000000],
+    snap: true,
+    connect: true,
+    margin: 200000000,
+    range: {
+        'min': 1000000, // 1M
+        '10%': 5000000, // 5M
+        '20%': 10000000, // 10M
+        '30%': 25000000, // 25M
+        '40%': 50000000, // 50M
+        '50%': 100000000, // 100M
+        '60%': 250000000, // 250M
+        '70%': 500000000, // 500M
+        '80%': 800000000, // 800M
+        '90%': 1000000000, // 1B
+        'max': 2000000000 // 2B
+    },
+    direction: 'rtl',
+    pips: {
+        mode: 'range',
+        density: 3,
+        format: {
+            to: function (a) {
+                return abr(a);
+            }
+        }
+    }
+});
+
+slider.noUiSlider.on('update', function (values, handle) {
+    var reciprocal1 = values[0] / 2000000000;
+    var reciprocal2 = values[1] / 2000000000;
+    
+    // calculate a multiplier value which is larger the closer the slider is to the right
+    var multiplier1 = Math.abs(1 - reciprocal1) * 15; // right slider multiplier
+    var multiplier2 = Math.abs(1 - reciprocal2) * 2; // left slider multiplier
+
+    // average of the two multipliers
+    var multiplier = multiplier1 + multiplier2 / 2;
+
+    // normalize the multiplier value to the range 1-5
+    var normalizedMultiplier = Math.abs((multiplier - 1) / 4);
+
+    difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
+});
+
+
+
 var aDifficulty = null;
 var song = null;
 var aOsztály = null;
@@ -113,12 +201,11 @@ function newSong(difficulty) {
     if (aOsztály == "") {
         alert("Nincs megadva osztály!");
         return;
-    }
-    else {
+    } else {
         let easyS = 20;
         let hardS = 15;
         let extremeS = 12;
-        
+
         aDifficulty = difficulty;
         cDifficulty.innerHTML = difficulty;
         if (aDifficulty == 1) {
@@ -126,14 +213,12 @@ function newSong(difficulty) {
             song = songsEasy[random];
             songsEasy = songsEasy.filter(x => x !== song);
             easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
-        }
-        else if (aDifficulty == 3) {
+        } else if (aDifficulty == 3) {
             let random = Math.floor(Math.random() * songsHard.length);
             song = songsHard[random];
             songsHard = songsHard.filter(x => x !== song);
             easyLeft.innerHTML = easyAbsLeft + " / " + songsHard.length;
-        }
-        else if (aDifficulty == 5) {
+        } else if (aDifficulty == 5) {
             let random = Math.floor(Math.random() * songsExtreme.length);
             song = songsExtreme[random];
             songsExtreme = songsExtreme.filter(x => x !== song);
@@ -149,8 +234,7 @@ function newSong(difficulty) {
         if (song == null) {
             alert("Már nincs hátralévő zene ebben a nehézségben!!");
             return;
-        }
-        else {
+        } else {
             if (song[0].indexOf('(ft. ') !== -1) {
                 const featSpan = document.createElement("span");
                 featSpan.style.fontWeight = "normal";
@@ -159,8 +243,7 @@ function newSong(difficulty) {
                 featSpan.appendChild(document.createTextNode(featArtists));
                 const div = document.getElementById("songArtist");
                 div.appendChild(featSpan);
-            }
-            else {
+            } else {
                 songArtist.innerHTML = song[0];
             }
             songTitle.innerHTML = song[1];
@@ -174,8 +257,7 @@ function playSong(duration) {
     if (song == null) {
         alert("Nincs kiválasztva zene!");
         return;
-    }
-    else {
+    } else {
         aDuration = duration;
         cDuration.innerHTML = duration;
         x.src = "songs/" + song[0] + ";" + song[1] + ";" + duration + ".mp3";
@@ -189,24 +271,21 @@ function setBaseScore(baseScore) {
     if (aDuration == 0) {
         alert("Nem volt lejátszva zene!");
         return;
-    }
-    else {
+    } else {
         aBaseScore = baseScore;
     }
 }
 
 function end(state) {
     var score = 0;
-    
+
     if (aBaseScore == 0 || aDuration == 0) {
         alert("Nincs megadva pontszám!");
         return;
-    }
-    else {
+    } else {
         if (state == 0 && song != null && aOsztály != null) {
             score = 0;
-        }
-        else if (state == 1 && song != null && aOsztály != null) {
+        } else if (state == 1 && song != null && aOsztály != null) {
             score = aBaseScore * aDifficulty;
         }
     }
@@ -244,10 +323,10 @@ function closeModal() {
 
 
 // window.onload = function() {
-  
+
 //     var file = document.getElementById("thefile");
 //     var audio = document.getElementById("audio");
-    
+
 //     file.onchange = function() {
 //       var files = this.files;
 //       audio.src = URL.createObjectURL(files[0]);
@@ -256,53 +335,53 @@ function closeModal() {
 //       var context = new AudioContext();
 //       var src = context.createMediaElementSource(audio);
 //       var analyser = context.createAnalyser();
-  
+
 //       var canvas = document.getElementById("canvas");
 //       canvas.width = window.innerWidth;
 //       canvas.height = window.innerHeight;
 //       var ctx = canvas.getContext("2d");
-  
+
 //       src.connect(analyser);
 //       analyser.connect(context.destination);
-  
+
 //       analyser.fftSize = 256;
-  
+
 //       var bufferLength = analyser.frequencyBinCount;
 //       console.log(bufferLength);
-  
+
 //       var dataArray = new Uint8Array(bufferLength);
-  
+
 //       var WIDTH = canvas.width;
 //       var HEIGHT = canvas.height;
-  
+
 //       var barWidth = (WIDTH / bufferLength) * 2.5;
 //       var barHeight;
 //       var x = 0;
-  
+
 //       function renderFrame() {
 //         requestAnimationFrame(renderFrame);
-  
+
 //         x = 0;
-  
+
 //         analyser.getByteFrequencyData(dataArray);
-  
+
 //         ctx.fillStyle = "#000";
 //         ctx.fillRect(0, 0, WIDTH, HEIGHT);
-  
+
 //         for (var i = 0; i < bufferLength; i++) {
 //           barHeight = dataArray[i];
-          
+
 //           var r = barHeight + (25 * (i/bufferLength));
 //           var g = 250 * (i/bufferLength);
 //           var b = 50;
-  
+
 //           ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
 //           ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-  
+
 //           x += barWidth + 1;
 //         }
 //       }
-  
+
 //       audio.play();
 //       renderFrame();
 //     };

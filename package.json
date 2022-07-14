@@ -5,6 +5,7 @@
     "tailwindcss-textshadow": "^2.1.3"
   },
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "nouislider": "^15.6.0"
   }
 }

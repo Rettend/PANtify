@@ -24,7 +24,7 @@
                 <span class="text-white">
                     <i class="fas fa-exclamation-triangle"></i>
                 </span>
-                OH NO
+                OH NO WHYYY
             </p>
             <p id="alertClose" onclick="alertBox.style.display = 'none'" class="absolute right-0 top-0 p-1 mr-1 my-auto text-4xl cursor-pointer text-black/50 transition-all hover:text-white">
                 <i class="fa-solid fa-xmark"></i>
@@ -37,7 +37,7 @@
                 <h2 id="songArtistTitle" class="bg-blue-800 my-auto p-5 rounded-t-xl font-bold text-4xl h-full">
                     <span id="songTitle">Title</span>
                 </h2>
-                <h2 class="bg-blue-900/50 my-auto py-2 px-5 mt-2 rounded-b-xl text-xl h-full">
+                <h2 class="bg-blue-900/50 my-auto font-bold py-2 px-5 mt-2 rounded-b-xl text-xl h-full">
                     <span id="songArtist">Artist ft. Artist</span>
                 </h2>
             </div>
@@ -59,51 +59,51 @@
     <div class="flex justify-center">
         <div class="w-screen">
             <div class="flex justify-between bg-gradient-to-r from-blue-900/50 via-indigo-900/50 to-purple-900/50 rounded-none md:rounded-2xl md:p-4 m-0 mt-0 md:m-8">
-                <div class="w-1/3 md:w-1/5 m-1">
+                <div id="easyScoreFlex" class="w-1/3 md:w-1/5 m-1">
                     <div class="flex flex-col h-full">
-                        <button onclick="playSong(5)" class="flex flex-col justify-around text-shadow-xl md:mix-blend-color-dodge z-10 bg-blue-700 hover:bg-blue-500 text-white transition-all place-self-start text-5xl md:text-8xl font-bold py-2 px-4 w-full h-full md:w-64 md:h-80 rounded-t-lg md:rounded-t-3xl">
-                            <span class="mx-auto">5s</span>
-                            <i class="fa-solid fa-circle-play mx-auto"></i>
+                        <button id="easyBtnBox" onclick="playSong(5)" class="flex flex-col justify-around text-shadow-xl md:mix-blend-color-dodge z-10 bg-blue-700 hover:bg-blue-500 text-white transition-all place-self-start text-5xl md:text-8xl font-bold py-2 px-4 w-full h-full md:w-64 md:h-80 rounded-t-lg md:rounded-t-3xl">
+                            <span id="easyText" class="mx-auto">5s</span>
+                            <i id="easyIcon" class="fa-solid fa-circle-play mx-auto"></i>
                             <img id="poke1mobile" class="md:hidden mix-blend-color-dodge" src="pokemon images/pokemon question mark.webp">
                         </button>
                         <img id="poke1" style="height:350px;" class="hidden md:block absolute mix-blend-color-dodge ml-40 my-auto " src="pokemon images/pokemon question mark.webp">
-                        <div class="bg-blue-900/50 z-10 text-white text-center place-self-start p-1 my-1 md:my-2 font-bold text-1xl md:text-2xl w-full h-fit md:w-64 rounded-b-lg md:rounded-b-3xl">
+                        <div id="easyScoreBox" class="bg-blue-900/50 z-10 text-white text-center place-self-start p-1 my-1 md:my-2 font-bold text-1xl md:text-2xl w-full h-fit md:w-64 rounded-b-lg md:rounded-b-3xl">
                             +<span id="easyScore">20</span> <i class="fa-solid fa-star-half-stroke"></i>
                         </div>
                     </div>
                 </div>
-                <div class="w-1/5 hidden md:block">
+                <div id="arrow1Flex" class="w-1/5 hidden md:block">
                     <div class="justify-start h-full md:flex hidden md:ml-10">
                         <i class="fa-solid fa-forward text-blue-500/75 text-9xl my-auto z-20"></i>
                     </div>
                 </div>
-                <div class="w-1/3 md:w-1/5 m-1">
+                <div id="hardScoreFlex" class="w-1/3 md:w-1/5 m-1">
                     <div class="flex flex-col h-full md:mr-56">
-                        <button onclick="playSong(10)" class="flex flex-col justify-around text-shadow-xl md:mix-blend-color-dodge z-10 bg-indigo-700 hover:bg-indigo-500 text-white transition-all place-self-center text-5xl md:text-8xl font-bold py-2 px-4 w-full h-full md:w-64 md:h-80 rounded-t-lg md:rounded-t-3xl">
-                            <span class="mx-auto">10s</span>
-                            <i class="fa-solid fa-circle-play mx-auto"></i>
+                        <button id="hardBtnBox" onclick="playSong(10)" class="flex flex-col justify-around text-shadow-xl md:mix-blend-color-dodge z-10 bg-indigo-700 hover:bg-indigo-500 text-white transition-all place-self-center text-5xl md:text-8xl font-bold py-2 px-4 w-full h-full md:w-64 md:h-80 rounded-t-lg md:rounded-t-3xl">
+                            <span id="hardText" class="mx-auto">10s</span>
+                            <i id="hardIcon" class="fa-solid fa-circle-play mx-auto"></i>
                             <img id="poke2mobile" class="md:hidden mix-blend-color-dodge" src="pokemon images/pokemon question mark.webp">
                         </button>
                         <img id="poke2" style="height:350px;" class="hidden md:block absolute mix-blend-color-dodge ml-32 my-auto" src="pokemon images/pokemon question mark.webp">
-                        <div class="bg-indigo-900/50 z-10 text-white text-center place-self-center p-1 my-1 md:my-2 font-bold text-1xl md:text-2xl w-full h-fit md:w-64 rounded-b-lg md:rounded-b-3xl">
+                        <div id="hardScoreBox" class="bg-indigo-900/50 z-10 text-white text-center place-self-center p-1 my-1 md:my-2 font-bold text-1xl md:text-2xl w-full h-fit md:w-64 rounded-b-lg md:rounded-b-3xl">
                             +<span id="hardScore">15</span> <i class="fa-solid fa-star-half-stroke"></i>
                         </div>
                     </div>
                 </div>
-                <div class="w-1/5 hidden md:block">
+                <div id="arrow2Flex" class="w-1/5 hidden md:block">
                     <div class="md:flex hidden justify-start h-full">
                         <i class="fa-solid fa-forward text-violet-500/75 text-9xl my-auto z-20"></i>
                     </div>
                 </div>
-                <div class="w-1/3 md:w-1/5 m-1">
+                <div id="extremeScoreFlex" class="w-1/3 md:w-1/5 m-1">
                     <div class="flex flex-col h-full">
-                        <button onclick="playSong(15)" class="flex flex-col justify-around text-shadow-xl md:mix-blend-color-dodge z-10 bg-purple-600 hover:bg-purple-500 text-white transition-all place-self-end text-5xl md:text-8xl font-bold py-2 px-4 w-full h-full md:w-64 md:h-80 rounded-t-lg md:rounded-t-3xl">
-                            <span class="mx-auto">15s</span>
-                            <i class="fa-solid fa-circle-play mx-auto"></i>
+                        <button id="extremeBtnBox" onclick="playSong(15)" class="flex flex-col justify-around text-shadow-xl md:mix-blend-color-dodge z-10 bg-purple-600 hover:bg-purple-500 text-white transition-all place-self-end text-5xl md:text-8xl font-bold py-2 px-4 w-full h-full md:w-64 md:h-80 rounded-t-lg md:rounded-t-3xl">
+                            <span id="extremeText" class="mx-auto">15s</span>
+                            <i id="extremeIcon" class="fa-solid fa-circle-play mx-auto"></i>
                             <img id="poke3mobile" class="md:hidden mix-blend-color-dodge" src="pokemon images/pokemon question mark.webp">
                         </button>
                         <img id="poke3" style="height:350px;" class="hidden md:block absolute mix-blend-color-dodge right-0 mr-52 my-auto" src="pokemon images/pokemon question mark.webp">
-                        <div class="bg-purple-900/50 z-10 text-white text-center place-self-end p-1 my-1 md:my-2 font-bold text-1xl md:text-2xl w-full h-fit md:w-64 rounded-b-lg md:rounded-b-3xl">
+                        <div id="extremeScoreBox" class="bg-purple-900/50 z-10 text-white text-center place-self-end p-1 my-1 md:my-2 font-bold text-1xl md:text-2xl w-full h-fit md:w-64 rounded-b-lg md:rounded-b-3xl">
                             +<span id="extremeScore">12</span> <i class="fa-solid fa-star-half-stroke"></i>
                         </div>
                     </div>

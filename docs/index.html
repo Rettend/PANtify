@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg-neutral-800 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-purple-800 scrollbar-thumb-purple-600 hover:scrollbar-track-purple-900 hover:scrollbar-thumb-purple-700">
-    <div class="fixed top-0 right-0 m-4 z-50 hidden">
+    <div id="alertBox" class="fixed top-0 right-0 m-4 z-50 hidden">
         <div class="bg-rose-600/95 md:bg-rose-600/90 text-white text-2xl rounded-lg px-4 py-2">
             <p id="alertText" class="text-white font-bold my-auto mr-5">
                 <span class="text-white">
@@ -26,7 +26,7 @@
                 </span>
                 OH NO
             </p>
-            <p id="alertClose" class="absolute right-0 top-0 p-1 mr-1 my-auto text-4xl cursor-pointer text-black/50 transition-all hover:text-white">
+            <p id="alertClose" onclick="alertBox.style.display = 'none'" class="absolute right-0 top-0 p-1 mr-1 my-auto text-4xl cursor-pointer text-black/50 transition-all hover:text-white">
                 <i class="fa-solid fa-xmark"></i>
             </p>
         </div>
@@ -42,9 +42,12 @@
                 </h2>
             </div>
         </div>
-        <h1 id="logo" class="bg-indigo-800 w-full md:w-fit p-4 mx-auto text-white text-5xl md:text-6xl md:m-4 md:mt-14 h-fit text-center -order-1 md:order-1 font-bold underline  decoration-indigo-600 md:rounded-2xl">
-            Zenefelismerés
-        </h1>
+        <div class="flex flex-col justify-between w-full -order-1 md:order-1 md:w-fit">
+            <h1 id="logo" class="bg-indigo-800 w-full md:w-fit p-4 mx-auto place-self-center text-white text-5xl md:text-6xl md:m-4 md:mt-8 h-fit text-center font-bold underline decoration-indigo-600 md:rounded-2xl">
+                Zenefelismerés
+            </h1>
+            <button id="start" onclick="newSong()" class="bg-rose-600 whitespace-nowrap md:absolute md:mt-40 my-auto font-bold place-self-center text-white text-3xl md:text-5xl md:m-2 w-full md:w-fit py-2 md:py-2 md:px-4 md:rounded-2xl"><span>START</span></button>
+        </div>
         <div class="flex justify-center bg-purple-900/50 w-full md:w-1/3 order-2 m-0 md:m-8 md:rounded-2xl">
             <div class="flex flex-wrap justify-between w-full p-4 mx-auto">
                 <h2 class="text-white font-bold text-3xl place-self-start">Nehézség</h2>
@@ -112,15 +115,18 @@
                         <h3 class="bg-blue-800 text-white my-auto p-5 rounded-t-xl font-bold text-2xl h-fit">
                             Hátralévő zenék
                         </h3>
-                        <p class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 text-xl h-fit">
-                            Easy: <span id="easyLeft"></span>
-                        </p>
-                        <p class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 text-xl h-fit">
-                            Hard: <span id="hardLeft"></span>
-                        </p>
-                        <p class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 rounded-b-xl text-xl h-fit">
-                            Extreme: <span id="extremeLeft"></span>
-                        </p>
+                        <div class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 text-xl h-fit flex justify-between">
+                            800M&lt;
+                            <span id="easyLeft"></span>
+                        </div>
+                        <div class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 text-xl h-fit flex justify-between">
+                            800M-250M
+                            <span id="hardLeft"></span>
+                        </div>
+                        <div class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 text-xl h-fit flex justify-between">
+                            250M&gt;
+                            <span id="extremeLeft"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="w-full md:w-1/6 hidden md:block order-2"></div>

@@ -3,23 +3,6 @@
 //     return "";
 // };
 
-const songs = [
-    {
-        "artist": "ACDC",
-        "song": "Highway to Hell",
-        "text": ["ACDC1", "ACDC2", "ACDC3"],
-        "streamCount": 1010569617,
-        "coverImage": "cover images/ACDC;Highway to Hell.jpg"
-    }, {
-        "artist": "Avicii",
-        "song": "The nights",
-        "text": ["Avicii1", "Avicii2", "Avicii3"],
-        "streamCount": 1116498715,
-        "coverImage": "cover images/Avicii;The nights.png"
-    }];
-
-console.log(songs[0].artist);
-
 let songsEasy = [
     ["ACDC", "Highway to Hell"],
     ["Avicii", "The nights"],
@@ -92,8 +75,40 @@ let songsExtreme = [
     ["ACDC", "For Those About to Rock"],
 ]
 
+const songs = [
+    {
+        "artist": "ACDC",
+        "song": "Highway to Hell",
+        "text": ["ACDC1", "ACDC2", "ACDC3"],
+        "streamCount": 1010569617,
+        "hasPlayed": false,
+        "coverImage": "cover images/ACDC;Highway to Hell.jpg"
+    }, {
+        "artist": "Avicii",
+        "song": "The nights",
+        "text": ["Avicii1", "Avicii2", "Avicii3"],
+        "streamCount": 1116498715,
+        "hasPlayed": false,
+        "coverImage": "cover images/Avicii;The nights.png"
+    }, {
+        "artist": "Hanson",
+        "song": "MMMBop",
+        "text": ["Hanson1", "Hanson2", "Hanson3"],
+        "streamCount": 131552367,
+        "hasPlayed": false,
+        "coverImage": "cover images/Hanson;MMMBop.jpg"
+    }, {
+        "artist": "Harley Poe",
+        "song": "Eat Shit and Die",
+        "text": ["Harley Poe1", "Harley Poe2", "Harley Poe3"],
+        "streamCount": 2328919,
+        "hasPlayed": false,
+        "coverImage": "cover images/Harley Poe;Eat Shit and Die.jpg"
+    }
+];
 
-const pokemonCount = 3;
+
+const pokemonCount = 4 - 1; // start with 0
 const x = document.getElementById("audio");
 const songTitle = document.getElementById("songTitle");
 const songArtist = document.getElementById("songArtist");
@@ -111,6 +126,14 @@ const extremeScore = document.getElementById("extremeScore");
 const easyAbsLeft = songsEasy.length;
 const hardAbsLeft = songsHard.length;
 const extremeAbsLeft = songsExtreme.length;
+const poke1 = document.getElementById("poke1");
+const poke2 = document.getElementById("poke2");
+const poke3 = document.getElementById("poke3");
+const poke1mobile = document.getElementById("poke1mobile");
+const poke2mobile = document.getElementById("poke2mobile");
+const poke3mobile = document.getElementById("poke3mobile");
+const alertText = document.getElementById("alertText");
+const alertBox = document.getElementById("alertBox");
 
 const easyLeft = document.getElementById("easyLeft");
 easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
@@ -123,7 +146,7 @@ extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
 var abrSymbols = ["", "k", "M", "B", "T"];
 function abr(number) {
 
-    // what tier? (determines SI symbol)
+    // what tier? (determines symbol)
     var tier = Math.log10(Math.abs(number)) / 3 | 0;
 
     // if zero, we don't need a suffix
@@ -173,13 +196,17 @@ noUiSlider.create(slider, {
     }
 });
 
+
+var aSongs = null;
+// base scores
+let easyS = 30;
+let hardS = 15;
+let extremeS = 10;
+
 slider.noUiSlider.on('update', function (values, handle) {
-    var reciprocal1 = values[0] / 2000000000;
-    var reciprocal2 = values[1] / 2000000000;
-    
     // calculate a multiplier value which is larger the closer the slider is to the right
-    var multiplier1 = Math.abs(1 - reciprocal1) * 15; // right slider multiplier
-    var multiplier2 = Math.abs(1 - reciprocal2) * 2; // left slider multiplier
+    var multiplier1 = Math.abs(1 - values[0] / 2000000000) * 15; // right slider multiplier
+    var multiplier2 = Math.abs(1 - values[1] / 2000000000) * 2; // left slider multiplier
 
     // average of the two multipliers
     var multiplier = multiplier1 + multiplier2 / 2;
@@ -188,66 +215,64 @@ slider.noUiSlider.on('update', function (values, handle) {
     var normalizedMultiplier = Math.abs((multiplier - 1) / 4);
 
     difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
+
+    // get the songs based on the slider value
+    aSongs = songs.filter(i => i.streamCount >= values[0] && i.streamCount <= values[1] && i.hasPlayed == false);
+
+
+    easyScore.innerHTML = Math.round(easyS * normalizedMultiplier);
+    hardScore.innerHTML = Math.round(hardS * normalizedMultiplier);
+    extremeScore.innerHTML = Math.round(extremeS * normalizedMultiplier);
 });
 
 
+function rPokemon(lastrandom) {
+    let random = Math.floor(Math.random() * pokemonCount);
+    if (random >= lastrandom) {
+        random += 1;
+    }
+    return random;
+  }
 
-var aDifficulty = null;
-var song = null;
-var aOsztály = null;
+function newSong() {
+    var random = Math.floor(Math.random() * aSongs.length);
+    var song = aSongs[random];
+    song.hasPlayed = true;
 
-function newSong(difficulty) {
-    aOsztály = osztály.value;
-    if (aOsztály == "") {
-        alert("Nincs megadva osztály!");
+    easyLeft.innerHTML = easyAbsLeft + " / " + songsExtreme.length;
+
+    if (poke1.src == "pokemon%20images/pokemon%20question%20mark.webp") {
+        var randomPokemon= rPokemon(1);
+    } else {
+        console.log(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-")));
+        var randomPokemon= rPokemon(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-1.webp")));
+    }
+    poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
+    poke2mobile.src = poke2.src = "pokemon images/" + randomPokemon + "-2.webp";
+    poke3mobile.src = poke3.src = "pokemon images/" + randomPokemon + "-3.webp";
+
+
+    if (aSongs.length == 0) {
+        alertText.innerHTML = "Nincs több zene!";
+        alertBox.style.display = "block";
+        return;
+    }
+    if (song == null) {
+        alert("Már nincs hátralévő zene ebben a nehézségben!!");
         return;
     } else {
-        let easyS = 20;
-        let hardS = 15;
-        let extremeS = 12;
-
-        aDifficulty = difficulty;
-        cDifficulty.innerHTML = difficulty;
-        if (aDifficulty == 1) {
-            let random = Math.floor(Math.random() * songsEasy.length);
-            song = songsEasy[random];
-            songsEasy = songsEasy.filter(x => x !== song);
-            easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
-        } else if (aDifficulty == 3) {
-            let random = Math.floor(Math.random() * songsHard.length);
-            song = songsHard[random];
-            songsHard = songsHard.filter(x => x !== song);
-            easyLeft.innerHTML = easyAbsLeft + " / " + songsHard.length;
-        } else if (aDifficulty == 5) {
-            let random = Math.floor(Math.random() * songsExtreme.length);
-            song = songsExtreme[random];
-            songsExtreme = songsExtreme.filter(x => x !== song);
-            easyLeft.innerHTML = easyAbsLeft + " / " + songsExtreme.length;
-        }
-        easyScore.innerHTML = easyS * aDifficulty;
-        hardScore.innerHTML = hardS * aDifficulty;
-        extremeScore.innerHTML = extremeS * aDifficulty;
-        if (songsEasy.length == 0 && songsHard.length == 0 && songsExtreme.length == 0) {
-            alert("Nincs több zene!");
-            return;
-        }
-        if (song == null) {
-            alert("Már nincs hátralévő zene ebben a nehézségben!!");
-            return;
+        if (song[0].indexOf('(ft. ') !== -1) {
+            const featSpan = document.createElement("span");
+            featSpan.style.fontWeight = "normal";
+            let featArtists = song[0].substring(song[0].indexOf('(ft. '));
+            songArtist.innerHTML = song[0].split('(ft. ')[0];
+            featSpan.appendChild(document.createTextNode(featArtists));
+            const div = document.getElementById("songArtist");
+            div.appendChild(featSpan);
         } else {
-            if (song[0].indexOf('(ft. ') !== -1) {
-                const featSpan = document.createElement("span");
-                featSpan.style.fontWeight = "normal";
-                let featArtists = song[0].substring(song[0].indexOf('(ft. '));
-                songArtist.innerHTML = song[0].split('(ft. ')[0];
-                featSpan.appendChild(document.createTextNode(featArtists));
-                const div = document.getElementById("songArtist");
-                div.appendChild(featSpan);
-            } else {
-                songArtist.innerHTML = song[0];
-            }
-            songTitle.innerHTML = song[1];
+            songArtist.innerHTML = song[0];
         }
+        songTitle.innerHTML = song[1];
     }
 }
 
@@ -386,3 +411,12 @@ function closeModal() {
 //       renderFrame();
 //     };
 //   };
+
+
+var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutationRecord) {
+        setTimeout(() => { if (alertBox.style.display == "block") alertBox.style.display = "none"; }, 10000);
+    });
+});
+
+observer.observe(alertBox, { attributes: true, attributeFilter: ['style'] });

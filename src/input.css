@@ -23,3 +23,12 @@
     font-size: 30px;
   }
 }
+
+#poke1, #poke2, #poke3 {
+  height: 350px;
+}
+
+#canvas {
+  top: 300px;
+  right: 80px;
+}

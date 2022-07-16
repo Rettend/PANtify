@@ -28,8 +28,7 @@ let songsEasy = [
 	["Alan Walker", "Alone"],
 	["Post Malone", "Circles"],
 	["Zedd (ft. Maren Morris, Grey)", "The Middle"],
-
-]
+];
 
 let songsHard = [
 	["Eric Clapton", "Change The World"],
@@ -52,7 +51,7 @@ let songsHard = [
 	["K'NAAN", "Wavin' Flag"],
 	["TheFatRat", "Unity"],
 	["Klaus Badelt (Pirates of the Caribbean)", "He's a Pirate"],
-]
+];
 
 let songsExtreme = [
 	["Harley Poe", "Eat Shit and Die"],
@@ -73,7 +72,7 @@ let songsExtreme = [
 	["Baha Men", "Rat Race"],
 	["IU (ft. SUGA)", "eight"],
 	["ACDC", "For Those About to Rock"],
-]
+];
 
 const songs = [
 	{
@@ -117,6 +116,7 @@ const songs = [
 
 const pokemonCount = 4 - 1; // start with 0
 const x = document.getElementById("audio");
+const canvas = document.getElementById("canvas");
 const songTitle = document.getElementById("songTitle");
 const songArtist = document.getElementById("songArtist");
 const result = document.getElementById("result");
@@ -262,10 +262,11 @@ function newSong() {
 
 	easyLeft.innerHTML = easyAbsLeft + " / " + songsExtreme.length;
 
+	var randomPokemon = null;
 	if (poke1.src == "pokemon%20images/pokemon%20question%20mark.webp") {
-		var randomPokemon = rPokemon(1);
+		randomPokemon = rPokemon(1);
 	} else {
-		var randomPokemon = rPokemon(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-1.webp")));
+		randomPokemon = rPokemon(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-1.webp")));
 	}
 	poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
 	poke2mobile.src = poke2.src = "pokemon images/" + randomPokemon + "-2.webp";
@@ -291,41 +292,91 @@ function newSong() {
 	}
 }
 
-var aDuration = 0; // duration = base score btw
+var aDuration = 0; // duration = base score in reverse order btw
 
 function playSong(duration) {
-	if (duration = 5) {
-		easyScoreFlex.classList.add("w-full");
-		easyScoreFlex.classList.remove("md:w-1/5");
-		easyScoreFlex.classList.remove("w-1/3");
-		hardScoreFlex.style.display = "none";
-		extremeScoreFlex.style.display = "none";
-		arrow1Flex.style.display = "none";
-		arrow2Flex.style.display = "none";
-		easyBtnBox.classList.remove("md:w-64");
-		easyBtnBox.classList.add("place-items-start");
-		easyText.classList.remove("mx-auto");
-		easyIcon.classList.remove("mx-auto");
-	} 
-	else if (duration = 10) {
-		
-	}
-	else if (duration = 15) {
-
-	}
-
-
-
 	if (song == null) {
 		alertText.innerHTML = "Nincs kiválasztva zene! Kattints a START gombra!";
 		alertBox.style.display = "block";
 		return;
 	} else {
+		if (duration == 5) {
+			easyScoreFlex.classList.add("w-full");
+			easyScoreFlex.classList.remove("md:w-1/5");
+			easyScoreFlex.classList.remove("w-1/3");
+			hardScoreFlex.style.display = "none";
+			extremeScoreFlex.style.display = "none";
+			arrow1Flex.style.display = "none";
+			arrow2Flex.style.display = "none";
+			easyBtnBox.classList.remove("md:w-64");
+			easyBtnBox.classList.add("place-items-start");
+			easyText.classList.remove("mx-auto");
+			easyIcon.classList.remove("mx-auto");
+			easyScoreBox.classList.remove("md:w-64");
+			easyText.classList.add("md:ml-10");
+			easyIcon.classList.add("md:ml-10");
+			easyScoreBox.classList.add("md:pl-16");
+			easyScoreBox.classList.add("md:w-full");
+			easyScoreBox.classList.add("text-left");
+			easyScoreBox.classList.remove("text-center");
+			musicVisualizer();
+		}
+		else if (duration == 10) {
+
+		}
+		else if (duration == 15) {
+
+		}
+
 		aDuration = duration;
 		x.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
 		x.play();
 	}
 }
+
+function musicVisualizer() {
+	canvas.style.display = "block";
+
+	const audioCtx = new AudioContext();
+	const analyser = audioCtx.createAnalyser();
+	source = audioCtx.createMediaElementSource(x);
+	source.connect(analyser);
+	analyser.connect(audioCtx.destination);
+
+	analyser.fftSize = 256;
+	const bufferLength = analyser.frequencyBinCount;
+	const dataArray = new Uint8Array(bufferLength);
+
+	const HEIGHT = canvas.height;
+	const WIDTH = canvas.width;
+	var canvasCtx = canvas.getContext("2d");
+
+	canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+
+	function draw() {
+		drawVisual = requestAnimationFrame(draw);
+
+		analyser.getByteFrequencyData(dataArray);
+
+		canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+		canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+
+		const barWidth = (WIDTH / bufferLength) * 2.5;
+		let barHeight;
+		var a = 0;
+
+		for (let i = 0; i < bufferLength; i++) {
+			barHeight = dataArray[i] * 2;
+
+			canvasCtx.fillStyle = 'rgb(' + barHeight + ',0,0)';
+			canvasCtx.fillRect(a, HEIGHT - barHeight / 2, barWidth, barHeight);
+
+			a += barWidth + 1;
+		}
+	}
+	draw();
+}
+
 
 function end(state) {
 	var score = 0;
@@ -371,74 +422,7 @@ function closeModal() {
 }
 
 
-
-
-// window.onload = function() {
-
-//     var file = document.getElementById("thefile");
-//     var audio = document.getElementById("audio");
-
-//     file.onchange = function() {
-//       var files = this.files;
-//       audio.src = URL.createObjectURL(files[0]);
-//       audio.load();
-//       audio.play();
-//       var context = new AudioContext();
-//       var src = context.createMediaElementSource(audio);
-//       var analyser = context.createAnalyser();
-
-//       var canvas = document.getElementById("canvas");
-//       canvas.width = window.innerWidth;
-//       canvas.height = window.innerHeight;
-//       var ctx = canvas.getContext("2d");
-
-//       src.connect(analyser);
-//       analyser.connect(context.destination);
-
-//       analyser.fftSize = 256;
-
-//       var bufferLength = analyser.frequencyBinCount;
-//       console.log(bufferLength);
-
-//       var dataArray = new Uint8Array(bufferLength);
-
-//       var WIDTH = canvas.width;
-//       var HEIGHT = canvas.height;
-
-//       var barWidth = (WIDTH / bufferLength) * 2.5;
-//       var barHeight;
-//       var x = 0;
-
-//       function renderFrame() {
-//         requestAnimationFrame(renderFrame);
-
-//         x = 0;
-
-//         analyser.getByteFrequencyData(dataArray);
-
-//         ctx.fillStyle = "#000";
-//         ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-//         for (var i = 0; i < bufferLength; i++) {
-//           barHeight = dataArray[i];
-
-//           var r = barHeight + (25 * (i/bufferLength));
-//           var g = 250 * (i/bufferLength);
-//           var b = 50;
-
-//           ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-//           ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-
-//           x += barWidth + 1;
-//         }
-//       }
-
-//       audio.play();
-//       renderFrame();
-//     };
-//   };
-
-
+// This works, but buggy when you spam the button
 var observer = new MutationObserver(function (mutations) {
 	mutations.forEach(function (mutationRecord) {
 		setTimeout(() => { if (alertBox.style.display == "block") alertBox.style.display = "none"; }, 10000);

@@ -24,11 +24,19 @@
   }
 }
 
-#poke1, #poke2, #poke3 {
+#poke1,
+#poke2,
+#poke3 {
   height: 350px;
 }
 
 #canvas {
   top: 300px;
   right: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  #canvas {
+    display: none; /*no need to thank me, mobile done*/
+  }
 }

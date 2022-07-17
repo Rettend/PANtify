@@ -114,21 +114,19 @@ const songs = [
 ];
 
 
-const pokemonCount = 4 - 1; // start with 0
+const pokemonCount = 4 - 1; // -1 to start at 0
 const x = document.getElementById("audio");
 const canvas = document.getElementById("canvas");
 const songTitle = document.getElementById("songTitle");
 const songArtist = document.getElementById("songArtist");
+const start = document.getElementById("start");
 const result = document.getElementById("result");
 const endModal = document.getElementById("endModal");
-const endArtits = document.getElementById("endArtits");
+const endArtist = document.getElementById("endArtist");
 const endTitle = document.getElementById("endTitle");
 const easyScore = document.getElementById("easyScore");
 const hardScore = document.getElementById("hardScore");
 const extremeScore = document.getElementById("extremeScore");
-const easyAbsLeft = songsEasy.length;
-const hardAbsLeft = songsHard.length;
-const extremeAbsLeft = songsExtreme.length;
 const poke1 = document.getElementById("poke1");
 const poke2 = document.getElementById("poke2");
 const poke3 = document.getElementById("poke3");
@@ -156,11 +154,14 @@ const hardIcon = document.getElementById("hardIcon");
 const extremeIcon = document.getElementById("extremeIcon");
 
 const easyLeft = document.getElementById("easyLeft");
-easyLeft.innerHTML = easyAbsLeft + " / " + songsEasy.length;
+easyLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
 const hardLeft = document.getElementById("hardLeft");
-hardLeft.innerHTML = hardAbsLeft + " / " + songsHard.length;
+hardLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === true).length;
 const extremeLeft = document.getElementById("extremeLeft");
-extremeLeft.innerHTML = extremeAbsLeft + " / " + songsExtreme.length;
+extremeLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+
+const mobile = window.matchMedia("(max-width: 768px)");
+mobile.addEventListener("change", musicVisualizer);
 
 
 var abrSymbols = ["", "k", "M", "B", "T"];
@@ -219,15 +220,27 @@ noUiSlider.create(slider, {
 
 var aSongs = null;
 var song = null;
+
 // base scores
-let easyS = 15;
-let hardS = 10;
-let extremeS = 5;
+const easyBaseS = 15;
+const hardBaseS = 10;
+const extremeBaseS = 5;
+
+// scores after multiplying by difficulty
+var easyS = 15;
+var hardS = 10;
+var extremeS = 5;
+
+var sliderValueR = slider.noUiSlider.get()[0];
+var sliderValueL = slider.noUiSlider.get()[1];
 
 slider.noUiSlider.on('update', function (values, handle) {
+	sliderValueR = values[0];
+	sliderValueL = values[1];
+
 	// calculate a multiplier value which is larger the closer the slider is to the right
-	var multiplier1 = Math.abs(1 - values[0] / 2000000000) * 15; // right slider multiplier
-	var multiplier2 = Math.abs(1 - values[1] / 2000000000) * 2; // left slider multiplier
+	var multiplier1 = Math.abs(1 - sliderValueR / 2000000000) * 15; // right slider multiplier
+	var multiplier2 = Math.abs(1 - sliderValueL / 2000000000) * 2; // left slider multiplier
 
 	// average of the two multipliers
 	var multiplier = multiplier1 + multiplier2 / 2;
@@ -237,13 +250,13 @@ slider.noUiSlider.on('update', function (values, handle) {
 
 	difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
 
-	// get the songs based on the slider value
-	aSongs = songs.filter(i => i.streamCount >= values[0] && i.streamCount <= values[1] && i.hasPlayed == false);
-
-
-	easyScore.innerHTML = Math.round(easyS * normalizedMultiplier);
-	hardScore.innerHTML = Math.round(hardS * normalizedMultiplier);
-	extremeScore.innerHTML = Math.round(extremeS * normalizedMultiplier);
+	// calculate the scores
+	easyS = easyBaseS * normalizedMultiplier;
+	hardS = hardBaseS * normalizedMultiplier;
+	extremeS = extremeBaseS * normalizedMultiplier;
+	easyScore.innerHTML = Math.round(easyS);
+	hardScore.innerHTML = Math.round(hardS);
+	extremeScore.innerHTML = Math.round(extremeS);
 });
 
 
@@ -256,92 +269,190 @@ function rPokemon(lastrandom) {
 }
 
 function newSong() {
+	aSongs = songs.filter(i => i.streamCount >= sliderValueR && i.streamCount <= sliderValueL && i.hasPlayed == false);
 	var random = Math.floor(Math.random() * aSongs.length);
 	song = aSongs[random];
-	song.hasPlayed = true;
-
-	easyLeft.innerHTML = easyAbsLeft + " / " + songsExtreme.length;
-
-	var randomPokemon = null;
-	if (poke1.src == "pokemon%20images/pokemon%20question%20mark.webp") {
-		randomPokemon = rPokemon(1);
-	} else {
-		randomPokemon = rPokemon(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-1.webp")));
-	}
-	poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
-	poke2mobile.src = poke2.src = "pokemon images/" + randomPokemon + "-2.webp";
-	poke3mobile.src = poke3.src = "pokemon images/" + randomPokemon + "-3.webp";
-
 	if (aSongs.length == 0) {
-		alertText.innerHTML = "Nincs több zene!";
-		alertBox.style.display = "block";
-		return;
+		alertShow("Nincs több zene!");
 	} else {
-		if (song.artist.indexOf('(ft. ') !== -1) {
-			const featSpan = document.createElement("span");
-			featSpan.style.fontWeight = "normal";
-			let featArtists = song.artist.substring(song.artist.indexOf('(ft. '));
-			songArtist.innerHTML = song.artist.split('(ft. ')[0];
-			featSpan.appendChild(document.createTextNode(featArtists));
-			const div = document.getElementById("songArtist");
-			div.appendChild(featSpan);
-		} else {
-			songArtist.innerHTML = song.artist;
-		}
+		artistWFeat(songArtist);
 		songTitle.innerHTML = song.song;
+		song.hasPlayed = true;
+
+		easyLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+		hardLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === true).length;
+
+
+		var randomPokemon = null;
+		if (poke1.src == "pokemon%20images/pokemon%20question%20mark.webp") {
+			randomPokemon = rPokemon(1);
+		} else {
+			randomPokemon = rPokemon(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-1.webp")));
+		}
+		poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
+		poke2mobile.src = poke2.src = "pokemon images/" + randomPokemon + "-2.webp";
+		poke3mobile.src = poke3.src = "pokemon images/" + randomPokemon + "-3.webp";
+
 	}
 }
+
+function artistWFeat(sourceDiv) {
+	if (song.artist.indexOf('(ft. ') !== -1) {
+		const featSpan = document.createElement("span");
+		featSpan.style.fontWeight = "normal";
+		let featArtists = song.artist.substring(song.artist.indexOf('(ft. '));
+		sourceDiv.innerHTML = song.artist.split('(ft. ')[0];
+		featSpan.appendChild(document.createTextNode(featArtists));
+		sourceDiv.appendChild(featSpan);
+	} else {
+		sourceDiv.innerHTML = song.artist;
+	}
+}
+
 
 var aDuration = 0; // duration = base score in reverse order btw
 
 function playSong(duration) {
 	if (song == null) {
-		alertText.innerHTML = "Nincs kiválasztva zene! Kattints a START gombra!";
-		alertBox.style.display = "block";
-		return;
+		alertShow("Nincs kiválasztva zene! Kattints a START gombra!");
 	} else {
+		aDuration = duration;
 		if (duration == 5) {
-			easyScoreFlex.classList.add("w-full");
-			easyScoreFlex.classList.remove("md:w-1/5");
-			easyScoreFlex.classList.remove("w-1/3");
-			hardScoreFlex.style.display = "none";
-			extremeScoreFlex.style.display = "none";
-			arrow1Flex.style.display = "none";
-			arrow2Flex.style.display = "none";
-			easyBtnBox.classList.remove("md:w-64");
-			easyBtnBox.classList.add("place-items-start");
-			easyText.classList.remove("mx-auto");
-			easyIcon.classList.remove("mx-auto");
-			easyScoreBox.classList.remove("md:w-64");
-			easyText.classList.add("md:ml-10");
-			easyIcon.classList.add("md:ml-10");
-			easyScoreBox.classList.add("md:pl-16");
-			easyScoreBox.classList.add("md:w-full");
-			easyScoreBox.classList.add("text-left");
-			easyScoreBox.classList.remove("text-center");
-			musicVisualizer();
+			showMusicPlayer("easy");
 		}
 		else if (duration == 10) {
-
+			showMusicPlayer("hard");
 		}
 		else if (duration == 15) {
-
+			showMusicPlayer("extreme");
 		}
 
-		aDuration = duration;
 		x.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
 		x.play();
 	}
 }
 
-function musicVisualizer() {
-	canvas.style.display = "block";
 
-	const audioCtx = new AudioContext();
-	const analyser = audioCtx.createAnalyser();
-	source = audioCtx.createMediaElementSource(x);
-	source.connect(analyser);
-	analyser.connect(audioCtx.destination);
+function showMusicPlayer(mode) {
+	let modes = ["easy", "hard", "extreme"];
+	modes.splice(modes.indexOf(mode), 1);
+	window[modes[0] + "ScoreFlex"].style.display = "none";
+	window[modes[1] + "ScoreFlex"].style.display = "none";
+	start.onclick = "";
+	start.classList.add("bg-rose-600/70");
+	start.classList.remove("bg-rose-600");
+	arrow1Flex.style.display = "none";
+	arrow2Flex.style.display = "none";
+	window[mode + "ScoreFlex"].classList.add("w-full");
+	window[mode + "ScoreFlex"].classList.remove("md:w-1/5");
+	window[mode + "ScoreFlex"].classList.remove("w-1/3");
+	window[mode + "BtnBox"].classList.remove("md:w-64");
+	window[mode + "BtnBox"].classList.add("place-items-start");
+	window[mode + "Text"].classList.add("md:mx-0");
+	window[mode + "Icon"].classList.add("md:mx-0");
+	window[mode + "ScoreBox"].classList.remove("md:w-64");
+	window[mode + "Text"].classList.add("md:ml-10");
+	window[mode + "Icon"].classList.add("md:ml-10");
+	window[mode + "ScoreBox"].classList.add("md:pl-16");
+	window[mode + "ScoreBox"].classList.add("md:w-full");
+	window[mode + "ScoreBox"].classList.add("md:text-left");
+	if (mode == "easy") {
+		poke1.classList.add("ml-52");
+		poke1.classList.remove("ml-40");
+	} else if (mode == "hard") {
+		poke2.classList.add("ml-52");
+		poke2.classList.remove("ml-32");
+
+		window[mode + "BtnBox"].parentElement.classList.remove("md:mr-56");
+	} else if (mode == "extreme") {
+		poke3.classList.add("ml-52");
+		poke3.classList.remove("right-0");
+	}
+	musicVisualizer();
+	setTimeout(function () {
+		window[modes[0] + "ScoreFlex"].style.display = "block";
+		window[modes[1] + "ScoreFlex"].style.display = "block";
+		start.onclick = newSong;
+		start.classList.add("bg-rose-600");
+		start.classList.remove("bg-rose-600/70");
+		canvas.style.display = "none";
+		if (mobile.matches) {
+			arrow1Flex.style.display = "none";
+			arrow2Flex.style.display = "none";
+		} else {
+			arrow1Flex.style.display = "block";
+			arrow2Flex.style.display = "block";
+		}
+		window[mode + "ScoreFlex"].classList.remove("w-full");
+		window[mode + "ScoreFlex"].classList.add("md:w-1/5");
+		window[mode + "ScoreFlex"].classList.add("w-1/3");
+		window[mode + "BtnBox"].classList.add("md:w-64");
+		window[mode + "BtnBox"].classList.remove("place-items-start");
+		window[mode + "Text"].classList.remove("md:mx-0");
+		window[mode + "Icon"].classList.remove("md:mx-0");
+		window[mode + "ScoreBox"].classList.add("md:w-64");
+		window[mode + "Text"].classList.remove("md:ml-10");
+		window[mode + "Icon"].classList.remove("md:ml-10");
+		window[mode + "ScoreBox"].classList.remove("md:pl-16");
+		window[mode + "ScoreBox"].classList.remove("md:w-full");
+		window[mode + "ScoreBox"].classList.remove("md:text-left");
+		if (mode == "easy") {
+			poke1.classList.remove("ml-52");
+			poke1.classList.add("ml-40");
+		} else if (mode == "hard") {
+			poke2.classList.remove("ml-52");
+			poke2.classList.add("ml-32");
+
+			window[mode + "BtnBox"].parentElement.classList.add("md:mr-56");
+		} else if (mode == "extreme") {
+			poke3.classList.remove("ml-52");
+			poke3.classList.add("right-0");
+		}
+	}, (aDuration + 1.5) * 1000);
+}
+
+function end() {
+	if (aDuration == 0) {
+		alertShow("Nem volt lejátszva zene!");
+	} else {
+		endModal.style.display = "block";
+		artistWFeat(endArtist);
+		endTitle.innerHTML = song.song;
+		document.body.style.overflowY = "hidden";
+		window.scrollTo(0, 0);
+		song = null;
+	}
+}
+
+function celebrate() {
+	x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+	x.play();
+}
+
+function closeModal() {
+	endModal.style.display = "none";
+	document.body.style.overflowY = "scroll";
+}
+
+function alertShow(text) {
+	alertText.innerHTML = text;
+	alertBox.style.display = "block";
+	return;
+}
+
+
+const audioCtx = new AudioContext();
+const analyser = audioCtx.createAnalyser();
+source = audioCtx.createMediaElementSource(x);
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+
+function musicVisualizer() {
+	if (mobile.matches) {
+		canvas.style.display = "none";
+	} else {
+		canvas.style.display = "block";
+	}
 
 	analyser.fftSize = 256;
 	const bufferLength = analyser.frequencyBinCount;
@@ -377,52 +488,7 @@ function musicVisualizer() {
 	draw();
 }
 
-
-function end(state) {
-	var score = 0;
-
-	if (aBaseScore == 0 || aDuration == 0) {
-		alert("Nincs megadva pontszám!");
-		return;
-	} else {
-		if (state == 0 && song != null && aOsztály != null) {
-			score = 0;
-		} else if (state == 1 && song != null && aOsztály != null) {
-			score = aBaseScore * aDifficulty;
-		}
-	}
-	var row = result.insertRow(result.rows.length);
-	var cell0 = row.insertCell(0);
-	cell0.innerHTML = aOsztály;
-	var cell1 = row.insertCell(1);
-	cell1.innerHTML = score;
-	var cell2 = row.insertCell(2);
-	cell2.innerHTML = song[0] + " - " + song[1];
-	var cell3 = row.insertCell(3);
-	cell3.innerHTML = aDifficulty;
-	aBaseScore = 0;
-	aDuration = 0;
-	cDuration.innerHTML = 0;
-
-	endModal.style.display = "block";
-	endArtist.innerHTML = song[0];
-	endTitle.innerHTML = song[1];
-	document.body.style.overflowY = "hidden";
-	window.scrollTo(0, 0);
-}
-
-function celebrate() {
-	x.src = "songs/" + song[0] + ";" + song[1] + ";" + 15 + ".mp3";
-	x.play();
-}
-
-function closeModal() {
-	endModal.style.display = "none";
-	document.body.style.overflowY = "scroll";
-}
-
-
-// This works, but buggy when you spam the button
+// This works, but buggy when you spam the button (already ongoing Timeout)
 var observer = new MutationObserver(function (mutations) {
 	mutations.forEach(function (mutationRecord) {
 		setTimeout(() => { if (alertBox.style.display == "block") alertBox.style.display = "none"; }, 10000);

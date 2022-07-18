@@ -78,49 +78,78 @@ const songs = [
 	{
 		"artist": "ACDC",
 		"song": "Highway to Hell",
-		"text": ["ACDC1", "ACDC2", "ACDC3"],
+		"lyrics": ["", "No stop signs, Speed limit, Nobody's gonna slow me down", "I'm on the highway to hell, Highway to hell, I'm on the highway to hell, Highway to hell"],
 		"streamCount": 1010569617,
 		"hasPlayed": false,
 		"coverImage": "cover images/ACDC;Highway to Hell.jpg"
 	}, {
 		"artist": "Avicii",
 		"song": "The nights",
-		"text": ["Avicii1", "Avicii2", "Avicii3"],
+		"lyrics": ["Once upon a younger year, When all our shadows disappeared, The animals...", "One day, my father, he told me \"Son, don't let it slip away \", When I was just a kid, I heard him say, \"When you get older your wild heart will...\"", "\"Live a life you will remember\", My father told me when I was just a child, \"These are the nights that never die\", My father told me"],
 		"streamCount": 1116498715,
 		"hasPlayed": false,
 		"coverImage": "cover images/Avicii;The nights.png"
 	}, {
 		"artist": "Hanson",
 		"song": "MMMBop",
-		"text": ["Hanson1", "Hanson2", "Hanson3"],
+		"lyrics": ["Oh, Oh oh", "Duba, Duba, Du, Yeah, MmmBop, Duba", "Yeah, Mmmbop, ba duba dop, Ba du bop, ba duba dop ba du, yeah, Mmmbop, ba duba dop, Ba du bop, ba duba dop ba"],
 		"streamCount": 131552367,
 		"hasPlayed": false,
 		"coverImage": "cover images/Hanson;MMMBop.jpg"
 	}, {
 		"artist": "Harley Poe",
 		"song": "Eat Shit and Die",
-		"text": ["Harley Poe1", "Harley Poe2", "Harley Poe3"],
+		"lyrics": ["She said I never completed, Any goals that I laid down, I hear the...", "I kinda find it so funny, Walking up to you now, I didn't plan this I swear it, But I dug a home for you in the ground", "Can you fly? Can you fly? Eat shit and die (Eat shit and die), Eat shit and die (Eat shit and die)"],
 		"streamCount": 2328919,
 		"hasPlayed": false,
 		"coverImage": "cover images/Harley Poe;Eat Shit and Die.jpg"
 	}, {
 		"artist": "IU (ft. SUGA)",
 		"song": "eight",
-		"text": ["IU (ft. SUGA)1", "IU (ft. SUGA)2", "IU (ft. SUGA)3"],
+		"lyrics": ["So are you happy now? Finally happy", "Forever young, Oh oh oh, Forever, we young, Oh oh oh", "Urineun orenji taeyang arae, Geurimja eopsi hamkke chumeul chwo, Jeonghaejin ibyeol ttawineun eopseo, Areumdawotdeon geu gieogeseo manna"],
 		"streamCount": 208700169,
 		"hasPlayed": false,
 		"coverImage": "cover images/IU (ft. SUGA);eight.jpg"
+	}, {
+		"artist": "ACDC",
+		"song": "For Those About to Rock",
+		"lyrics": ["", "For a twenty-one gun salute, For those about to rock, fire, we salute you", "For those about to rock, we salute you, For those about to rock, we salute you, For those about to rock"],
+		"streamCount": 88495681,
+		"hasPlayed": false,
+		"coverImage": "cover images/ACDC;For Those About to Rock.jpg"
+	}, {
+		"artist": "ACDC",
+		"song": "Fire Your Guns",
+		"lyrics": ["", "You gotta fire your guns, Fire your guns", "Fire when she's going down, Fire then she make you drown, Fire then she blow you round, Yeah, you want some fun, Fire your guns, Fire your guns"],
+		"streamCount": 33363311,
+		"hasPlayed": false,
+		"coverImage": "cover images/Razorsedge.jpg"
+	}, {
+		"artist": "ACDC",
+		"song": "Thunderstruck",
+		"lyrics": ["Ah ah ah, Thunder, Ah ah ah", "Sound of the drums, Beating in my heart, The thunder of guns, Yeah", "Thunderstruck, yeah, yeah, yeah, Thunderstruck, thunderstruck, Thunderstruck, whoa, baby, baby, Thunderstruck, you've been thunderstruck"],
+		"streamCount": 963360129,
+		"hasPlayed": false,
+		"coverImage": "cover images/Razorsedge.jpg"
 	}
+	// , {
+	// 	"artist": "",
+	// 	"song": "",
+	// 	"lyrics": ["", "", ""],
+	// 	"streamCount": ,
+	// 	"hasPlayed": false,
+	// 	"coverImage": "cover images/.jpg"
+	// }
 ];
 
 
-const pokemonCount = 4 - 1; // -1 to start at 0
+const pokemonCount = 30; //starting from 0
 const x = document.getElementById("audio");
 const canvas = document.getElementById("canvas");
 const songTitle = document.getElementById("songTitle");
 const songArtist = document.getElementById("songArtist");
 const start = document.getElementById("start");
-const result = document.getElementById("result");
+const lyricsBox = document.getElementById("lyricsBox");
 const endModal = document.getElementById("endModal");
 const endArtist = document.getElementById("endArtist");
 const endTitle = document.getElementById("endTitle");
@@ -264,7 +293,7 @@ slider.noUiSlider.on('update', function (values, handle) {
 });
 
 
-function rPokemon(lastrandom) {
+function rPokemon(lastrandom) { // not working who cares sorry
 	let random = Math.floor(Math.random() * pokemonCount);
 	if (random >= lastrandom) {
 		random += 1;
@@ -287,13 +316,10 @@ function newSong() {
 		easyLeft.innerHTML = songs.filter(song => song.streamCount > 800000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 800000000).length;
 		hardLeft.innerHTML = songs.filter(song => song.streamCount <= 800000000 && song.streamCount >= 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 800000000 && song.streamCount >= 25000000).length;
 		extremeLeft.innerHTML = songs.filter(song => song.streamCount < 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 25000000).length;
-		
+
 		var randomPokemon = null;
-		if (poke1.src == "pokemon%20images/pokemon%20question%20mark.webp") {
-			randomPokemon = rPokemon(1);
-		} else {
-			randomPokemon = rPokemon(poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 17, poke1.src.lastIndexOf("-1.webp")));
-		}
+		randomPokemon = rPokemon((poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 18).replace('-', ''), poke1.src.lastIndexOf("-1.webp")));
+
 		poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
 		poke2mobile.src = poke2.src = "pokemon images/" + randomPokemon + "-2.webp";
 		poke3mobile.src = poke3.src = "pokemon images/" + randomPokemon + "-3.webp";
@@ -336,6 +362,13 @@ function playSong(duration) {
 	}
 }
 
+function setLyrics(i) {
+	if (song.lyrics[i] == "") {
+		lyricsBox.innerHTML = "¯\\_(ツ)_/¯";
+	} else {
+		lyricsBox.innerHTML = song.lyrics[i];
+	}
+}
 
 function showMusicPlayer(mode) {
 	let modes = ["easy", "hard", "extreme"];
@@ -363,14 +396,16 @@ function showMusicPlayer(mode) {
 	if (mode == "easy") {
 		poke1.classList.add("ml-52");
 		poke1.classList.remove("ml-40");
+		setLyrics(0);
 	} else if (mode == "hard") {
 		poke2.classList.add("ml-52");
 		poke2.classList.remove("ml-32");
-
+		setLyrics(1);
 		window[mode + "BtnBox"].parentElement.classList.remove("md:mr-56");
 	} else if (mode == "extreme") {
 		poke3.classList.add("ml-52");
 		poke3.classList.remove("right-0");
+		setLyrics(2);
 	}
 	musicVisualizer();
 	setTimeout(function () {
@@ -379,6 +414,7 @@ function showMusicPlayer(mode) {
 		start.onclick = newSong;
 		start.classList.add("bg-rose-600");
 		start.classList.remove("bg-rose-600/70");
+		lyricsBox.innerHTML = "Lyrics";
 		canvas.style.display = "none";
 		if (mobile.matches) {
 			arrow1Flex.style.display = "none";
@@ -491,7 +527,7 @@ function musicVisualizer() {
 		for (let i = 0; i < bufferLength; i++) {
 			barHeight = dataArray[i] * 2;
 
-			canvasCtx.fillStyle = 'rgb(' + barHeight + ',0,0)';
+			canvasCtx.fillStyle = 'rgb(' + barHeight + ',' + barHeight + ',' + barHeight + ')';
 			canvasCtx.fillRect(a, HEIGHT - barHeight / 2, barWidth, barHeight);
 
 			a += barWidth + 1;

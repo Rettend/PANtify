@@ -38,7 +38,7 @@
                     <span id="songTitle">Title</span>
                 </h2>
                 <h2 class="bg-blue-900/50 my-auto font-bold py-2 px-5 mt-2 rounded-b-xl text-xl h-full">
-                    <span id="songArtist">Artist ft. Artist</span>
+                    <span id="songArtist">Artist</span>
                 </h2>
             </div>
         </div>
@@ -111,10 +111,11 @@
                 <canvas class="-z-50 absolute rounded-3xl" height="280px" width="1000px" id="canvas"></canvas>
             </div>
             <div class="flex flex-col md:flex-row justify-center w-full mt-0 md:-mt-10">
-                <div class="m-0 md:m-8 w-full md:w-1/6 flex justify-center bg-blue-900/50 rounded-none md:rounded-2xl h-fit order-3 md:order-1">
+                <div class="m-0 md:m-8 w-full md:w-1/4 flex justify-center bg-blue-900/50 rounded-none md:rounded-2xl h-fit order-3 md:order-1">
                     <div class="flex flex-col w-full p-4">
-                        <h3 class="bg-blue-800 text-white my-auto p-5 rounded-t-xl font-bold text-2xl h-fit">
-                            Hátralévő zenék
+                        <h3 class="bg-blue-800 text-white my-auto p-5 rounded-t-xl font-bold text-2xl h-fit flex justify-between">
+                            Hátralévő zenék: <span id="allLeft">
+                            </span>
                         </h3>
                         <div class="bg-blue-900/50 text-white my-auto py-2 px-5 mt-2 text-xl h-fit flex justify-between">
                             800M&lt;
@@ -130,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/6 hidden md:block order-2"></div>
+                <div class="w-full md:w-1/12 hidden md:block order-2"></div>
                 <div class="w-full md:w-1/3 order-1 md:order-3">
                     <div class="flex justify-center flex-col md:flex-row bg-indigo-900/50 m-0 md:mt-6 w-full h-36 mx-auto rounded-none md:rounded-b-3xl">
                         <button onclick="end()" class="bg-green-600 hover:bg-green-500 m-2 md:mt-6 text-white font-bold transition-all h-fit text-4xl py-2 px-6 md:p-4 rounded-3xl mx-auto whitespace-nowrap">
@@ -146,57 +147,50 @@
     <div class="bg-gradient-to-r from-blue-800/70 via-indigo-800/70 to-purple-800/70 pb-64 pt-10">
         <h1 class="text-white text-5xl font-bold text-center underline uppercase">A játék menete</h1>
         <div class="flex flex-col md:flex-row justify-center mt-8">
-            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+            <div class="mx-auto w-full md:w-1/4 flex flex-col">
                 <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
-                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">1</div>
-                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Írd be az osztályt</h3>
-                </div>
-                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
-                    <p class="text-xl text-white ml-5">...a logó alatti mezőbe, miután megmutattad a játékosoknak a játék menetét (ezt az útmutatót azért nem kell felolvasni). <br><span class="font-bold">A számok sokfélék, talán lesz 1-2 amit valaki ismer..</span></p>
-                </div>
-            </div>
-            <div class="mx-auto w-full md:w-1/5 flex flex-col">
-                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
-                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">2</div>
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full ">1</div>
                     <h3 class="text-4xl font-bold text-white my-auto ml-5">Válassz nehézséget</h3>
                 </div>
                 <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
-                    <p class="text-xl text-white ml-5">...fent, jobb oldalon. Ekkor ki lesz választva egy zene amit bal-fent láthatsz ha ráviszed az egeret. Főleg angol zenék vannak. <br><span class="underline">Könnyű:</span> ismert számok, nagyrészt milliárdos megtekintéssel. <br><span class="underline">Nehéz:</span> kevésbé ismert előadók legnépszerűbb számai. <br><span class="underline">Extrém:</span> 😘.</p>
+                    <p class="text-xl text-white ml-5">A jobb felső sarokban a csúszkát használva válaszd ki azt az intervallumot, amin belül sorsoljon zenéket. A számok a Spotify streamek számát jelentik. <br><span class="font-bold">Minél közelebb van a két vége a jobb oldalhoz, annál nagyobb szorzót ad.</span></p>
                 </div>
             </div>
-            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+            <div class="mx-auto w-full md:w-1/4 flex flex-col">
                 <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
-                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">3</div>
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full ">2</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Kattints a START gombra</h3>
+                </div>
+                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+                    <p class="text-xl text-white ml-5">...középen a cím alatt. Ekkor ki lesz választva egy zene, aminek a címét bal-fent láthatod ha ráviszed az egeret (azért hogy a többiek ne lássák, és kivetítésnél jobb freezelni a táblát). Főleg angol zenék vannak. Telefonokat nem szabad elővenni! <br> Ezután a nehézségen már ne állíts ty.</p>
+                </div>
+            </div>
+            <div class="mx-auto w-full md:w-1/4 flex flex-col">
+                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full ">3</div>
                     <h3 class="text-4xl font-bold text-white my-auto ml-5">Hallgass bele a zenébe</h3>
                 </div>
                 <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
-                    <p class="text-xl text-white ml-5">Egymás után kell végigmenni az 5, 10 és 15 másodperces részeken.<br><span class="font-bold">Minden egyes</span> lejátszás után lehet 10mp-et gondolkodni és egyszer tippelni (emberenként) <span class="font-bold">kézfeltartással</span> és a zene címét és/vagy az előadót bemondva. <br><span class="underline">5s rész:</span> A zene eleje, általában ének nélkül. <br><span class="underline">10s rész:</span> A zene refrén előtti része. <br><span class="underline">15s rész:</span> Refrén (meglepően sok zenében kimondják a címét btw).</p>
+                    <p class="text-xl text-white ml-5">Egymás után kell végigmenni az 5, 10 és 15 másodperces részeken.<br><span class="font-bold">Minden egyes</span> lejátszás után lehet egy kicsit gondolkodni és egyszer tippelni a zene címét és/vagy az előadót bemondva. <br><span class="underline">5s rész:</span> A zene eleje, általában ének nélkül. <br><span class="underline">10s rész:</span> A zene refrén előtti része. <br><span class="underline">15s rész:</span> Refrén (meglepően sok zenében kimondják a címét btw).</p>
                 </div>
             </div>
-            <div class="mx-auto w-full md:w-1/5 flex flex-col">
+            <div class="mx-auto w-full md:w-1/4 flex flex-col">
                 <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
-                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">4</div>
-                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Pontozd le</h3>
+                    <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full ">4</div>
+                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Kitaláltam vagy következő</h3>
                 </div>
                 <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
-                    <p class="text-xl text-white ml-5">Telefonokat nem szabad elővenni! Ha több előadó is van elég az egyiket eltalálni ("ft." az elválasztás). Amelyik résznél találják ki a zenét, az alatt kell rákattintani a pont hozzáadására. Az első szám a cím <span class="font-bold">vagy</span> a szerző felismeréséért járó pontot mutatja, a második számú összeg pedig mindkettő kitalálásáért jár. <br>A végén menj rá a <span class="bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-circle-check"></i></span> gombra, hogy felvedd a táblázatba a pontot. <br> Ha a 3. meghallgatás után sem találják ki, akkor a <span class="bg-red-600 hover:bg-red-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-square-xmark"></i></span> gombra menj, ami 0 pontot fog felvenni.</p>
-                </div>
-            </div>
-            <div class="mx-auto w-full md:w-1/5 flex flex-col">
-                <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
-                    <div class="bg-transparent font-bold w-fit h-fit my-auto text-black/50 p-5 text-7xl rounded-full ">5</div>
-                    <h3 class="text-4xl font-bold text-white my-auto ml-5">Vedd fel a táblázatba</h3>
-                </div>
-                <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
-                    <p class="text-xl text-white ml-5">Ha például az 1. meghallgatásnál kitalálják a zene címét, akkor 25 pontot kapnának, ilyenkor választhatnak, hogy tovább akarnak-e menni (ha úgy gondolják, hogy abból ki tudják találni az előadót is), mivel ha már továbbmennek, akkor a második meghallgatás után, az, hogy kitalálták a címet már csak 20 pontot fog érni, a harmadik után meg csak 12-t. Sőt ha közben a másik csapat kitalálja az előadót akkor csak a második csapat kap pontot (csak az előadóért). <br>A hátralévő zenékre figyelni kell, ha elfogynak újra kell tölteni az oldalt. De azelőtt másold be a táblázatot az Excelbe! GLHF! Ha előbb kitalálják mint a 15s-es rész, akkor a pontozás után rá lehet kattintani a címre és lejátsza azt, hogy ne maradjon ki :)</p>
+                    <p class="text-xl text-white ml-5">Amelyik résznél kitalálják a zenét, az után kell rákattintani a <span class="bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-circle-check"></i></span> gombra. <b>Csak a zene <span class="underline">címének</span> kitalálásáért jár pont, aki az előadót találja ki, annak lehet sorsolni zenét megint</b> (akkor is ha a címét nem tudta), és mindaddig jöhet következőnek egyből újra, amíg felismeri az előadót! Ha több előadó is van elég csak az egyiket kitalálni. Ha a 15s-es részig nem jutsz el, mert előbb kitalálják a zenét, akkor a végén lejátszódik az a rész és mehet a jamming 😘. Ha nem sikerül egyáltalán kitalálni a zenét, akkor egyszerűen jöhet a következő zene.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="endModal" class="absolute hidden h-screen w-full top-0 left-0 right-0 m-0 bg-gradient-to-r from-blue-800 via-indigo-800 to-purple-800 z-20">
-        <h2 id="endArtist" class="absolute top-48 font-bold left-0 right-0 w-fit mx-auto text-4xl md:text-8xl text-white text-center">Artist</h2>
-        <h2 id="endTitle" onclick="celebrate()" class="absolute cursor-pointer top-96 font-bold left-0 right-0 w-fit mx-auto text-5xl md:text-9xl text-white text-center">Title</h2>
+        <p class="absolute top-6 md:top-14 bg-black/50 p-3 font-bold rounded-2xl left-0 right-0 w-fit mx-auto text-3xl md:text-6xl text-white text-center">+<span id="endScore">0</span> <i class="fa-solid fa-star-half-stroke"></i></p>
+        <h2 id="endArtist" class="absolute top-24 md:top-48 font-bold left-0 right-0 w-fit mx-auto text-4xl md:text-8xl text-shadow-xl text-white text-center">Artist</h2>
+        <h2 id="endTitle" class="absolute top-52 md:top-96 font-bold left-0 right-0 w-fit mx-auto text-5xl md:text-9xl text-shadow-xl text-white text-center">Title</h2>
+        <img id="endCoverImg" class="absolute bottom-1 md:bottom-10 w-2/3 md:w-80 left-0 right-0 mx-auto shadow-2xl rounded-3xl" src="pokemon images/pokemon question mark.webp" alt="cover image">
         <button title="close button" onclick="closeModal()" class="absolute top-0 right-0 text-6xl text-black/50 transition-all hover:text-white m-4">
             <i class="fa-solid fa-xmark mr-4"></i>
         </button>
@@ -210,5 +204,3 @@
 </body>
 
 </html>
-
-

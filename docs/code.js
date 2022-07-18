@@ -124,6 +124,8 @@ const result = document.getElementById("result");
 const endModal = document.getElementById("endModal");
 const endArtist = document.getElementById("endArtist");
 const endTitle = document.getElementById("endTitle");
+const endScore = document.getElementById("endScore");
+const endCoverImg = document.getElementById("endCoverImg");
 const easyScore = document.getElementById("easyScore");
 const hardScore = document.getElementById("hardScore");
 const extremeScore = document.getElementById("extremeScore");
@@ -153,12 +155,14 @@ const easyIcon = document.getElementById("easyIcon");
 const hardIcon = document.getElementById("hardIcon");
 const extremeIcon = document.getElementById("extremeIcon");
 
+const allLeft = document.getElementById("allLeft");
 const easyLeft = document.getElementById("easyLeft");
-easyLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
 const hardLeft = document.getElementById("hardLeft");
-hardLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === true).length;
 const extremeLeft = document.getElementById("extremeLeft");
-extremeLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+easyLeft.innerHTML = songs.filter(song => song.streamCount > 800000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 800000000).length;
+hardLeft.innerHTML = songs.filter(song => song.streamCount <= 800000000 && song.streamCount >= 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 800000000 && song.streamCount >= 25000000).length;
+extremeLeft.innerHTML = songs.filter(song => song.streamCount < 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 25000000).length;
 
 const mobile = window.matchMedia("(max-width: 768px)");
 mobile.addEventListener("change", musicVisualizer);
@@ -251,12 +255,12 @@ slider.noUiSlider.on('update', function (values, handle) {
 	difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
 
 	// calculate the scores
-	easyS = easyBaseS * normalizedMultiplier;
-	hardS = hardBaseS * normalizedMultiplier;
-	extremeS = extremeBaseS * normalizedMultiplier;
-	easyScore.innerHTML = Math.round(easyS);
-	hardScore.innerHTML = Math.round(hardS);
-	extremeScore.innerHTML = Math.round(extremeS);
+	easyS = Math.round(easyBaseS * normalizedMultiplier);
+	hardS = Math.round(hardBaseS * normalizedMultiplier);
+	extremeS = Math.round(extremeBaseS * normalizedMultiplier);
+	easyScore.innerHTML = easyS;
+	hardScore.innerHTML = hardS;
+	extremeScore.innerHTML = extremeS;
 });
 
 
@@ -273,16 +277,17 @@ function newSong() {
 	var random = Math.floor(Math.random() * aSongs.length);
 	song = aSongs[random];
 	if (aSongs.length == 0) {
-		alertShow("Nincs több zene!");
+		alertShow("Nincs több zene! Válassz más nehézséget vagy töltsd újra az oldalt!");
 	} else {
 		artistWFeat(songArtist);
 		songTitle.innerHTML = song.song;
 		song.hasPlayed = true;
 
-		easyLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-		hardLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === true).length;
-
-
+		allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+		easyLeft.innerHTML = songs.filter(song => song.streamCount > 800000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 800000000).length;
+		hardLeft.innerHTML = songs.filter(song => song.streamCount <= 800000000 && song.streamCount >= 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 800000000 && song.streamCount >= 25000000).length;
+		extremeLeft.innerHTML = songs.filter(song => song.streamCount < 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 25000000).length;
+		
 		var randomPokemon = null;
 		if (poke1.src == "pokemon%20images/pokemon%20question%20mark.webp") {
 			randomPokemon = rPokemon(1);
@@ -292,7 +297,6 @@ function newSong() {
 		poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
 		poke2mobile.src = poke2.src = "pokemon images/" + randomPokemon + "-2.webp";
 		poke3mobile.src = poke3.src = "pokemon images/" + randomPokemon + "-3.webp";
-
 	}
 }
 
@@ -412,21 +416,29 @@ function showMusicPlayer(mode) {
 }
 
 function end() {
-	if (aDuration == 0) {
+	if (aDuration == 0 || song == null) {
 		alertShow("Nem volt lejátszva zene!");
 	} else {
+		if (aDuration == 5) {
+			endScore.innerHTML = easyS;
+			x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+			x.play();
+		} else if (aDuration == 10) {
+			endScore.innerHTML = hardS;
+			x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+			x.play();
+		} else if (aDuration == 15) {
+			endScore.innerHTML = extremeS;
+		}
+
 		endModal.style.display = "block";
 		artistWFeat(endArtist);
 		endTitle.innerHTML = song.song;
+		endCoverImg.src = song.coverImage;
 		document.body.style.overflowY = "hidden";
 		window.scrollTo(0, 0);
 		song = null;
 	}
-}
-
-function celebrate() {
-	x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
-	x.play();
 }
 
 function closeModal() {

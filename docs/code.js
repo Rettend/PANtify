@@ -112,7 +112,7 @@ const songs = [
 	}, {
 		"artist": "Calvin Harris (ft. Pharrel Williams, Katy Perry, Big Sean)",
 		"song": "Feels",
-		"lyrics": ["", "...catch feels, Feels with me, I'm your window shopper, sucker for your love, oh, I'm wearing your goggles", "The way you move it here (hey), Just wanna feel it from you (hey), Don't be afraid to catch feels (ha), Ride drop top and chase thrills (oh-oh-oh, oh), I know you"],
+		"lyrics": ["", "...catch feels, Feels with me, I'm your window shopper, sucker for your love, oh, I'm wearing your goggles", "The way you move it here (hey), Just wanna feel it from you (hey), Don't be afraid to catch feels (ha), Ride drop top and chase thrills (oh-oh-oh, oh), I know you..."],
 		"streamCount": 917575369,
 		"hasPlayed": false,
 		"year": 2017
@@ -137,6 +137,83 @@ const songs = [
 		"streamCount": 298368113,
 		"hasPlayed": false,
 		"year": 1972
+	}, {
+		"artist": "Dire Straits",
+		"song": "Sultans Of Swing",
+		"lyrics": ["", "Then the man he steps right up to the microphone, And says at last just as the time bell rings", "We are the Sultans, We are the Sultans of Swing"],
+		"streamCount": 799561909,
+		"hasPlayed": false,
+		"year": 1978
+	}, {
+		"artist": "Ed Sheeran",
+		"song": "Bad Habits",
+		"lyrics": ["Ooh-ooh", "Fallin' over everything to reach the first time's spark, It started...", "Bad habits lead to wide eyes stare into space, And I know I'll lose control of the things that I say, Yeah, I was lookin' for a way out, now I can't escape, Nothin' happens after two, it's true, It's true, my bad habits lead to you"],
+		"streamCount": 1182416851,
+		"hasPlayed": false,
+		"year": 2021
+	}, {
+		"artist": "Electric Light Orchestra (ELO)",
+		"song": "Mr. Blue Sky",
+		"lyrics": ["Hey you with the pretty face, Welcome to the human race", "Mr. Blue Sky please tell us why, You had to hide away for so long (so long), Where did we go wrong?", "Look around see what you do, Everybody smiles at you, Mr. Blue Sky, Blue Sky Blue Sky"],
+		"streamCount": 694570384,
+		"hasPlayed": false,
+		"year": 1977
+	}, {
+		"artist": "Eminem (ft. Nate Dogg)",
+		"song": "'Till I Collapse",
+		"lyrics": ["'Cause sometimes you just feel tired, feel weak, And when you feel weak...", "'Till I collapse I'm spilling these raps long as you feel 'em, 'Till the day that I drop you'll never say that I'm not killing 'em, 'Cause when I am not, then I'ma stop penning 'em, And I am not...", "'Till the roof comes off, 'till the lights go out, 'Till my legs give out, can't shut my mouth, 'Till the smoke clears out, am I high? Perhaps, I'ma rip this shit, 'till my bone collapse, 'Till the roof comes off, 'till the lights go out, 'Till my legs give out, can't..."],
+		"streamCount": 1381192368,
+		"hasPlayed": false,
+		"year": 2002
+	}, {
+		"artist": "Eminem",
+		"song": "Without Me",
+		"lyrics": ["I've created a monster, 'Cause nobody wants to see Marshall no more, They want Shady, I'm chopped liver", "Guess who's back, Back again, Shady's back, Tell a friend, Guess who's back, guess who's back", "...Debbie!, Now this looks like a job for me, So everybody, just follow me, 'Cause we need a little, controversy, 'Cause it feels so empty, without me, I said This looks like a job for me, So everybody, just follow me, 'Cause we need a little, controversy, 'Cause it feels..."],
+		"streamCount": 1216316640,
+		"hasPlayed": false,
+		"year": 2002
+	}, {
+		"artist": "Eric Clapton",
+		"song": "Change the World",
+		"lyrics": ["If I can reach the stars", "Baby, if I could change the world", "It's only in my dreams, And I can change the world, I will be the sunlight in your universe"],
+		"streamCount": 127932663,
+		"hasPlayed": false,
+		"year": 1999
+	}, {
+		"artist": "Guns N' Roses",
+		"song": "Paradise City",
+		"lyrics": ["", "Why I'm here I can't quite remember, The surgeon general says it's hazardous to breathe, I'd have another cigarette but I can't see, Tell me who you're gonna believe", "Take me down to the paradise city, Where the grass is green and the girls are pretty, Take me home, yeah yeah, Take me down to the paradise city, Where the grass is green and the girls are pretty, Oh, won't you..."],
+		"streamCount": 756532359,
+		"hasPlayed": false,
+		"year": 1987
+	}, {
+		"artist": "Imagine Dragons",
+		"song": "Whatever It Takes",
+		"lyrics": ["... for the fall of man, Everybody praying for the end of times, Everybody hoping they could be the one, I was born to run, I was born for this...", "Whip, whip, Run me like a racehorse, Pull me like a ripcord, Break me down and build me up, I wanna be the slip, slip, Word upon your lip, lip, Letter that", "Whatever it takes, 'Cause I love the adrenaline in my veins, I do whatever it takes, 'Cause I love how it feels when I break the chains, Whatever it takes..."],
+		"streamCount": 885414935,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Jackson Browne",
+		"song": "Running on Empty",
+		"lyrics": ["I don't know how to tell you all just how crazy this life feels", "... running up one-oh-one, I don't know where I'm running now, I'm just running on", "I'm just running on, Running on, running on empty, Running on, running blind, Running on, running into the sun, But I'm running behind"],
+		"streamCount": 134108821,
+		"hasPlayed": false,
+		"year": 1997
+	}, {
+		"artist": "Jamiroquai",
+		"song": "Virtual Insanity",
+		"lyrics": ["Yeah, it's a wonder man can eat at all, When things are big that should be small", "...be, And nothing's gonna change the way we live, 'Cause we can always take, but never give, And now that things are changing for the worse, see, Whoa...", "And I just can't see that half of us immersed in sin, Is all we have to give these, Futures made of virtual insanity, now, Always seem to be governed by this love we have..."],
+		"streamCount": 168873835,
+		"hasPlayed": false,
+		"year": 1996
+	}, {
+		"artist": "K'NAAN",
+		"song": "Wavin' Flag",
+		"lyrics": ["... around us, Staying forever young, Singing songs underneath the sun", "Oh-oh-oh", "When I get older I will be stronger, They'll call me freedom just like a wavin' flag, When I get older I will be stronger, They'll call me freedom just like a wavin' flag, So wave your flag, now wave your flag"],
+		"streamCount": 124968039,
+		"hasPlayed": false,
+		"year": 2010
 	}
 	// , {
 	// 	"artist": "",

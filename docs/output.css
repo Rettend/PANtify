@@ -917,10 +917,6 @@ video {
   border-bottom-left-radius: 1rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .bg-rose-600\/70 {
   background-color: rgb(225 29 72 / 0.7);
 }
@@ -1432,14 +1428,14 @@ video {
     margin-right: 0px;
   }
 
-  .md\:my-2 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
   .md\:mx-8 {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .md\:my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .md\:ml-10 {
@@ -1462,28 +1458,8 @@ video {
     margin-top: 1.5rem;
   }
 
-  .md\:-mt-10 {
-    margin-top: -2.5rem;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
-  }
-
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
-  .md\:mt-4 {
-    margin-top: 1rem;
-  }
-
   .md\:mt-2 {
     margin-top: 0.5rem;
-  }
-
-  .md\:-mt-0 {
-    margin-top: -0px;
   }
 
   .md\:-mt-4 {
@@ -1546,10 +1522,6 @@ video {
 
   .md\:rounded-2xl {
     border-radius: 1rem;
-  }
-
-  .md\:rounded-3xl {
-    border-radius: 1.5rem;
   }
 
   .md\:rounded-t-3xl {

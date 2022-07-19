@@ -123,6 +123,20 @@ const songs = [
 		"streamCount": 142803214,
 		"hasPlayed": false,
 		"year": 1997
+	}, {
+		"artist": "Coldplay (ft. BTS)",
+		"song": "My Universe",
+		"lyrics": ["", "You (you), you are (you are) my universe, And I (I) just want (just want) to put you first", "My universe (doo-doo, doo-doo), My universe (doo-doo, doo-doo), (You make my world), You make my world light up inside"],
+		"streamCount": 679681060,
+		"hasPlayed": false,
+		"year": 2021
+	}, {
+		"artist": "David Bowie",
+		"song": "Starman",
+		"lyrics": ["", "Didn't know what time it was, The lights were low, oh, oh", "There's a Starman waiting in the sky, He'd like to come and meet us, But he thinks he'd blow our minds, There's a Starman waiting in the sky"],
+		"streamCount": 298368113,
+		"hasPlayed": false,
+		"year": 1972
 	}
 	// , {
 	// 	"artist": "",

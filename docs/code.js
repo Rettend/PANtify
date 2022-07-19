@@ -88,6 +88,41 @@ const songs = [
 		"streamCount": 1073250309,
 		"hasPlayed": false,
 		"year": 2016
+	}, {
+		"artist": "Bag Raiders",
+		"song": "Shooting Stars",
+		"lyrics": ["", "", "Gave my love to a shooting star, But she moves so fast, That I can't keep up, I'm chasing, I'm in love with a shooting star, But she..."],
+		"streamCount": 298662760,
+		"hasPlayed": false,
+		"year": 2009
+	}, {
+		"artist": "Bomba Estéreo",
+		"song": "Soy Yo",
+		"lyrics": ["Tarap, tarap, Yo, tarap", "Y no te preocupes si no te aprueban, Cuando te critiquen, tú solo di, Soy yo", "Soy yo, Soy yo (soy, soy, soy, soy, soy, soy, soy), Soy yo (yo, yo, yo, yo, yo, yo, yo)"],
+		"streamCount": 67267950,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "BTS",
+		"song": "Dynamite",
+		"lyrics": ["'Cause I-I-I'm in the stars tonight, So watch me bring the fire...", "...and set the night alight (hey), Shining through the city with a little funk and soul, So I'ma light it up like dynamite, whoa oh oh", "...Na-na-na, life is dynamite. Dy-na-na-na, na-na, na-na-na, na-na-na, life is dynamite. Shining through the city with a little funk and soul. So I'ma light it up like dynamite, whoa oh oh"],
+		"streamCount": 1415259815,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "Calvin Harris (ft. Pharrel Williams, Katy Perry, Big Sean)",
+		"song": "Feels",
+		"lyrics": ["", "...catch feels, Feels with me, I'm your window shopper, sucker for your love, oh, I'm wearing your goggles", "The way you move it here (hey), Just wanna feel it from you (hey), Don't be afraid to catch feels (ha), Ride drop top and chase thrills (oh-oh-oh, oh), I know you"],
+		"streamCount": 917575369,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Chumbawamba",
+		"song": "Tubthumping",
+		"lyrics": ["We'll be singing, I get knocked down, but I get up...", "He drinks a Whiskey drink, he drinks a Vodka drink, He drinks a Lager drink, he drinks a Cider drink, He sings the songs that remind him of the good times, He sings the songs that remind him of the better times, Oh...", "I get knocked down, but I get up again, You are never gonna keep me down, I get knocked down, but I get up again, You are never gonna keep me down, I get knocked down, but I get up again, You are never gonna keep me down, I get knocked down"],
+		"streamCount": 142803214,
+		"hasPlayed": false,
+		"year": 1997
 	}
 	// , {
 	// 	"artist": "",

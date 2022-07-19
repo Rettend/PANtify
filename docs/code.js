@@ -3,77 +3,6 @@
 //     return "";
 // };
 
-let songsEasy = [
-	["ACDC", "Highway to Hell"],
-	["Avicii", "The nights"],
-	["Ed Sheeran", "Bad Habits"],
-	["The Rolling Stones", "Paint It, Black"],
-	["The White Stripes", "Seven Nation Army"],
-	["Imagine Dragons", "Whatever It Takes"],
-	["BTS", "Dynamite"],
-	["Queen", "Under Pressure"],
-	["Queen", "Another One Bites the Dust"],
-	["Rag'n'Bone Man", "Human"],
-	["Adele", "Rolling in the Deep"],
-	["Panic! At The Disco", "High Hopes"],
-	["Red Hot Chili Peppers", "Dark Necessities"],
-	["Marshmello (ft. Khalid)", "Silence"],
-	["Alessia Cara", "Scars To Your Beautiful"],
-	["Calvin Harris (ft. Pharrel Williams, Katy Perry, Big Sean)", "Feels"],
-	["Eminem (ft. Nate Dogg)", "'Till I Collapse"],
-	["The Weeknd", "Save Your Tears"],
-	["Eminem", "Without Me"],
-	["Aerosmith", "I Don't Want to Miss a Thing"],
-	["Guns 'N Roses", "Paradise City"],
-	["Alan Walker", "Alone"],
-	["Post Malone", "Circles"],
-	["Zedd (ft. Maren Morris, Grey)", "The Middle"],
-];
-
-let songsHard = [
-	["Eric Clapton", "Change The World"],
-	["Hanson", "MMMBop"],
-	["KALEO", "Broken Bones"],
-	["David Bowie", "Starman"],
-	["Mountain", "Mississippi Queen"],
-	["Ozzy Osbourne", "Crazy Train"],
-	["Imagine Dragons", "One Day"],
-	["Electric Light Orchestra (ELO)", "Mr. Blue Sky"],
-	["Coldplay (ft. BTS)", "My Universe"],
-	["Emberek", "Forog a Föld"],
-	["Dire Straits", "Sultans Of Swing"],
-	["SHAUN (ft. Conor Maynard)", "Way Back Home"],
-	["Jackson Browne", "Running on Empty"],
-	["Paul Simon (ft. Garfunkel)", "The Sound of Silence"],
-	["Bag Raiders", "Shooting Stars"],
-	["SABATON", "Stormtroopers"],
-	["Sigala (ft. Ella Eyre, Meghan Trainor)", "Just Got Paid"],
-	["K'NAAN", "Wavin' Flag"],
-	["TheFatRat", "Unity"],
-	["Klaus Badelt (Pirates of the Caribbean)", "He's a Pirate"],
-];
-
-let songsExtreme = [
-	["Harley Poe", "Eat Shit and Die"],
-	["ALESTORM", "Treasure Chest Party Quest"],
-	["Anthrax", "Got The Time"],
-	["Cypress Hill", "Lowrider"],
-	["The Dead South", "In Hell I'll Be In Good Company"],
-	["Chumbawamba", "Tubthumping"],
-	["JUNNY", "MOVIE"],
-	["ACDC", "Fire Your Guns"],
-	["Yunsae", "Warm Puppy"],
-	["Bomba Estéreo", "Soy Yo"],
-	["Rusted Root", "Send Me On My Way"],
-	["League of Legends (ft. Jasmine Clarke)", "Seraphine"],
-	["La Coka Nostra (ft. Snoop Dogg)", "Bang Bang"],
-	["Yogscast (Lewis & Simon)", "Diggy Diggy Hole"],
-	["Jamiroquai", "Virtual Insanity"],
-	["Baha Men", "Rat Race"],
-	["IU (ft. SUGA)", "eight"],
-	["ACDC", "For Those About to Rock"],
-];
-
 const songs = [
 	{
 		"artist": "ACDC",
@@ -81,64 +10,92 @@ const songs = [
 		"lyrics": ["", "No stop signs, Speed limit, Nobody's gonna slow me down", "I'm on the highway to hell, Highway to hell, I'm on the highway to hell, Highway to hell"],
 		"streamCount": 1010569617,
 		"hasPlayed": false,
-		"coverImage": "cover images/ACDC;Highway to Hell.jpg"
+		"year": 1979
 	}, {
 		"artist": "Avicii",
 		"song": "The nights",
 		"lyrics": ["Once upon a younger year, When all our shadows disappeared, The animals...", "One day, my father, he told me \"Son, don't let it slip away \", When I was just a kid, I heard him say, \"When you get older your wild heart will...\"", "\"Live a life you will remember\", My father told me when I was just a child, \"These are the nights that never die\", My father told me"],
 		"streamCount": 1116498715,
 		"hasPlayed": false,
-		"coverImage": "cover images/Avicii;The nights.png"
+		"year": 2014
 	}, {
 		"artist": "Hanson",
 		"song": "MMMBop",
 		"lyrics": ["Oh, Oh oh", "Duba, Duba, Du, Yeah, MmmBop, Duba", "Yeah, Mmmbop, ba duba dop, Ba du bop, ba duba dop ba du, yeah, Mmmbop, ba duba dop, Ba du bop, ba duba dop ba"],
 		"streamCount": 131552367,
 		"hasPlayed": false,
-		"coverImage": "cover images/Hanson;MMMBop.jpg"
+		"year": 1997
 	}, {
 		"artist": "Harley Poe",
 		"song": "Eat Shit and Die",
 		"lyrics": ["She said I never completed, Any goals that I laid down, I hear the...", "I kinda find it so funny, Walking up to you now, I didn't plan this I swear it, But I dug a home for you in the ground", "Can you fly? Can you fly? Eat shit and die (Eat shit and die), Eat shit and die (Eat shit and die)"],
 		"streamCount": 2328919,
 		"hasPlayed": false,
-		"coverImage": "cover images/Harley Poe;Eat Shit and Die.jpg"
+		"year": 2019
 	}, {
 		"artist": "IU (ft. SUGA)",
 		"song": "eight",
 		"lyrics": ["So are you happy now? Finally happy", "Forever young, Oh oh oh, Forever, we young, Oh oh oh", "Urineun orenji taeyang arae, Geurimja eopsi hamkke chumeul chwo, Jeonghaejin ibyeol ttawineun eopseo, Areumdawotdeon geu gieogeseo manna"],
 		"streamCount": 208700169,
 		"hasPlayed": false,
-		"coverImage": "cover images/IU (ft. SUGA);eight.jpg"
+		"year": 2020
 	}, {
 		"artist": "ACDC",
 		"song": "For Those About to Rock",
 		"lyrics": ["", "For a twenty-one gun salute, For those about to rock, fire, we salute you", "For those about to rock, we salute you, For those about to rock, we salute you, For those about to rock"],
 		"streamCount": 88495681,
 		"hasPlayed": false,
-		"coverImage": "cover images/ACDC;For Those About to Rock.jpg"
+		"year": 1981
 	}, {
 		"artist": "ACDC",
 		"song": "Fire Your Guns",
 		"lyrics": ["", "You gotta fire your guns, Fire your guns", "Fire when she's going down, Fire then she make you drown, Fire then she blow you round, Yeah, you want some fun, Fire your guns, Fire your guns"],
 		"streamCount": 33363311,
 		"hasPlayed": false,
-		"coverImage": "cover images/Razorsedge.jpg"
+		"year": 1990
 	}, {
 		"artist": "ACDC",
 		"song": "Thunderstruck",
 		"lyrics": ["Ah ah ah, Thunder, Ah ah ah", "Sound of the drums, Beating in my heart, The thunder of guns, Yeah", "Thunderstruck, yeah, yeah, yeah, Thunderstruck, thunderstruck, Thunderstruck, whoa, baby, baby, Thunderstruck, you've been thunderstruck"],
 		"streamCount": 963360129,
 		"hasPlayed": false,
-		"coverImage": "cover images/Razorsedge.jpg"
+		"year": 1990
+	}, {
+		"artist": "Adele",
+		"song": "Rolling in the Deep",
+		"lyrics": ["See how I'll leave with every piece of you, Don't...", "The scars of your love remind me of us, They keep me thinking that we almost had it all, The scars...", "They leave me breathless, I can't help feeling, We could've had it all (you're gonna wish you), (Never had met me), Rolling in the deep, You had my heart inside"],
+		"streamCount": 1154857443,
+		"hasPlayed": false,
+		"year": 2011
+	}, {
+		"artist": "Aerosmith",
+		"song": "I Don't Want to Miss a Thing",
+		"lyrics": ["Lying close to you, feeling your heart beating", "... you is a moment I treasure, Don't want to close my eyes", "...you baby, And I don't want to miss a thing, 'Cause even when I dream of you, The sweetest dream will never do, I'd still miss you baby, And I don't want to miss a thing"],
+		"streamCount": 734623519,
+		"hasPlayed": false,
+		"year": 1998
+	}, {
+		"artist": "Alan Walker",
+		"song": "Alone",
+		"lyrics": ["Lost in your mind", "...night is not forever, At least we are together, I know I'm not alone, I know I'm not alone, Anywhere, whenever...", "I know I'm not alone, I'm not alone, I'm not alone, I'm not alone (I know I'm not alone), I'm not alone"],
+		"streamCount": 572988157,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Alessia Cara",
+		"song": "Scars To Your Beautiful",
+		"lyrics": ["Oh, she don't see, the light that's shining, Deeper than the eyes can find it", "But there's a hope that's waiting for you in the dark, You should know you're beautiful just the way you are, And you don't...", "You don't have to change a thing, The world could change its heart, No scars to your beautiful, We're stars and we're beautiful"],
+		"streamCount": 1073250309,
+		"hasPlayed": false,
+		"year": 2016
 	}
 	// , {
 	// 	"artist": "",
 	// 	"song": "",
 	// 	"lyrics": ["", "", ""],
-	// 	"streamCount": ,
+	// 	"streamCount": 0,
 	// 	"hasPlayed": false,
-	// 	"coverImage": "cover images/.jpg"
+	// 	"year": 20
 	// }
 ];
 
@@ -155,6 +112,8 @@ const endArtist = document.getElementById("endArtist");
 const endTitle = document.getElementById("endTitle");
 const endScore = document.getElementById("endScore");
 const endCoverImg = document.getElementById("endCoverImg");
+const endYear = document.getElementById("endYear");
+const endStreams = document.getElementById("endStreams");
 const easyScore = document.getElementById("easyScore");
 const hardScore = document.getElementById("hardScore");
 const extremeScore = document.getElementById("extremeScore");
@@ -198,7 +157,7 @@ mobile.addEventListener("change", musicVisualizer);
 
 
 var abrSymbols = ["", "k", "M", "B", "T"];
-function abr(number) {
+function abr(number, dec) {
 
 	// what tier? (determines symbol)
 	var tier = Math.log10(Math.abs(number)) / 3 | 0;
@@ -214,29 +173,27 @@ function abr(number) {
 	var scaled = number / scale;
 
 	// format number and add suffix
-	return scaled.toFixed(0) + suffix;
+	return scaled.toFixed(dec) + suffix;
 }
 
 
 var slider = document.getElementById('slider');
 var difficultyLabel = document.getElementById('difficultyLabel');
 noUiSlider.create(slider, {
-	start: [800000000, 2000000000],
+	start: [800000000, 5000000000],
 	snap: true,
 	connect: true,
 	margin: 200000000,
 	range: {
-		'min': 1000000, // 1M
-		'10%': 5000000, // 5M
-		'20%': 10000000, // 10M
-		'30%': 25000000, // 25M
-		'40%': 50000000, // 50M
-		'50%': 100000000, // 100M
-		'60%': 250000000, // 250M
-		'70%': 500000000, // 500M
-		'80%': 800000000, // 800M
-		'90%': 1000000000, // 1B
-		'max': 2000000000 // 2B
+		'min': 1000000, 	// 1M
+		'12.5%': 50000000, 	// 50M
+		'25%': 200000000, 	// 200M
+		'37.5%': 400000000, // 400M
+		'50%': 600000000, 	// 600M
+		'62.5%': 800000000, // 800M
+		'75%': 1000000000, 	// 1B
+		'87.5%': 2000000000,// 2B
+		'max': 5000000000 	// 5B
 	},
 	direction: 'rtl',
 	pips: {
@@ -244,7 +201,7 @@ noUiSlider.create(slider, {
 		density: 3,
 		format: {
 			to: function (a) {
-				return abr(a);
+				return abr(a, 0);
 			}
 		}
 	}
@@ -272,14 +229,14 @@ slider.noUiSlider.on('update', function (values, handle) {
 	sliderValueL = values[1];
 
 	// calculate a multiplier value which is larger the closer the slider is to the right
-	var multiplier1 = Math.abs(1 - sliderValueR / 2000000000) * 15; // right slider multiplier
-	var multiplier2 = Math.abs(1 - sliderValueL / 2000000000) * 2; // left slider multiplier
+	var multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 15; // right slider multiplier
+	var multiplier2 = Math.abs(1 - sliderValueL / 5000000000) * 4; // left slider multiplier
 
 	// average of the two multipliers
 	var multiplier = multiplier1 + multiplier2 / 2;
 
 	// normalize the multiplier value to the range 1-5
-	var normalizedMultiplier = Math.abs((multiplier - 1) / 4);
+	var normalizedMultiplier = Math.abs((multiplier - 1) / 6);
 
 	difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
 
@@ -470,7 +427,9 @@ function end() {
 		endModal.style.display = "block";
 		artistWFeat(endArtist);
 		endTitle.innerHTML = song.song;
-		endCoverImg.src = song.coverImage;
+		endCoverImg.src = "cover images/" + song.artist + ';' + song.song + ".webp";
+		endYear.innerHTML = song.year;
+		endStreams.innerHTML = abr(song.streamCount, 2);
 		document.body.style.overflowY = "hidden";
 		window.scrollTo(0, 0);
 		song = null;

@@ -180,9 +180,9 @@ const songs = [
 		"hasPlayed": false,
 		"year": 1999
 	}, {
-		"artist": "Guns N' Roses",
+		"artist": "Guns 'N Roses",
 		"song": "Paradise City",
-		"lyrics": ["", "Why I'm here I can't quite remember, The surgeon general says it's hazardous to breathe, I'd have another cigarette but I can't see, Tell me who you're gonna believe", "Take me down to the paradise city, Where the grass is green and the girls are pretty, Take me home, yeah yeah, Take me down to the paradise city, Where the grass is green and the girls are pretty, Oh, won't you..."],
+		"lyrics": ["", "Why I'm here I can't quite remember, The surgeon general says it's hazardous to breathe, I'd have another cigarette but I can't see, Tell me who you're gonna believe, Take...", "Take me down to the paradise city, Where the grass is green and the girls are pretty, Take me home, yeah yeah, Take me down to the paradise city, Where the grass is green and the girls are pretty, Oh, won't you..."],
 		"streamCount": 756532359,
 		"hasPlayed": false,
 		"year": 1987
@@ -214,6 +214,83 @@ const songs = [
 		"streamCount": 124968039,
 		"hasPlayed": false,
 		"year": 2010
+	}, {
+		"artist": "KALEO",
+		"song": "Broken Bones",
+		"lyrics": ["The devil's going to make me a free man, The devil's going to set me free", "I went down, deep Texas, Mississippi state, Hoping things might go my way, For every hard-earned...", "...now, Ain't got no place to call a home, Only chains and broken bones, Ain't got no place to call a home, So come on Lord, what you waiting for?"],
+		"streamCount": 66186321,
+		"hasPlayed": false,
+		"year": 2016
+	}, {
+		"artist": "Klaus Badelt (Pirates of the Caribbean)",
+		"song": "He's a Pirate",
+		"lyrics": ["", "", ""],
+		"streamCount": 123930030,
+		"hasPlayed": false,
+		"year": 2003
+	}, {
+		"artist": "Marshmello (ft. Khalid)",
+		"song": "Silence",
+		"lyrics": ["Yeah, I'd rather be a lover than a fighter (fighter), 'Cause all my life, I've been fighting, Never...", "...and I've been quiet for too long, oh, I found peace in your violence, Can't tell me there's no point in trying", "...and I've been silent for too long, oh, I've been quiet for too long, oh, I've been quiet for too long, oh"],
+		"streamCount": 1238834619,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Panic! At The Disco",
+		"song": "High Hopes",
+		"lyrics": ["", "Mama said, It's uphill for oddities, Stranger crusaders, Ain't ever wannabes, The weird and the novelties, Don't ever change, We wanted everything", "Had to have high, high hopes for a living, Shooting for the stars when I couldn't make a killing, Didn't have a dime but I always had a vision, Always had high, high hopes, Had to have high, high hopes for a living, Didn't know how..."],
+		"streamCount": 1250995128,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Paul Simon (ft. Garfunkel)",
+		"song": "The Sound of Silence",
+		"lyrics": ["In restless dreams, I walked alone, Narrow streets...", "Hello darkness, my old friend, I've come to talk with you again", "When my eyes were stabbed by the flash of a neon light, That split the night, And touched the sound of silence"],
+		"streamCount": 419961218,
+		"hasPlayed": false,
+		"year": 1964
+	}, {
+		"artist": "",
+		"song": "",
+		"lyrics": ["", "I knew that this was doomed from the get-go, You thought that it was special, special, But it was just...", "...let it go, Seasons change and our love went cold, Feed the flame 'cause we can't let it go, Run away, but we're running in circles, Run away..."],
+		"streamCount": 1786112794,
+		"hasPlayed": false,
+		"year": 2019
+	}, {
+		"artist": "Queen",
+		"song": "Another One Bites the Dust",
+		"lyrics": ["", "...are you satisfied? How long can you stand the heat? Out of the doorway the bullets rip, To the sound of the beat, Look out! Another one...", "Another one bites the dust, Another one bites the dust, And another one gone, and another one gone, Another one bites the dust, Hey, I'm gonna get you, too, Another one bites the dust"],
+		"streamCount": 1311527257,
+		"hasPlayed": false,
+		"year": 1980
+	}, {
+		"artist": "Queen",
+		"song": "Under Pressure",
+		"lyrics": ["Day day de mm hm, Da da da ba ba", "Pressure pushing down on me, Pressing down on you no man ask for, Under pressure", "This is our last dance, This is ourselves, Under pressure, Under pressure"],
+		"streamCount": 0,
+		"hasPlayed": false,
+		"year": 1981
+	}, {
+		"artist": "Rag'n'Bone Man",
+		"song": "Human",
+		"lyrics": ["Don't ask my opinion, Don't ask me to lie, Then beg for forgiveness...", "I'm no prophet or Messiah, Should go looking somewhere higher...", "Oh, some people got the real problems, Some people out of luck, Some people think I can solve them, Lord heavens above, I'm only human after all..."],
+		"streamCount": 707269818,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Red Hot Chili Peppers",
+		"song": "Dark Necessities",
+		"lyrics": ["", "Stumble down to the parking lot, You got no time for the afterthought, They're like ice cream for an astronaut, Well that's me looking for weed", "Dark necessities are part of my design, Tell the world that I'm falling from the sky, Dark necessities are part of my design"],
+		"streamCount": 355432917,
+		"hasPlayed": false,
+		"year": 2016
+	}, {
+		"artist": "Rusted Root",
+		"song": "Send Me On My Way",
+		"lyrics": ["", "On my way, on my way, On my way, on my way", "I would like to hold my little hand, And we will run, we will, we will crawl, Send me on my way (on my way), Send me on my way (on my way), Send me on my way (on my way)"],
+		"streamCount": 339392386,
+		"hasPlayed": false,
+		"year": 1990
 	}
 	// , {
 	// 	"artist": "",
@@ -223,6 +300,8 @@ const songs = [
 	// 	"hasPlayed": false,
 	// 	"year": 20
 	// }
+
+	//Believer, Way down We Go
 ];
 
 

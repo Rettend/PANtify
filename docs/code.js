@@ -291,6 +291,34 @@ const songs = [
 		"streamCount": 339392386,
 		"hasPlayed": false,
 		"year": 1990
+	}, {
+		"artist": "SHAUN (ft. Conor Maynard)",
+		"song": "Way Back Home",
+		"lyrics": ["", "Remember when I told you, No matter where I go, I'll never leave your side, You will never be alone, Even when we go...", "Even when we're old, Remember that I told you, I'll find my way back home"],
+		"streamCount": 274071562,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Sigala (ft. Ella Eyre, Meghan Trainor)",
+		"song": "Just Got Paid",
+		"lyrics": ["I just got paid", "I should grow up some day 'cause I got bills to pay, I can't be waking up at someone else's place, I know I drink too much", "Can't pay my rent this month, I should be saving up, but, I just got paid, I'm broke, but I'm balling, Don't know where we're going, We go in when we go out, I just got paid"],
+		"streamCount": 205411635,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "The Dead South",
+		"song": "In Hell I'll Be In Good Company",
+		"lyrics": ["I see my red head, messed bed, tear shed, queen bee, my squeeze", "Brass knife sinks into my shoulder, Oh babe, don't know what I'm gonna do", "After I count down three rounds, in Hell I'll be in good company"],
+		"streamCount": 81978337,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "The Rolling Stones",
+		"song": "Paint It, Black",
+		"lyrics": ["", "", ""],
+		"streamCount": 742173285,
+		"hasPlayed": false,
+		"year": 1966
 	}
 	// , {
 	// 	"artist": "",

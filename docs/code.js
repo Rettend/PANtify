@@ -189,7 +189,7 @@ const songs = [
 	}, {
 		"artist": "Imagine Dragons",
 		"song": "Whatever It Takes",
-		"lyrics": ["... for the fall of man, Everybody praying for the end of times, Everybody hoping they could be the one, I was born to run, I was born for this...", "Whip, whip, Run me like a racehorse, Pull me like a ripcord, Break me down and build me up, I wanna be the slip, slip, Word upon your lip, lip, Letter that", "Whatever it takes, 'Cause I love the adrenaline in my veins, I do whatever it takes, 'Cause I love how it feels when I break the chains, Whatever it takes..."],
+		"lyrics": ["...for the fall of man, Everybody praying for the end of times, Everybody hoping they could be the one, I was born to run, I was born for this...", "Whip, whip, Run me like a racehorse, Pull me like a ripcord, Break me down and build me up, I wanna be the slip, slip, Word upon your lip, lip, Letter that...", "Whatever it takes, 'Cause I love the adrenaline in my veins, I do whatever it takes, 'Cause I love how it feels when I break the chains, Whatever it takes..."],
 		"streamCount": 885414935,
 		"hasPlayed": false,
 		"year": 2017
@@ -250,8 +250,8 @@ const songs = [
 		"hasPlayed": false,
 		"year": 1964
 	}, {
-		"artist": "",
-		"song": "",
+		"artist": "Post Malone",
+		"song": "Circles",
 		"lyrics": ["", "I knew that this was doomed from the get-go, You thought that it was special, special, But it was just...", "...let it go, Seasons change and our love went cold, Feed the flame 'cause we can't let it go, Run away, but we're running in circles, Run away..."],
 		"streamCount": 1786112794,
 		"hasPlayed": false,
@@ -267,7 +267,7 @@ const songs = [
 		"artist": "Queen",
 		"song": "Under Pressure",
 		"lyrics": ["Day day de mm hm, Da da da ba ba", "Pressure pushing down on me, Pressing down on you no man ask for, Under pressure", "This is our last dance, This is ourselves, Under pressure, Under pressure"],
-		"streamCount": 0,
+		"streamCount": 1137375891,
 		"hasPlayed": false,
 		"year": 1981
 	}, {
@@ -315,10 +315,129 @@ const songs = [
 	}, {
 		"artist": "The Rolling Stones",
 		"song": "Paint It, Black",
-		"lyrics": ["", "", ""],
+		"lyrics": ["", "I see a red door, And I want it painted black, No colors anymore, I want them to turn black", "If I look hard enough, Into the setting sun, My love will laugh with me, Before the morning comes, I see a red door, And I want it..."],
 		"streamCount": 742173285,
 		"hasPlayed": false,
 		"year": 1966
+	}, {
+		"artist": "The Weeknd",
+		"song": "Save Your Tears",
+		"lyrics": ["I don't know why I run away", "So, I made you think that I would always stay, I said some things that I should never say, Yeah, I...", "Save your tears for another day, ooh, girl (ah), I said save your tears for another day (ah)"],
+		"streamCount": 1114912301,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "The White Stripes",
+		"song": "Seven Nation Army",
+		"lyrics": ["I'm talking to myself at night, Because I can't forget", "And the message coming from my eyes, Says, Leave it alone", "I'm gonna fight 'em all, A seven nation army couldn't hold me back"],
+		"streamCount": 1099258989,
+		"hasPlayed": false,
+		"year": 2003
+	}, {
+		"artist": "TheFatRat",
+		"song": "Unity",
+		"lyrics": ["", "", ""],
+		"streamCount": 120509760,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Yogscast (Lewis & Simon)",
+		"song": "Diggy Diggy Hole",
+		"lyrics": ["", "Born underground, suckled from a teat of stone, Raised in the dark, the safety of our mountain home, Skin made of iron", "I am a dwarf and I'm digging a hole, Diggy diggy hole, diggy diggy hole, I am a dwarf and I'm digging a hole, Diggy diggy hole, digging a hole"],
+		"streamCount": 21148537,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "Yunsae",
+		"song": "Warm Puppy",
+		"lyrics": ["Did I finally go mad and insane? I'll never let them break it, oh", "My life is going on & on & on, I might have been losing some of days, I just wanna be alive, Oh...", "Oh, I just want a warm puppy, warm puppy now, I just want a warm puppy, warm puppy now, I just want a warm puppy, warm puppy now, I just want..."],
+		"streamCount": 62856,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "Zedd (ft. Maren Morris, Grey)",
+		"song": "The Middle",
+		"lyrics": ["Take a seat, Right over there, sat on the stairs, Stay or leave", "Oh baby, why don't you just meet me in the middle? I'm losing my mind just a little", "So why don't you just meet me in the middle? In the middle, Baby, why don't you just meet me in the middle, Baby? I'm losing my..."],
+		"streamCount": 1238680460,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Imagine Dragons",
+		"song": "Believer",
+		"lyrics": ["First things first, I'ma say all the words inside my head, I'm...", "Hoping my feelings, they would drown, But they never did, ever lived, ebbing and flowing, Inhibited, limited, Till it broke open and rained down, It rained down, like... Pain!", "Pain! Oh let the bullets fly, oh let them rain, My life, my love, my drive, it came from... Pain! You made me a, you made me a believer, believer"],
+		"streamCount": 2150927401,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Way down We Go",
+		"song": "KALEO",
+		"lyrics": ["Oh baby, yeah", "And way down we go go go go go, Way down we go go...", "Cause they will run you down, down 'til the dark, Yes and they will run you down, down 'til you fall, And they will run you down, down 'til you go"],
+		"streamCount": 628196255,
+		"hasPlayed": false,
+		"year": 2016
+	}, {
+		"artist": "Marshmello (Ft. Anne-Marie)",
+		"song": "FRIENDS",
+		"lyrics": ["You say you love me, I say you crazy, We're nothing more than friends", "You can't be reasoned with, I'm done being polite, I've told you 1, 2, 3, 4, 5, 6000 times", "Haven't I made it obvious? Haven't I made it clear? Want me to spell it out for you? F-R-I-E-N-D-S, Haven't I made it obvious? Haven't I made it clear? Want me to spell it out...?"],
+		"streamCount": 1211599289,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Macklemore (ft. Ryan Lewis, Ray Dalton)",
+		"song": "Can't Hold Us",
+		"lyrics": ["So we put our hands up", "Return of the Mack, Get 'em, what it is, what it does, what it is, what it isn't, Looking for a better way to get up out of bed, Instead of getting on the Internet, And checking on who hit me, get up, Thrift shop, pimp-strut walkin', Little bit of humble, little bit of cautious, Somewhere between like...", "Can we go back? This is the moment, Tonight is the night, we'll fight 'til it's over, So we put our hands up, Like the ceiling can't hold us, Like the ceiling can't hold us, Can we go back? This is the moment"],
+		"streamCount": 1554707106,
+		"hasPlayed": false,
+		"year": 2012
+	}, {
+		"artist": "Macklemore (ft. Ryan Lewis, Wanz)",
+		"song": "Thrift Shop",
+		"lyrics": ["They be like Oh that Gucci, that's hella tight! I'm like Yo, that's fifty dollars for a t-shirt!", "I'll wear your granddad's clothes (damn right!), I look incredible (uh, come on, man!), I'm in this big ass coat (big ass coat), From that thrift shop down the road (let's go!)", "(Goodwill... poppin' tags... yeah!), I'm gonna pop some tags, Only got twenty dollars in my pocket, I'm, I'm, I'm hunting, looking for a come up, This is fucking awesome!"],
+		"streamCount": 857042334,
+		"hasPlayed": false,
+		"year": 2012
+	}, {
+		"artist": "Post Malone (ft. Swae Lee) (Into The Spider-Verse)",
+		"song": "Sunflower",
+		"lyrics": ["Ayy, ayy, ayy, ayy (ooh), Ooh, ooh", "Needless to say, I keep her in check, She was a bad-bad, nevertheless (yeah), Callin' it quits now, baby, I'm a wreck (wreck), Crash at my place, baby, you're a wreck (wreck)", "And you'll be left in the dust, Unless I stuck by ya, You're the sunflower, I think your love would be too much, Or you'll be left in the dust, Unless I stuck by ya"],
+		"streamCount": 2349890984,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Coldplay",
+		"song": "Hymn for the Weekend",
+		"lyrics": ["Oh, angel sent from up above", "Put your wings on me, wings on me, When I was so heavy, Pour on a symphony, When I'm low, low, low...", "Ah-oh-ah-oh-ah, Got me feeling drunk and high, So high, so high, Oh-ah-oh-ah-oh-ah"],
+		"streamCount": 920496536,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Nirvana",
+		"song": "Smells Like Teen Spirit",
+		"lyrics": ["Load up on guns, bring your friends, It's fun...", "Hello, hello, hello, how low, Hello, hello, hello, how low, Hello, hello", "...hello, With the lights out, it's less dangerous, Here we are now, entertain us, I feel stupid and contagious, Here we are now..."],
+		"streamCount": 1343113355,
+		"hasPlayed": false,
+		"year": 1991
+	}, {
+		"artist": "Gotye (ft. Kimbra)",
+		"song": "Somebody That I Used To Know",
+		"lyrics": ["", "Now you're just somebody that I used to know, Now you're just somebody that I used to know", "...used to know... But you didn't have to cut me off, Make out like it never happened, And that we were nothing, And I don't even need your love, But you treat me like a stranger, And that feels so rough"],
+		"streamCount": 1177385588,
+		"hasPlayed": false,
+		"year": 2011
+	}, {
+		"artist": "Clean Bandit (ft. Zara Larsson)",
+		"song": "Symphony",
+		"lyrics": ["Ah, ah, ah, ah, ah, ah, Ah ah, ah", "'Cause I've been hearing symphonies, Before all I heard was silence, A rhapsody for you and me", "I just wanna be part of your symphony, Will you hold me tight and not let go? Symphony, Like a love song on the radio"],
+		"streamCount": 1149092432,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "The Chainsmokers (ft. Coldplay)",
+		"song": "Something Just Like This",
+		"lyrics": ["Doo-doo-doo, doo-doo-doo, Doo-doo-doo", "Where'd you wanna go? How much you wanna risk? I'm not looking for somebody, With some superhuman gifts, Some superhero", "Some fairytale bliss, Just something I can turn to, Somebody I can miss, I want something just like this"],
+		"streamCount": 1862609578,
+		"hasPlayed": false,
+		"year": 2017
 	}
 	// , {
 	// 	"artist": "",
@@ -329,7 +448,6 @@ const songs = [
 	// 	"year": 20
 	// }
 
-	//Believer, Way down We Go
 ];
 
 
@@ -381,9 +499,9 @@ const easyLeft = document.getElementById("easyLeft");
 const hardLeft = document.getElementById("hardLeft");
 const extremeLeft = document.getElementById("extremeLeft");
 allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-easyLeft.innerHTML = songs.filter(song => song.streamCount > 800000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 800000000).length;
-hardLeft.innerHTML = songs.filter(song => song.streamCount <= 800000000 && song.streamCount >= 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 800000000 && song.streamCount >= 25000000).length;
-extremeLeft.innerHTML = songs.filter(song => song.streamCount < 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 25000000).length;
+easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
+hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
+extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
 
 const mobile = window.matchMedia("(max-width: 768px)");
 mobile.addEventListener("change", musicVisualizer);
@@ -418,7 +536,7 @@ noUiSlider.create(slider, {
 	connect: true,
 	margin: 200000000,
 	range: {
-		'min': 1000000, 	// 1M
+		'min': 0, 			// 0
 		'12.5%': 50000000, 	// 50M
 		'25%': 200000000, 	// 200M
 		'37.5%': 400000000, // 400M
@@ -517,11 +635,11 @@ function newSong() {
 }
 
 function artistWFeat(sourceDiv) {
-	if (song.artist.indexOf('(ft. ') !== -1) {
+	if (song.artist.indexOf('(') !== -1) {
 		const featSpan = document.createElement("span");
 		featSpan.style.fontWeight = "normal";
-		let featArtists = song.artist.substring(song.artist.indexOf('(ft. '));
-		sourceDiv.innerHTML = song.artist.split('(ft. ')[0];
+		let featArtists = song.artist.substring(song.artist.indexOf('('));
+		sourceDiv.innerHTML = song.artist.split('(')[0];
 		featSpan.appendChild(document.createTextNode(featArtists));
 		sourceDiv.appendChild(featSpan);
 	} else {
@@ -554,7 +672,11 @@ function playSong(duration) {
 
 function setLyrics(i) {
 	if (song.lyrics[i] == "") {
-		lyricsBox.innerHTML = "¯\\_(ツ)_/¯";
+		if (song.lyrics[0] == "" && song.lyrics[1] == "" && song.lyrics[2] == "") {
+			lyricsBox.innerHTML = "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻";
+		} else {
+			lyricsBox.innerHTML = "¯\\_(ツ)_/¯";
+		}
 	} else {
 		lyricsBox.innerHTML = song.lyrics[i];
 	}
@@ -666,6 +788,7 @@ function end() {
 		document.body.style.overflowY = "hidden";
 		window.scrollTo(0, 0);
 		song = null;
+		aDuration = 0;
 	}
 }
 

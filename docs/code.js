@@ -438,6 +438,76 @@ const songs = [
 		"streamCount": 1862609578,
 		"hasPlayed": false,
 		"year": 2017
+	}, {
+		"artist": "Coldplay",
+		"song": "Paradise",
+		"lyrics": ["", "When she was just a girl she expected the world, But it flew away from her reach, And the...", "...set to rise, This could be para-para-paradise, Para-para-paradise, This could be para-para-paradise, (Oh oh oh oh oh, oh oh oh)"],
+		"streamCount": 805197711,
+		"hasPlayed": false,
+		"year": 2011
+	}, {
+		"artist": "Kanye West",
+		"song": "Stronger",
+		"lyrics": ["(Work it harder, make it better), (Do it faster, makes us stronger), I need you right now, (More than ever)", "I ask, 'cause I'm not sure, Do anybody make real shit anymore? Bow in the presence of greatness, 'Cause right now thou hast forsaken us, You should be honored by my lateness", "(harder, better, faster, stronger), N-n-now that that don't kill me (oh, oh), Can only make me stronger (oh), I need you to hurry up now (oh), 'Cause I can't wait much longer (oh), I know I got to be right now (oh), 'Cause I can't get much wronger (oh)"],
+		"streamCount": 1031311399,
+		"hasPlayed": false,
+		"year": 2007
+	}, {
+		"artist": "TheFatRat (ft. Laura Brehm)",
+		"song": "Monody",
+		"lyrics": ["I still hear you in the breeze, See your shadows in the trees", "", "...never change"],
+		"streamCount": 95156559,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "TheFatRat (ft. Laura Brehm)",
+		"song": "We'll Meet Again",
+		"lyrics": ["Never thought I'd do this on my own (on my own), But now, I wield the sword you left behind", "The oak tree where I met you, And the writing on the statue, I still remember every word you said, I'm not a soldier but I'm fighting", "I won't give up 'cause there will be a day, We'll meet again, We'll meet again"],
+		"streamCount": 21022117,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "TheFatRat (Dota 2)",
+		"song": "Origin",
+		"lyrics": ["", "", ""],
+		"streamCount": 6468356,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Vangelis",
+		"song": "Conquest of Paradise",
+		"lyrics": ["", "", "In noreni per ipe, In noreni cora, Tira mine per ito, Ne domina"],
+		"streamCount": 59801354,
+		"hasPlayed": false,
+		"year": 1992
+	}, {
+		"artist": "JAY-Z (ft. Kanye West)",
+		"song": "Ni--as In Paris",
+		"lyrics": ["Excuse my French, but I'm in France, ahah, I'm just sayin', Prince William's ain't do it right...", "Ball so hard, motherfuckers wanna fine me", "...like me? Can you please remind me? (Ball so hard) this shit crazy, Y'all don't know that don't shit faze me, The Nets could go 0 for 82, And I look at you like this shit gravy, (Ball so hard) this shit weird, We ain't even 'posed to be here, but since we here, It's only right that we'd be fair, Psycho"],
+		"streamCount": 920071796,
+		"hasPlayed": false,
+		"year": 2011
+	}, {
+		"artist": "League of Legends (ft. Becky G, Keke Palmer, SOYEON...)",
+		"song": "GIANTS (True Damage)",
+		"lyrics": ["(Yeah) Movin' too fast, have 'em movin' in slow-mo, I'm a God, better ask if you don't know, Homie, better put your pride aside", "Ay, no one can stop us, they'll try, but they won't, Ay, nada nos puede parar, oh, no", "We're wide awake now, our eyes are wide open, We're runnin' this world, we're keepin' it turnin', We're livin' like giants, yeah, giants, We're bigger than giants, we're giants, You thought that we were weak, but we comin' right back (right back), This time, you're gonna see how we..."],
+		"streamCount": 113073437,
+		"hasPlayed": false,
+		"year": 2019
+	}, {
+		"artist": "Linkin Park",
+		"song": "Numb",
+		"lyrics": ["", "walking in your shoes, (Caught in the undertow, just caught in the undertow), Every step that I take is another mistake to you", "I've become so numb, I can't feel you there, Become so tired, So much more aware, I'm becoming this, All I want to do, Is be more like me, And be less like..."],
+		"streamCount": 1072048833,
+		"hasPlayed": false,
+		"year": 2003
+	}, {
+		"artist": "Linkin Park",
+		"song": "In the End",
+		"lyrics": ["", "", ""],
+		"streamCount": 1289977026,
+		"hasPlayed": false,
+		"year": 2000
 	}
 	// , {
 	// 	"artist": "",
@@ -619,6 +689,7 @@ function newSong() {
 		artistWFeat(songArtist);
 		songTitle.innerHTML = song.song;
 		song.hasPlayed = true;
+		lyricsBox.innerHTML = "Lyrics";
 
 		allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
 		easyLeft.innerHTML = songs.filter(song => song.streamCount > 800000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 800000000).length;
@@ -726,7 +797,6 @@ function showMusicPlayer(mode) {
 		start.onclick = newSong;
 		start.classList.add("bg-rose-600");
 		start.classList.remove("bg-rose-600/70");
-		lyricsBox.innerHTML = "Lyrics";
 		canvas.style.display = "none";
 		if (mobile.matches) {
 			arrow1Flex.style.display = "none";
@@ -785,6 +855,7 @@ function end() {
 		endCoverImg.src = "cover images/" + song.artist + ';' + song.song + ".webp";
 		endYear.innerHTML = song.year;
 		endStreams.innerHTML = abr(song.streamCount, 2);
+		lyricsBox.innerHTML = "Lyrics";
 		document.body.style.overflowY = "hidden";
 		window.scrollTo(0, 0);
 		song = null;

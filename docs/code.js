@@ -692,10 +692,10 @@ function newSong() {
 		lyricsBox.innerHTML = "Lyrics";
 
 		allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-		easyLeft.innerHTML = songs.filter(song => song.streamCount > 800000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 800000000).length;
-		hardLeft.innerHTML = songs.filter(song => song.streamCount <= 800000000 && song.streamCount >= 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 800000000 && song.streamCount >= 25000000).length;
-		extremeLeft.innerHTML = songs.filter(song => song.streamCount < 25000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 25000000).length;
-
+		easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
+		hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
+		extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
+		
 		var randomPokemon = null;
 		randomPokemon = rPokemon((poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 18).replace('-', ''), poke1.src.lastIndexOf("-1.webp")));
 
@@ -831,7 +831,7 @@ function showMusicPlayer(mode) {
 			poke3.classList.remove("ml-52");
 			poke3.classList.add("right-0");
 		}
-	}, (aDuration + 1.5) * 1000);
+	}, (aDuration + 2) * 1000);
 }
 
 function end() {

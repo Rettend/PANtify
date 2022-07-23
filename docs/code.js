@@ -737,8 +737,8 @@ function playSong(duration) {
 		}
 
 		x.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
-		x.play();
 		audioCtx.resume();
+		x.play();
 	}
 }
 

@@ -875,8 +875,8 @@ function alertShow(text) {
 }
 
 
-const audioCtx = new AudioContext();
-const analyser = audioCtx.createAnalyser();
+var audioCtx = new AudioContext();
+var analyser = audioCtx.createAnalyser();
 source = audioCtx.createMediaElementSource(x);
 source.connect(analyser);
 analyser.connect(audioCtx.destination);

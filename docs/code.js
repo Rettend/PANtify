@@ -536,6 +536,20 @@ const songs = [
 		"streamCount": 714932647,
 		"hasPlayed": false,
 		"year": 2010
+	}, {
+		"artist": "The Script",
+		"song": "Hall of Fame",
+		"lyrics": ["Yeah, you can be the greatest, you can be the best", "You can throw your hands up, You can beat the clock (yeah), You can move a mountain, You can break rocks, You can be a master, Don't wait for luck, Dedicate yourself and you gon' find yourself...", "Standing in the hall of fame (yeah), And the world's gonna know your name (yeah), 'Cause you burn with the brightest flame (yeah)"],
+		"streamCount": 1001251800,
+		"hasPlayed": false,
+		"year": 2012
+	}, {
+		"artist": "Billie Eilish",
+		"song": "bad guy",
+		"lyrics": ["Don't say thank you or please, I do what I want when...", "So you're a tough guy, Like it really rough guy, Just can't get enough guy, Chest always so puffed guy, I'm that bad type, Make your mama sad type", "Duh, I'm only good at being bad, bad"],
+		"streamCount": 2088893524,
+		"hasPlayed": false,
+		"year": 2019
 	}
 	// , {
 	// 	"artist": "",

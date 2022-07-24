@@ -14,7 +14,7 @@ const songs = [
 	}, {
 		"artist": "Avicii",
 		"song": "The nights",
-		"lyrics": ["Once upon a younger year, When all our shadows disappeared, The animals...", "One day, my father, he told me \"Son, don't let it slip away \", When I was just a kid, I heard him say, \"When you get older your wild heart will...\"", "\"Live a life you will remember\", My father told me when I was just a child, \"These are the nights that never die\", My father told me"],
+		"lyrics": ["Once upon a younger year, When all our shadows disappeared, The animals...", "One day, my father, he told me Son, don't let it slip away, When I was just a kid, I heard him say, When you get older your wild heart will...", "Live a life you will remember, My father told me when I was just a child, These are the nights that never die, My father told me"],
 		"streamCount": 1116498715,
 		"hasPlayed": false,
 		"year": 2014
@@ -133,7 +133,7 @@ const songs = [
 	}, {
 		"artist": "David Bowie",
 		"song": "Starman",
-		"lyrics": ["", "Didn't know what time it was, The lights were low, oh, oh", "There's a Starman waiting in the sky, He'd like to come and meet us, But he thinks he'd blow our minds, There's a Starman waiting in the sky"],
+		"lyrics": ["", "Didn't know what time it was, The lights were low, oh, oh, I leaned back on my radio, oh, oh", "There's a Starman waiting in the sky, He'd like to come and meet us, But he thinks he'd blow our minds, There's a Starman waiting in the sky"],
 		"streamCount": 298368113,
 		"hasPlayed": false,
 		"year": 1972
@@ -155,7 +155,7 @@ const songs = [
 		"artist": "Electric Light Orchestra (ELO)",
 		"song": "Mr. Blue Sky",
 		"lyrics": ["Hey you with the pretty face, Welcome to the human race", "Mr. Blue Sky please tell us why, You had to hide away for so long (so long), Where did we go wrong?", "Look around see what you do, Everybody smiles at you, Mr. Blue Sky, Blue Sky Blue Sky"],
-		"streamCount": 694570384,
+		"streamCount": 696691083,
 		"hasPlayed": false,
 		"year": 1977
 	}, {
@@ -369,8 +369,8 @@ const songs = [
 		"hasPlayed": false,
 		"year": 2017
 	}, {
-		"artist": "Way down We Go",
-		"song": "KALEO",
+		"artist": "KALEO",
+		"song": "Way down We Go",
 		"lyrics": ["Oh baby, yeah", "And way down we go go go go go, Way down we go go...", "Cause they will run you down, down 'til the dark, Yes and they will run you down, down 'til you fall, And they will run you down, down 'til you go"],
 		"streamCount": 628196255,
 		"hasPlayed": false,
@@ -504,10 +504,38 @@ const songs = [
 	}, {
 		"artist": "Linkin Park",
 		"song": "In the End",
-		"lyrics": ["", "", ""],
+		"lyrics": ["It starts with one, One thing I don't know why, It doesn't even matter how hard you try", "Things aren't the way they were before, You wouldn't even recognize me anymore, Not that you knew me back then, But it all comes back to me in the end", "I tried so hard and got so far, But in the end it doesn't even matter, I had to fall to lose it all, But in the end..."],
 		"streamCount": 1289977026,
 		"hasPlayed": false,
 		"year": 2000
+	}, {
+		"artist": "Fall Out Boy",
+		"song": "Centuries",
+		"lyrics": ["Du du du du-du du du, Du du du du du-du du du", "(Hey yeah, oh hey, hey yeah), Remember me for centuries", "Some legends are told, Some turn to dust or to gold, But you will remember me, Remember me for centuries, And just one mistake, Is all it will take"],
+		"streamCount": 878980255,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Fall Out Boy",
+		"song": "Immortals",
+		"lyrics": ["Oh, I try to picture me without you, but I can't", "'Cause we could be immortals, immortals, Just not for long, for long, And live with me forever now...", "Immor—immortals, Immor—immortals, Immor—immortals, immortals"],
+		"streamCount": 342432089,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Arctic Monkeys",
+		"song": "Do I Wanna Know",
+		"lyrics": ["", "(Do I wanna know?), If this feelin' flows both ways? (Sad to see you go), Was sorta hopin' that you'd stay", "Crawlin' back to you, Ever thought of callin' when you've had a few? 'Cause I always do, Maybe I'm too busy being yours to..."],
+		"streamCount": 1377807287,
+		"hasPlayed": false,
+		"year": 2013
+	}, {
+		"artist": "Kanye West",
+		"song": "POWER",
+		"lyrics": ["", "I'm living in that 21st century, Doing something mean to it, Do it better than anybody you ever seen do it, Screams from the haters, got a nice ring to it", "I guess every superhero need his theme music, No one man should have all that power, The clock's ticking, I just count the hours, Stop tripping, I'm tripping off the power, (21st-century schizoid man)"],
+		"streamCount": 714932647,
+		"hasPlayed": false,
+		"year": 2010
 	}
 	// , {
 	// 	"artist": "",
@@ -695,7 +723,7 @@ function newSong() {
 		easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
 		hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
 		extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
-		
+
 		var randomPokemon = null;
 		randomPokemon = rPokemon((poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 18).replace('-', ''), poke1.src.lastIndexOf("-1.webp")));
 

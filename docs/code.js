@@ -550,6 +550,41 @@ const songs = [
 		"streamCount": 2088893524,
 		"hasPlayed": false,
 		"year": 2019
+	}, {
+		"artist": "Olivia Rodrigo",
+		"song": "good 4 you",
+		"lyrics": ["Maybe I'm too emotional, Your apathy is like a wound in salt", "Well, good for you, you look happy and healthy, Not me, if you ever cared to ask, Good for you, you're doing great out there without me, baby, God, I wish that I could do that", "I've lost my mind, I've spent the night crying on the floor of my bathroom, But you're so unaffected, I really don't get it, But I guess good for you"],
+		"streamCount": 1537758884,
+		"hasPlayed": false,
+		"year": 2021
+	}, {
+		"artist": "YOASOBI",
+		"song": "Racing Into The Night",
+		"lyrics": ["Hi ga shizumi dashita sora to kimi no sugata, Fensu-goshi ni kasanatte ita", "Itsu datte chikkutakku to, Naru sekai de nando datte sa, Fureru kokoronai kotoba urusai, Koe ni namida ga kobore-sōde mo, Arikitarina yorokobi kitto", "Sawagashī hibi ni waraenai kimi ni, Omoitsuku kagiri mabushii asu wo, Akenai yoru ni ochite yuku mae ni, Boku no te o tsukan de hora, Wasurete shimaitakute"],
+		"streamCount": 350357007,
+		"hasPlayed": false,
+		"year": 2019
+	}, {
+		"artist": "TOTO",
+		"song": "Africa",
+		"lyrics": ["", "It's gonna take a lot to drag me away from you, There's nothing that a hundred men or more could ever do", "I bless the rains down in Africa, Gonna take some time to do the things we never had (ooh, ooh)"],
+		"streamCount": 1237541056,
+		"hasPlayed": false,
+		"year": 1982
+	}, {
+		"artist": "Team America",
+		"song": "America F--K Yeah",
+		"lyrics": ["Rock 'n' roll (fuck yeah), The Internet (fuck yeah), Slavery (fuck yeah), Fuck yeah", "America, America, fuck yeah, Comin' again to save the motherfuckin' day, yeah, America, fuck yeah,", "Freedom is the only way, yeah, Terrorists, your game is through, 'Cause now you have to answer to, America, fuck yeah, So lick my butt and suck on my balls, America, fuck yeah"],
+		"streamCount": 2813618,
+		"hasPlayed": false,
+		"year": 2004
+	}, {
+		"artist": "Selena Gomez (ft. Marshmello)",
+		"song": "Wolves",
+		"lyrics": ["To get to you, to get to you, to get to you", "I've looked for love in every stranger, Took too much to ease the anger, All for you, yeah, all for you, I've been running through the jungle, I've been crying with...", "I've been running through the jungle, I've been running with the wolves, To get to you, to get to you, I've been down the darkest alleys, Saw the dark side of the moon, To get to you, to get to you"],
+		"streamCount": 1120022881,
+		"hasPlayed": false,
+		"year": 2017
 	}
 	// , {
 	// 	"artist": "",
@@ -692,14 +727,14 @@ slider.noUiSlider.on('update', function (values, handle) {
 	sliderValueL = values[1];
 
 	// calculate a multiplier value which is larger the closer the slider is to the right
-	var multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 15; // right slider multiplier
-	var multiplier2 = Math.abs(1 - sliderValueL / 5000000000) * 4; // left slider multiplier
+	var multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 200; // right slider multiplier
+	var multiplier2 = Math.abs(1 - sliderValueL / 5000000000) * 10; // left slider multiplier
 
 	// average of the two multipliers
 	var multiplier = multiplier1 + multiplier2 / 2;
 
 	// normalize the multiplier value to the range 1-5
-	var normalizedMultiplier = Math.abs((multiplier - 1) / 6);
+	var normalizedMultiplier = Math.abs((multiplier - 150) / 5);
 
 	difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
 

@@ -142,20 +142,46 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/12 hidden md:block order-2"></div>
+                <button onclick="resetSongs()" class="m-0 md:m-4 md:mt-8 p-2 text-3xl w-full md:w-1/12 flex justify-center bg-indigo-700 hover:bg-indigo-600 text-white font-bold transition-all rounded-none md:rounded-2xl h-fit order-4 md:order-2">
+                    RESET
+                </button>
                 <div class="w-full md:w-1/3 order-1 md:order-3">
                     <div class="flex justify-center flex-col md:flex-row bg-indigo-900/50 m-0 md:mt-6 w-full h-36 mx-auto rounded-none md:rounded-b-3xl">
                         <button onclick="end()" class="bg-green-600 hover:bg-green-500 m-2 md:mt-6 text-white font-bold transition-all h-fit text-4xl py-2 px-6 md:p-4 rounded-3xl mx-auto whitespace-nowrap">
-                            <i class="fa-solid fa-circle-check mr-4"></i>MUTASD MEG
+                            <i class="fa-solid fa-circle-check mr-4"></i>TALÁLT!
+                        </button>
+                        <button onclick="end()" class="bg-red-600 hover:bg-red-500 m-2 md:mt-6 text-white font-bold transition-all h-fit text-4xl py-2 px-6 md:p-4 rounded-3xl mx-auto whitespace-nowrap">
+                            <i class="fa-solid fa-circle-xmark mr-4"></i>NEM AZ
                         </button>
                     </div>
                 </div>
-                <div class="w-full md:w-1/3 hidden md:block order-4"></div>
+                <div class="m-0 md:m-8 w-full md:w-1/3 flex justify-center bg-purple-900/50 text-white text-3xl md:text-4xl font-bold rounded-none md:rounded-2xl h-fit order-2 md:order-4">
+                    <div class="flex w-full p-4 justify-between gap-3">
+                        <div id="playerA" onclick="switchPlayer(0)" class="flex flex-col gap-3 w-full p-4 rounded-2xl bg-purple-800/50 hover:bg-purple-700/60 cursor-pointer transition-all">
+                            <span class="flex justify-center"><i class="fa-solid fa-heart text-rose-600 mr-1 mt-1"></i>x<span id="LivesA">3</span></span>
+                            <span class="flex justify-center" id="ScoreA">
+                                <p class="my-1 md:my-2 mx-1">0</p><i class="fa-solid fa-star-half-stroke mt-2 md:mt-3"></i>
+                            </span>
+                            <span class="flex justify-center">
+                                <p class="bg-white text-purple-700 w-fit rounded-full px-4 pb-4 text-8xl">A</p>
+                            </span>
+                        </div>
+                        <div id="playerB" onclick="switchPlayer(1)" class="flex flex-col gap-3 w-full p-4 rounded-2xl bg-purple-800/50 hover:bg-purple-700/60 cursor-pointer transition-all">
+                            <span class="flex justify-center"><i class="fa-solid fa-heart text-rose-600 mr-1 mt-1"></i>x<span id="LivesB">3</span></span>
+                            <span class="flex justify-center" id="ScoreB">
+                                <p class="my-1 md:my-2 mx-1">0</p><i class="fa-solid fa-star-half-stroke mt-2 md:mt-3"></i>
+                            </span>
+                            <span class="flex justify-center">
+                                <p class="bg-white text-purple-700 w-fit rounded-full px-4 pb-4 text-8xl">B</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="bg-indigo-900/50 md:block hidden mx-auto absolute left-0 right-0 top-0 w-80 my-5 h-56 rounded-t-3xl -z-50"></div>
         </div>
     </div>
-    
+
     <div class="bg-gradient-to-r from-blue-800/70 via-indigo-800/70 to-purple-800/70 pb-64 pt-10">
         <h1 class="text-white text-5xl font-bold text-center underline uppercase">
             A játék menete

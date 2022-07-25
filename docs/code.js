@@ -761,7 +761,7 @@ function newSong() {
 	var random = Math.floor(Math.random() * aSongs.length);
 	song = aSongs[random];
 	if (aSongs.length == 0) {
-		alertShow("Nincs több zene! Válassz más nehézséget vagy töltsd újra az oldalt!");
+		alertShow("Nincs több zene! Válassz más nehézséget vagy kattints a RESET gombra!");
 	} else {
 		artistWFeat(songArtist);
 		songTitle.innerHTML = song.song;
@@ -939,6 +939,16 @@ function end() {
 		song = null;
 		aDuration = 0;
 	}
+}
+
+function resetSongs() {
+	songs.forEach(function (song) {
+		song.hasPlayed = false;
+	});
+	allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+	easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
+	hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
+	extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
 }
 
 function closeModal() {

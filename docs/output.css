@@ -1063,6 +1063,14 @@ video {
   background-color: rgb(107 33 168 / var(--tw-bg-opacity));
 }
 
+.bg-red-600\/70 {
+  background-color: rgb(220 38 38 / 0.7);
+}
+
+.bg-red-600\/60 {
+  background-color: rgb(220 38 38 / 0.6);
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1310,6 +1318,14 @@ video {
 .decoration-purple-600 {
   -webkit-text-decoration-color: #9333ea;
           text-decoration-color: #9333ea;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
 }
 
 .mix-blend-color-dodge {

@@ -648,6 +648,7 @@ const PlayerA = document.getElementById("PlayerA");
 const PlayerB = document.getElementById("PlayerB");
 const endButton = document.getElementById("endButton");
 const endButtonMobile = document.getElementById("endButtonMobile");
+const wrongButton = document.getElementById("wrongButton");
 
 const allLeft = document.getElementById("allLeft");
 const easyLeft = document.getElementById("easyLeft");
@@ -813,12 +814,21 @@ function playSong(duration) {
 		aDuration = duration;
 		if (duration == 5) {
 			showMusicPlayer("easy");
+			wrongButton.onclick = "";
+			wrongButton.classList.remove("hover:bg-red-500");
+			wrongButton.classList.add("opacity-60");
 		}
 		else if (duration == 10) {
 			showMusicPlayer("hard");
+			wrongButton.onclick = "";
+			wrongButton.classList.remove("hover:bg-red-500");
+			wrongButton.classList.add("opacity-60");
 		}
 		else if (duration == 15) {
 			showMusicPlayer("extreme");
+			wrongButton.setAttribute("onclick", "end(0);");
+			wrongButton.classList.add("hover:bg-red-500");
+			wrongButton.classList.remove("opacity-60");
 		}
 
 		x.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
@@ -845,8 +855,7 @@ function showMusicPlayer(mode) {
 	window[modes[0] + "ScoreFlex"].style.display = "none";
 	window[modes[1] + "ScoreFlex"].style.display = "none";
 	start.onclick = "";
-	start.classList.add("bg-rose-600/70");
-	start.classList.remove("bg-rose-600");
+	start.classList.add("opacity-70");
 	arrow1Flex.style.display = "none";
 	arrow2Flex.style.display = "none";
 	window[mode + "ScoreFlex"].classList.add("w-full");
@@ -880,9 +889,6 @@ function showMusicPlayer(mode) {
 	setTimeout(function () {
 		window[modes[0] + "ScoreFlex"].style.display = "block";
 		window[modes[1] + "ScoreFlex"].style.display = "block";
-		start.onclick = newSong;
-		start.classList.add("bg-rose-600");
-		start.classList.remove("bg-rose-600/70");
 		canvas.style.display = "none";
 		if (mobile.matches) {
 			arrow1Flex.style.display = "none";
@@ -948,25 +954,23 @@ function end(state) {
 	if (aDuration == 0 || song == null) {
 		alertShow("Nem volt lejátszva zene!");
 	} else {
-		if (aDuration == 5) {
-			if (state != 0) {
+		if (state != 0) {
+			if (aDuration == 5) {
 				endScore.innerHTML = easyS;
 				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + easyS;
-			}
-			x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
-			x.play();
-		} else if (aDuration == 10) {
-			if (state != 0) {
+				x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+				x.play();
+			} else if (aDuration == 10) {
 				endScore.innerHTML = hardS;
 				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + hardS;
-			}
-			x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
-			x.play();
-		} else if (aDuration == 15) {
-			if (state != 0) {
+				x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+				x.play();
+			} else if (aDuration == 15) {
 				endScore.innerHTML = extremeS;
 				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + extremeS;
 			}
+		} else {
+			endScore.innerHTML = 0;
 		}
 
 		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) - 1;
@@ -989,6 +993,8 @@ function end(state) {
 		lyricsBox.innerHTML = "Lyrics";
 		document.body.style.overflowY = "hidden";
 		window.scrollTo(0, 0);
+		start.onclick = newSong;
+		start.classList.remove("opacity-70");
 		song = null;
 		aDuration = 0;
 	}

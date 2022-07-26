@@ -640,15 +640,20 @@ const extremeText = document.getElementById("extremeText");
 const easyIcon = document.getElementById("easyIcon");
 const hardIcon = document.getElementById("hardIcon");
 const extremeIcon = document.getElementById("extremeIcon");
+const LivesA = document.getElementById("LivesA");
+const LivesB = document.getElementById("LivesB");
+const ScoreA = document.getElementById("ScoreA");
+const ScoreB = document.getElementById("ScoreB");
+const PlayerA = document.getElementById("PlayerA");
+const PlayerB = document.getElementById("PlayerB");
+const endButton = document.getElementById("endButton");
+const endButtonMobile = document.getElementById("endButtonMobile");
 
 const allLeft = document.getElementById("allLeft");
 const easyLeft = document.getElementById("easyLeft");
 const hardLeft = document.getElementById("hardLeft");
 const extremeLeft = document.getElementById("extremeLeft");
-allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
-hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
-extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
+setSongsLeft();
 
 const mobile = window.matchMedia("(max-width: 768px)");
 mobile.addEventListener("change", musicVisualizer);
@@ -747,6 +752,12 @@ slider.noUiSlider.on('update', function (values, handle) {
 	extremeScore.innerHTML = extremeS;
 });
 
+function setSongsLeft() {
+	allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
+	easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
+	hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
+	extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
+}
 
 function rPokemon(lastrandom) { // not working who cares sorry
 	let random = Math.floor(Math.random() * pokemonCount);
@@ -767,11 +778,7 @@ function newSong() {
 		songTitle.innerHTML = song.song;
 		song.hasPlayed = true;
 		lyricsBox.innerHTML = "Lyrics";
-
-		allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-		easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
-		hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
-		extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
+		setSongsLeft();
 
 		var randomPokemon = null;
 		randomPokemon = rPokemon((poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 18).replace('-', ''), poke1.src.lastIndexOf("-1.webp")));
@@ -911,22 +918,58 @@ function showMusicPlayer(mode) {
 	}, (aDuration + 2) * 1000);
 }
 
-function end() {
+let aPlayer = "A";
+
+function setPlayer() {
+	window["Player" + aPlayer].classList.add("bg-white");
+	window["Player" + aPlayer].classList.add("text-purple-700");
+	window["Player" + aPlayer].classList.remove("text-white");
+	window["Lives" + aPlayer].parentElement.parentElement.classList.add("bg-purple-700/60");
+	window["Lives" + aPlayer].parentElement.parentElement.classList.remove("bg-purple-800/50");
+	let players = ["A", "B"];
+	players.splice(players.indexOf(aPlayer), 1);
+	window["Player" + players[0]].classList.remove("bg-white");
+	window["Player" + players[0]].classList.remove("text-purple-700");
+	window["Player" + players[0]].classList.add("text-white");
+	window["Lives" + players[0]].parentElement.parentElement.classList.add("bg-purple-800/50");
+	window["Lives" + players[0]].parentElement.parentElement.classList.remove("bg-purple-700/60");
+}
+
+function changePlayer() {
+	let players = ["A", "B"];
+	players.splice(players.indexOf(aPlayer), 1);
+	aPlayer = players[0];
+}
+
+setPlayer();
+
+function end(state) {
 	if (aDuration == 0 || song == null) {
 		alertShow("Nem volt lejátszva zene!");
 	} else {
 		if (aDuration == 5) {
-			endScore.innerHTML = easyS;
+			if (state != 0) {
+				endScore.innerHTML = easyS;
+				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + easyS;
+			}
 			x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
 			x.play();
 		} else if (aDuration == 10) {
-			endScore.innerHTML = hardS;
+			if (state != 0) {
+				endScore.innerHTML = hardS;
+				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + hardS;
+			}
 			x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
 			x.play();
 		} else if (aDuration == 15) {
-			endScore.innerHTML = extremeS;
+			if (state != 0) {
+				endScore.innerHTML = extremeS;
+				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + extremeS;
+			}
 		}
 
+		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) - 1;
+		guessedArtistPressed = false;
 		endModal.style.display = "block";
 		artistWFeat(endArtist);
 		endTitle.innerHTML = song.song;
@@ -941,19 +984,56 @@ function end() {
 	}
 }
 
+let guessedArtistPressed = false;
+
+function guessedArtist() {
+	if (guessedArtistPressed == false) {
+		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) + 1;
+		guessedArtistPressed = true;
+	} else {
+		alertShow("Már kapott életet!");
+	}
+}
+
+function resetPlayers() {
+	aPlayer = "A";
+	setPlayer();
+	ScoreA.innerHTML = 0;
+	ScoreB.innerHTML = 0;
+	LivesA.innerHTML = 3;
+	LivesB.innerHTML = 3;
+}
+
 function resetSongs() {
 	songs.forEach(function (song) {
 		song.hasPlayed = false;
 	});
-	allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-	easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
-	hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
-	extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
+	setSongsLeft();
 }
 
 function closeModal() {
-	endModal.style.display = "none";
-	document.body.style.overflowY = "scroll";
+	if (parseInt(LivesA.textContent) <= 0 && parseInt(LivesB.textContent) <= 0) {
+		endButton.style.display = "none";
+		endButtonMobile.style.display = "none";
+		endCoverImg.style.display = "none";
+		endScore.parentElement.style.display = "none";
+		endYear.style.display = "none";
+		endStreams.style.display = "none";
+		
+		let players = ["A", "B"];
+		players.splice(players.indexOf(aPlayer), 1);
+		endArtist.innerHTML = "Vesztes: " + players[0] + ", " + window["Score" + players[0]].textContent + " pont";
+		endTitle.innerHTML = "Győztes: " + aPlayer + ", " + window["Score" + aPlayer].textContent + " pont";
+
+		resetPlayers();
+	} else {
+		if (parseInt(window["Lives" + aPlayer].textContent) > 0) {
+			changePlayer();
+			setPlayer();
+		}
+		endModal.style.display = "none";
+		document.body.style.overflowY = "auto";
+	}
 }
 
 function alertShow(text) {

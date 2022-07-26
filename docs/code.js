@@ -657,6 +657,7 @@ setSongsLeft();
 
 const mobile = window.matchMedia("(max-width: 768px)");
 mobile.addEventListener("change", musicVisualizer);
+mobile.addEventListener("change", end);
 
 
 var abrSymbols = ["", "k", "M", "B", "T"];
@@ -732,14 +733,14 @@ slider.noUiSlider.on('update', function (values, handle) {
 	sliderValueL = values[1];
 
 	// calculate a multiplier value which is larger the closer the slider is to the right
-	var multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 200; // right slider multiplier
+	var multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 150; // right slider multiplier
 	var multiplier2 = Math.abs(1 - sliderValueL / 5000000000) * 10; // left slider multiplier
 
 	// average of the two multipliers
 	var multiplier = multiplier1 + multiplier2 / 2;
 
 	// normalize the multiplier value to the range 1-5
-	var normalizedMultiplier = Math.abs((multiplier - 150) / 5);
+	var normalizedMultiplier = Math.abs((multiplier - 100) / 5);
 
 	difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
 
@@ -971,6 +972,15 @@ function end(state) {
 		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) - 1;
 		guessedArtistPressed = false;
 		endModal.style.display = "block";
+		if (mobile.matches) {
+			endButtonMobile.style.display = "block";
+		} else {
+			endButton.style.display = "block";
+		}
+		endCoverImg.style.display = "block";
+		endScore.parentElement.style.display = "block";
+		endYear.style.display = "block";
+		endStreams.style.display = "block";
 		artistWFeat(endArtist);
 		endTitle.innerHTML = song.song;
 		endCoverImg.src = "cover images/" + song.artist + ';' + song.song + ".webp";
@@ -996,12 +1006,12 @@ function guessedArtist() {
 }
 
 function resetPlayers() {
-	aPlayer = "A";
-	setPlayer();
 	ScoreA.innerHTML = 0;
 	ScoreB.innerHTML = 0;
 	LivesA.innerHTML = 3;
 	LivesB.innerHTML = 3;
+	aPlayer = "A";
+	setPlayer();
 }
 
 function resetSongs() {
@@ -1013,21 +1023,33 @@ function resetSongs() {
 
 function closeModal() {
 	if (parseInt(LivesA.textContent) <= 0 && parseInt(LivesB.textContent) <= 0) {
-		endButton.style.display = "none";
-		endButtonMobile.style.display = "none";
-		endCoverImg.style.display = "none";
-		endScore.parentElement.style.display = "none";
-		endYear.style.display = "none";
-		endStreams.style.display = "none";
-		
+		if (parseInt(ScoreA.textContent) == parseInt(ScoreB.textContent)) {
+			LivesA.innerHTML = parseInt(LivesA.textContent) + 1;
+			LivesB.innerHTML = parseInt(LivesB.textContent) + 1;
+			changePlayer();
+			setPlayer();
+			endModal.style.display = "none";
+			document.body.style.overflowY = "auto";
+		} else {
+
+			endButton.style.display = "none";
+			endButtonMobile.style.display = "none";
+			endCoverImg.style.display = "none";
+			endScore.parentElement.style.display = "none";
+			endYear.style.display = "none";
+			endStreams.style.display = "none";
+
+			let players = ["A", "B"];
+			players.splice(players.indexOf(aPlayer), 1);
+			endArtist.innerHTML = "Vesztes: " + players[0] + ", " + window["Score" + players[0]].textContent + " <i class='fa-solid fa-star-half-stroke mt-2 md:mt-3'></i>";
+			endTitle.innerHTML = "Győztes: " + aPlayer + ", " + window["Score" + aPlayer].textContent + " <i class='fa-solid fa-star-half-stroke mt-2 md:mt-3'></i>";
+			resetPlayers();
+			aPlayer = "B";
+		}
+	} else {
 		let players = ["A", "B"];
 		players.splice(players.indexOf(aPlayer), 1);
-		endArtist.innerHTML = "Vesztes: " + players[0] + ", " + window["Score" + players[0]].textContent + " pont";
-		endTitle.innerHTML = "Győztes: " + aPlayer + ", " + window["Score" + aPlayer].textContent + " pont";
-
-		resetPlayers();
-	} else {
-		if (parseInt(window["Lives" + aPlayer].textContent) > 0) {
+		if (parseInt(window["Lives" + players[0]].textContent) > 0) {
 			changePlayer();
 			setPlayer();
 		}

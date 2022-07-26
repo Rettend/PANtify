@@ -600,16 +600,16 @@ video {
   bottom: 0.25rem;
 }
 
+.right-5 {
+  right: 1.25rem;
+}
+
 .right-1 {
   right: 0.25rem;
 }
 
 .top-52 {
   top: 13rem;
-}
-
-.right-5 {
-  right: 1.25rem;
 }
 
 .z-50 {
@@ -977,16 +977,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-purple-500\/60 {
-  background-color: rgb(168 85 247 / 0.6);
+.bg-purple-700\/60 {
+  background-color: rgb(126 34 206 / 0.6);
 }
 
 .bg-purple-800\/50 {
   background-color: rgb(107 33 168 / 0.5);
-}
-
-.bg-purple-700\/60 {
-  background-color: rgb(126 34 206 / 0.6);
 }
 
 .bg-neutral-800 {

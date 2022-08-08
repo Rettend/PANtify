@@ -1044,7 +1044,11 @@ function closeModal() {
 			endScore.parentElement.style.display = "none";
 			endYear.style.display = "none";
 			endStreams.style.display = "none";
-
+			if (parseInt(ScoreA.textContent) > parseInt(ScoreB.textContent)) {
+				aPlayer = "A";
+			} else {
+				aPlayer = "B";
+			}
 			let players = ["A", "B"];
 			players.splice(players.indexOf(aPlayer), 1);
 			endArtist.innerHTML = "Vesztes: " + players[0] + ", " + window["Score" + players[0]].textContent + " <i class='fa-solid fa-star-half-stroke mt-2 md:mt-3'></i>";

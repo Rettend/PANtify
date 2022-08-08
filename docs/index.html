@@ -10,7 +10,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="logo.png" />
+  <link rel="icon" href="guess the song logo.png" />
   <title>Zenefelismerés</title>
   <link href="output.css" rel="stylesheet" />
   <link href="nouislider.css" rel="stylesheet" />
@@ -194,12 +194,12 @@
     </div>
   </div>
 
-  <div class="bg-gradient-to-r from-blue-800/70 via-indigo-800/70 to-purple-800/70 pb-64 pt-10">
+  <div class="bg-gradient-to-r from-blue-800/70 via-indigo-800/70 to-purple-800/70 pt-10">
     <h1 class="text-white text-5xl font-bold text-center underline uppercase">
       A játék menete
     </h1>
     <div class="flex flex-col md:flex-row justify-center mt-8">
-      <div class="mx-auto w-full md:w-1/4 flex flex-col">
+      <div class="mx-auto w-full md:w-1/5 flex flex-col">
         <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
           <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full">
             1
@@ -213,30 +213,36 @@
             A jobb felső sarokban a csúszkát használva válaszd ki azt az
             intervallumot, amin belül sorsoljon zenéket. A számok a Spotify
             streamek számát jelentik. <br /><span class="font-bold">Minél közelebb van a két vége a jobb oldalhoz, annál nagyobb
-              szorzót ad.</span>
+              szorzót ad.</span><br />
+            Ötlet a kezeléshez szóban: 2 csúszka (bal és jobb), 2 irányba
+            mozog (fel és le)<br />Pl.: "Bal lejjebb 2-vel" <br /><br />
+            2 játékos játszik egymás ellen felváltva (A és B játékos),
+            kezdetben 3 életük van és egy zene sorsolása egy életbe kerül. Az
+            aktuális játékos a jobb oldalon lentebb van kiemelve, és itt
+            látható a pontszámuk és a hátralévő életek száma is.
           </p>
         </div>
       </div>
-      <div class="mx-auto w-full md:w-1/4 flex flex-col">
+      <div class="mx-auto w-full md:w-1/5 flex flex-col">
         <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
           <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full">
             2
           </div>
           <h3 class="text-4xl font-bold text-white my-auto ml-5">
-            Kattints a START gombra
+            Kattints a START-ra
           </h3>
         </div>
         <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
           <p class="text-xl text-white ml-5">
             ...középen a cím alatt. Ekkor ki lesz választva egy zene, aminek a
             címét bal-fent láthatod ha ráviszed az egeret (azért hogy a
-            többiek ne lássák, és kivetítésnél jobb freezelni a táblát). Főleg
+            többiek ne lássák. Kivetítésnél jobb freezelni a táblát). Főleg
             angol zenék vannak. Telefonokat nem szabad elővenni! <br />
-            Ezután a nehézségen már ne állíts ty.
+            Ezután a nehézségen ebben a körben már ne állíts ty.
           </p>
         </div>
       </div>
-      <div class="mx-auto w-full md:w-1/4 flex flex-col">
+      <div class="mx-auto w-full md:w-1/5 flex flex-col">
         <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
           <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full">
             3
@@ -253,34 +259,51 @@
             zene címét és/vagy az előadót bemondva. <br /><span class="underline">5s rész:</span>
             A zene eleje, általában ének nélkül. <br /><span class="underline">10s rész:</span>
             A zene refrén előtti része. <br /><span class="underline">15s rész:</span>
-            Refrén (meglepően sok zenében kimondják a címét btw).
+            Refrén (majdnem mindig kimondják a címét btw).
           </p>
         </div>
       </div>
-      <div class="mx-auto w-full md:w-1/4 flex flex-col">
+      <div class="mx-auto w-full md:w-1/5 flex flex-col">
         <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
           <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full">
             4
           </div>
           <h3 class="text-4xl font-bold text-white my-auto ml-5">
-            Kitaláltam vagy következő
+            Kitalálta vagy nem
           </h3>
         </div>
         <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
           <p class="text-xl text-white ml-5">
             Amelyik résznél kitalálják a zenét, az után kell rákattintani a
-            <span class="bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl py-1 px-1.5"><i class="fa-solid fa-circle-check"></i></span>
+            <span class="bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl py-0.5 px-1"><i class="fa-solid fa-circle-check"></i></span>
             gombra.
             <b>Csak a zene
               <span class="underline">címének</span> kitalálásáért jár pont,
-              aki az előadót találja ki, annak lehet sorsolni zenét megint</b>
-            (akkor is ha a címét nem tudta), és mindaddig jöhet következőnek
-            egyből újra, amíg felismeri az előadót! Ha több előadó is van elég
+              aki az előadót találja ki, az kap egy extra életet</b>
+            (akkor is ha a címét nem tudta). Ha több előadó is van elég
             csak az egyiket kitalálni. Ha a 15s-es részig nem jutsz el, mert
             előbb kitalálják a zenét, akkor a végén lejátszódik az a rész és
-            mehet a jamming 😘. Ha nem sikerül egyáltalán kitalálni a zenét,
-            akkor ugyanúgy a MUTASD MEG gomb jön (csak a pontot nem kell
-            beírni), és utána egyszerűen mehet a következő zene.
+            mehet a jamming 😘 <br> Ha nem sikerül egyáltalán kitalálni a zenét,
+            akkor a <span class="bg-red-600 hover:bg-red-500 text-white font-bold rounded-2xl py-0.5 px-1"><i class="fa-solid fa-circle-xmark"></i></span> gomb jön, ilyenkor 0 pontot kap, és utána egyszerűen mehet a következő játékos.
+          </p>
+        </div>
+      </div>
+      <div class="mx-auto w-full md:w-1/5 flex flex-col">
+        <div class="flex justify-center bg-black/20 mx-2 mt-2 p-3 rounded-t-2xl">
+          <div class="bg-transparent font-bold w-fit h-fit my-auto p-2 text-white text-8xl rounded-full">
+            5
+          </div>
+          <h3 class="text-4xl font-bold text-white my-auto ml-5">
+            Másik játékos
+          </h3>
+        </div>
+        <div class="flex bg-black/20 m-2 py-3 px-1 rounded-b-2xl h-fit">
+          <p class="text-xl text-white ml-5">
+            A játék addig tart, amíg el nem fogy mindenkinek az élete, és a legtöbb pontszámot szerző fél nyer. Az extra életek miatt előfordulhat hogy az egyik játékosnak nincs már élete,
+            ilyenkor a másik még lejátsza a sajátjait egymás után. <br>Ha elfogy mindenkinek az élete és valahogy ugyanannyi pontszámuk lenne, akkor mindketten kapnak 1-1 életet és folytathatják.
+            <br><br> A RESET gombok vészhelyzetre vannak. A zenéket véletlenszerűen sorsolja és a már játszodtakat kidobja. Ha elfogy az összes zene a kiválasztott nehézségből a játék közben, akkor
+            a felső gombtól újra fogja használni az összes zenét (az oldal újratöltése nélkül, mert akkor elveszne a játékosok pontszáma). Az alsó gomb a játékosokat állítja vissza kiindulóállapotba,
+            <span class="font-bold">de ez a játék végével automatikus megtörténik mindig.</span>
           </p>
         </div>
       </div>

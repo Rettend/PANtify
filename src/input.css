@@ -12,13 +12,13 @@
   display: none;
 }
 
-#start:hover:before {
+#start:hover::before {
   content: "♪~（＾▽＾）人( •̀ ω •́ )y♫";
   font-size: 44px;
 }
 
 @media screen and (max-width: 768px) {
-  #start:hover:before {
+  #start:hover::before {
     content: "♪~（＾▽＾）人( •̀ ω •́ )y♫";
     font-size: 30px;
   }

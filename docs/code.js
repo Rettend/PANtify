@@ -1,8 +1,3 @@
-// // Window leave confirmation
-// window.onbeforeunload = function (e) {
-//     return "";
-// };
-
 const songs = [
 	{
 		"artist": "ACDC",
@@ -599,7 +594,7 @@ const songs = [
 
 
 const pokemonCount = 30; //starting from 0
-const x = document.getElementById("audio");
+const audio = document.getElementById("audio");
 const canvas = document.getElementById("canvas");
 const songTitle = document.getElementById("songTitle");
 const songArtist = document.getElementById("songArtist");
@@ -661,29 +656,29 @@ mobile.addEventListener("change", musicVisualizer);
 mobile.addEventListener("change", end);
 
 
-var abrSymbols = ["", "k", "M", "B", "T"];
+let abrSymbols = ["", "k", "M", "B", "T"];
 function abr(number, dec) {
 
 	// what tier? (determines symbol)
-	var tier = Math.log10(Math.abs(number)) / 3 | 0;
+	let tier = Math.log10(Math.abs(number)) / 3 | 0;
 
 	// if zero, we don't need a suffix
 	if (tier == 0) return number;
 
 	// get suffix and determine scale
-	var suffix = abrSymbols[tier];
-	var scale = Math.pow(10, tier * 3);
+	let suffix = abrSymbols[tier];
+	let scale = Math.pow(10, tier * 3);
 
 	// scale the number
-	var scaled = number / scale;
+	let scaled = number / scale;
 
 	// format number and add suffix
 	return scaled.toFixed(dec) + suffix;
 }
 
 
-var slider = document.getElementById('slider');
-var difficultyLabel = document.getElementById('difficultyLabel');
+let slider = document.getElementById('slider');
+let difficultyLabel = document.getElementById('difficultyLabel');
 noUiSlider.create(slider, {
 	start: [800000000, 5000000000],
 	snap: true,
@@ -713,8 +708,8 @@ noUiSlider.create(slider, {
 });
 
 
-var aSongs = null;
-var song = null;
+let aSongs = null;
+let song = null;
 
 // base scores
 const easyBaseS = 15;
@@ -722,26 +717,26 @@ const hardBaseS = 10;
 const extremeBaseS = 5;
 
 // scores after multiplying by difficulty
-var easyS = 15;
-var hardS = 10;
-var extremeS = 5;
+let easyS = 15;
+let hardS = 10;
+let extremeS = 5;
 
-var sliderValueR = slider.noUiSlider.get()[0];
-var sliderValueL = slider.noUiSlider.get()[1];
+let sliderValueR = slider.noUiSlider.get()[0];
+let sliderValueL = slider.noUiSlider.get()[1];
 
-slider.noUiSlider.on('update', function (values, handle) {
+slider.noUiSlider.on('update', function (values, _handle) {
 	sliderValueR = values[0];
 	sliderValueL = values[1];
 
 	// calculate a multiplier value which is larger the closer the slider is to the right
-	var multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 150; // right slider multiplier
-	var multiplier2 = Math.abs(1 - sliderValueL / 5000000000) * 10; // left slider multiplier
+	let multiplier1 = Math.abs(1 - sliderValueR / 5000000000) * 150; // right slider multiplier
+	let multiplier2 = Math.abs(1 - sliderValueL / 5000000000) * 10; // left slider multiplier
 
 	// average of the two multipliers
-	var multiplier = multiplier1 + multiplier2 / 2;
+	let multiplier = multiplier1 + multiplier2 / 2;
 
 	// normalize the multiplier value to the range 1-5
-	var normalizedMultiplier = Math.abs((multiplier - 100) / 5);
+	let normalizedMultiplier = Math.abs((multiplier - 100) / 5);
 
 	difficultyLabel.innerHTML = normalizedMultiplier.toFixed(2);
 
@@ -755,10 +750,10 @@ slider.noUiSlider.on('update', function (values, handle) {
 });
 
 function setSongsLeft() {
-	allLeft.innerHTML = songs.length + " / " + songs.filter(song => song.hasPlayed === false).length;
-	easyLeft.innerHTML = songs.filter(song => song.streamCount > 1000000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount > 1000000000).length;
-	hardLeft.innerHTML = songs.filter(song => song.streamCount <= 1000000000 && song.streamCount >= 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount <= 1000000000 && song.streamCount >= 400000000).length;
-	extremeLeft.innerHTML = songs.filter(song => song.streamCount < 400000000).length + " / " + songs.filter(song => song.hasPlayed === false && song.streamCount < 400000000).length;
+	allLeft.innerHTML = songs.length + " / " + songs.filter(x => x.hasPlayed === false).length;
+	easyLeft.innerHTML = songs.filter(x => x.streamCount > 1000000000).length + " / " + songs.filter(x => x.hasPlayed === false && x.streamCount > 1000000000).length;
+	hardLeft.innerHTML = songs.filter(x => x.streamCount <= 1000000000 && x.streamCount >= 400000000).length + " / " + songs.filter(x => x.hasPlayed === false && x.streamCount <= 1000000000 && x.streamCount >= 400000000).length;
+	extremeLeft.innerHTML = songs.filter(x => x.streamCount < 400000000).length + " / " + songs.filter(x => x.hasPlayed === false && x.streamCount < 400000000).length;
 }
 
 function rPokemon(lastrandom) { // not working who cares sorry
@@ -770,8 +765,8 @@ function rPokemon(lastrandom) { // not working who cares sorry
 }
 
 function newSong() {
-	aSongs = songs.filter(i => i.streamCount >= sliderValueR && i.streamCount <= sliderValueL && i.hasPlayed == false);
-	var random = Math.floor(Math.random() * aSongs.length);
+	aSongs = songs.filter(i => i.streamCount >= sliderValueR && i.streamCount <= sliderValueL && !i.hasPlayed);
+	let random = Math.floor(Math.random() * aSongs.length);
 	song = aSongs[random];
 	if (aSongs.length == 0) {
 		alertShow("Nincs több zene! Válassz más nehézséget vagy kattints a RESET gombra!");
@@ -782,7 +777,7 @@ function newSong() {
 		lyricsBox.innerHTML = "Lyrics";
 		setSongsLeft();
 
-		var randomPokemon = null;
+		let randomPokemon = null;
 		randomPokemon = rPokemon((poke1.src.substring(poke1.src.indexOf("pokemon%20images/") + 18).replace('-', ''), poke1.src.lastIndexOf("-1.webp")));
 
 		poke1mobile.src = poke1.src = "pokemon images/" + randomPokemon + "-1.webp";
@@ -805,7 +800,7 @@ function artistWFeat(sourceDiv) {
 }
 
 
-var aDuration = 0; // duration = base score in reverse order btw
+let aDuration = 0; // duration = base score in reverse order btw
 
 function playSong(duration) {
 	if (song == null) {
@@ -831,21 +826,21 @@ function playSong(duration) {
 			wrongButton.classList.remove("opacity-60");
 		}
 
-		x.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
+		audio.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
 		audioCtx.resume();
-		x.play();
+		audio.play();
 	}
 }
 
-function setLyrics(i) {
-	if (song.lyrics[i] == "") {
+function setLyrics(x) {
+	if (song.lyrics[x] == "") {
 		if (song.lyrics[0] == "" && song.lyrics[1] == "" && song.lyrics[2] == "") {
 			lyricsBox.innerHTML = "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻";
 		} else {
 			lyricsBox.innerHTML = "¯\\_(ツ)_/¯";
 		}
 	} else {
-		lyricsBox.innerHTML = song.lyrics[i];
+		lyricsBox.innerHTML = song.lyrics[x];
 	}
 }
 
@@ -958,13 +953,13 @@ function end(state) {
 			if (aDuration == 5) {
 				endScore.innerHTML = easyS;
 				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + easyS;
-				x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
-				x.play();
+				audio.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+				audio.play();
 			} else if (aDuration == 10) {
 				endScore.innerHTML = hardS;
 				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + hardS;
-				x.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
-				x.play();
+				audio.src = "songs/" + song.artist + ";" + song.song + ";15.mp3";
+				audio.play();
 			} else if (aDuration == 15) {
 				endScore.innerHTML = extremeS;
 				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + extremeS;
@@ -1003,7 +998,7 @@ function end(state) {
 let guessedArtistPressed = false;
 
 function guessedArtist() {
-	if (guessedArtistPressed == false) {
+	if (!guessedArtistPressed) {
 		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) + 1;
 		guessedArtistPressed = true;
 	} else {
@@ -1021,8 +1016,8 @@ function resetPlayers() {
 }
 
 function resetSongs() {
-	songs.forEach(function (song) {
-		song.hasPlayed = false;
+	songs.forEach(function (x) {
+		x.hasPlayed = false;
 	});
 	setSongsLeft();
 }
@@ -1071,13 +1066,12 @@ function closeModal() {
 function alertShow(text) {
 	alertText.innerHTML = text;
 	alertBox.style.display = "block";
-	return;
 }
 
 
-var audioCtx = new AudioContext();
-var analyser = audioCtx.createAnalyser();
-source = audioCtx.createMediaElementSource(x);
+let audioCtx = new AudioContext();
+let analyser = audioCtx.createAnalyser();
+let source = audioCtx.createMediaElementSource(audio);
 source.connect(analyser);
 analyser.connect(audioCtx.destination);
 
@@ -1094,12 +1088,12 @@ function musicVisualizer() {
 
 	const HEIGHT = canvas.height;
 	const WIDTH = canvas.width;
-	var canvasCtx = canvas.getContext("2d");
+	let canvasCtx = canvas.getContext("2d");
 
 	canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
 	function draw() {
-		drawVisual = requestAnimationFrame(draw);
+		requestAnimationFrame(draw);
 
 		analyser.getByteFrequencyData(dataArray);
 
@@ -1108,7 +1102,7 @@ function musicVisualizer() {
 
 		const barWidth = (WIDTH / bufferLength) * 2.5;
 		let barHeight;
-		var a = 0;
+		let a = 0;
 
 		for (let i = 0; i < bufferLength; i++) {
 			barHeight = dataArray[i] * 2;
@@ -1123,8 +1117,8 @@ function musicVisualizer() {
 }
 
 // This works, but buggy when you spam the button (already ongoing Timeout)
-var observer = new MutationObserver(function (mutations) {
-	mutations.forEach(function (mutationRecord) {
+let observer = new MutationObserver(function (mutations) {
+	mutations.forEach(function () {
 		setTimeout(() => { if (alertBox.style.display == "block") alertBox.style.display = "none"; }, 10000);
 	});
 });

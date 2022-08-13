@@ -1178,14 +1178,9 @@ video {
   padding-right: 0.25rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-.px-1\.5 {
-  padding-left: 0.375rem;
-  padding-right: 0.375rem;
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .py-0 {
@@ -1193,17 +1188,8 @@ video {
   padding-bottom: 0px;
 }
 
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pb-10 {
-  padding-bottom: 2.5rem;
 }
 
 .pt-10 {
@@ -1326,28 +1312,8 @@ video {
   opacity: 0.7;
 }
 
-.mix-blend-screen {
-  mix-blend-mode: screen;
-}
-
-.mix-blend-overlay {
-  mix-blend-mode: overlay;
-}
-
-.mix-blend-darken {
-  mix-blend-mode: darken;
-}
-
-.mix-blend-lighten {
-  mix-blend-mode: lighten;
-}
-
 .mix-blend-color-dodge {
   mix-blend-mode: color-dodge;
-}
-
-.mix-blend-luminosity {
-  mix-blend-mode: luminosity;
 }
 
 .shadow-2xl {
@@ -1444,13 +1410,13 @@ video {
   display: none;
 }
 
-#start:hover:before {
+#start:hover::before {
   content: "♪~（＾▽＾）人( •̀ ω •́ )y♫";
   font-size: 44px;
 }
 
 @media screen and (max-width: 768px) {
-  #start:hover:before {
+  #start:hover::before {
     content: "♪~（＾▽＾）人( •̀ ω •́ )y♫";
     font-size: 30px;
   }

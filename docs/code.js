@@ -655,6 +655,9 @@ const mobile = window.matchMedia("(max-width: 768px)");
 mobile.addEventListener("change", musicVisualizer);
 mobile.addEventListener("change", end);
 
+// songs.sort((a, b) => a.artist.localeCompare(b.artist)).forEach(i => {
+// 	console.log(`${i.artist}: ${i.song}`);
+// });
 
 let abrSymbols = ["", "k", "M", "B", "T"];
 function abr(number, dec) {

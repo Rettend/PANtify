@@ -993,12 +993,7 @@ function end(state) {
 			endScore.innerHTML = 0;
 		}
 
-		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) - 1;
-		if (state == 2) {
-			guessedArtistPressed = true;
-		} else {
-			guessedArtistPressed = false;
-		}
+		guessedArtistPressed = false;
 		endModal.style.display = "block";
 		if (mobile.matches) {
 			endButtonMobile.style.display = "block";

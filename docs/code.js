@@ -992,7 +992,7 @@ function end(state) {
 		} else {
 			endScore.innerHTML = 0;
 		}
-
+		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) - 1;
 		guessedArtistPressed = false;
 		endModal.style.display = "block";
 		if (mobile.matches) {

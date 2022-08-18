@@ -644,6 +644,7 @@ const PlayerB = document.getElementById("PlayerB");
 const endButton = document.getElementById("endButton");
 const endButtonMobile = document.getElementById("endButtonMobile");
 const wrongButton = document.getElementById("wrongButton");
+const stealButton = document.getElementById("stealButton");
 
 const allLeft = document.getElementById("allLeft");
 const easyLeft = document.getElementById("easyLeft");
@@ -812,21 +813,36 @@ function playSong(duration) {
 		aDuration = duration;
 		if (duration == 5) {
 			showMusicPlayer("easy");
+
 			wrongButton.onclick = "";
 			wrongButton.classList.remove("hover:bg-red-500");
 			wrongButton.classList.add("opacity-60");
+
+			stealButton.onclick = "";
+			stealButton.classList.remove("hover:bg-slate-500");
+			stealButton.classList.add("opacity-60");
 		}
 		else if (duration == 10) {
 			showMusicPlayer("hard");
+
 			wrongButton.onclick = "";
 			wrongButton.classList.remove("hover:bg-red-500");
 			wrongButton.classList.add("opacity-60");
+
+			stealButton.onclick = "";
+			stealButton.classList.remove("hover:bg-slate-500");
+			stealButton.classList.add("opacity-60");
 		}
 		else if (duration == 15) {
 			showMusicPlayer("extreme");
+
 			wrongButton.setAttribute("onclick", "end(0);");
 			wrongButton.classList.add("hover:bg-red-500");
 			wrongButton.classList.remove("opacity-60");
+
+			stealButton.setAttribute("onclick", "end(2);");
+			stealButton.classList.add("hover:bg-slate-500");
+			stealButton.classList.remove("opacity-60");
 		}
 
 		audio.src = "songs/" + song.artist + ";" + song.song + ";" + duration + ".mp3";
@@ -965,14 +981,24 @@ function end(state) {
 				audio.play();
 			} else if (aDuration == 15) {
 				endScore.innerHTML = extremeS;
-				window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + extremeS;
+				if (state == 2) {
+					let players = ["A", "B"];
+					players.splice(players.indexOf(aPlayer), 1);
+					window["Score" + players[0]].innerHTML = parseInt(window["Score" + players[0]].textContent) + extremeS;
+				} else {
+					window["Score" + aPlayer].innerHTML = parseInt(window["Score" + aPlayer].textContent) + extremeS;
+				}
 			}
 		} else {
 			endScore.innerHTML = 0;
 		}
 
 		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) - 1;
-		guessedArtistPressed = false;
+		if (state == 2) {
+			guessedArtistPressed = true;
+		} else {
+			guessedArtistPressed = false;
+		}
 		endModal.style.display = "block";
 		if (mobile.matches) {
 			endButtonMobile.style.display = "block";
@@ -1005,7 +1031,7 @@ function guessedArtist() {
 		window["Lives" + aPlayer].innerHTML = parseInt(window["Lives" + aPlayer].textContent) + 1;
 		guessedArtistPressed = true;
 	} else {
-		alertShow("Már kapott életet!");
+		alertShow("Már kapott életet vagy lopás történt!");
 	}
 }
 

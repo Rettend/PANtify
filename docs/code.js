@@ -580,6 +580,167 @@ const songs = [
 		"streamCount": 1120022881,
 		"hasPlayed": false,
 		"year": 2017
+	}, {
+		"artist": "Imagine Dragons (ft. JID) (Arcane, League of Legends)",
+		"song": "Enemy",
+		"lyrics": ["Look out for yourself, I wake up to the sounds of the silence that allows...", "...hate us, Oh, the misery, Everybody wants to be my enemy, Spare the sympathy", "Everybody wants to be my enemy (I swear), Pray it away, I swear, I never be a saint, no way, My enemy, Pray it away, I swear, I never be a saint, Look out for yourself"],
+		"streamCount": 835068478,
+		"hasPlayed": false,
+		"year": 2021
+	}, {
+		"artist": "Twenty One Pilots",
+		"song": "Heathens",
+		"lyrics": ["Welcome to the room of people, Who have rooms of people that they loved one day, Docked away", "Please don't make any sudden moves, You don't know the half of the abuse", "You'll think, \"How'd I get here, sitting next to you?\", But after all I've said, please don't forget, All my friends are heathens, take it slow, Wait for them to ask you who you know"],
+		"streamCount": 1401326725,
+		"hasPlayed": false,
+		"year": 2016
+	}, {
+		"artist": "Ava Max",
+		"song": "Sweet But Psycho",
+		"lyrics": ["Grab a cop gun kinda crazy, She's poison but tasty, Yeah, people say, Run...", "You're just like me, you're out your mind, I know it's strange, we're both the crazy kind", "'Cause she messin' with your head (hey), Oh, she's sweet but a psycho, A little bit psycho, At night, she's screamin', I'm-ma-ma-ma out my mind, Oh, she's hot but a psycho, So left but she's right, though, At night, she's screamin', I'm-ma-ma-ma out my mind"],
+		"streamCount": 1326261019,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Ava Max",
+		"song": "Kings & Queens",
+		"lyrics": ["", "Once I start breathin' fire, you can't tame me, And you might think I'm weak without a sword, But if I had one, it'd be bigger than yours", "If all of the kings had their queens on the throne, We would pop champagne and raise a toast, To all of the queens who are fighting alone, Baby, you're not dancin' on your own"],
+		"streamCount": 656347934,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "Avicii",
+		"song": "Levels",
+		"lyrics": ["", "Oh oh sometimes, I get a good feeling, Yeah, Get a feeling that I never never never never...", ""],
+		"streamCount": 649932171,
+		"hasPlayed": false,
+		"year": 2011
+	}, {
+		"artist": "Taylor Swift",
+		"song": "Blank Space",
+		"lyrics": ["Nice to meet you, where you been? I could show you incredible things", "So it's gonna be forever, Or it's gonna go down in flames, You can tell me when it's over, hmm, If the high was worth the pain", "It'll leave you breathless, hmm, Or with a nasty scar (leave a nasty scar), Got a long list of ex-lovers, They'll tell you I'm insane, But I've got a blank space, baby, And I'll write your name"],
+		"streamCount": 899925507,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "Don Omar (ft. Lucenzo)",
+		"song": "Danza Kuduro",
+		"lyrics": ["A&X, El Orfanato", "Danza Kuduro, (Plop, plop, plop, plop, plop, plop, plop), Lucenzo, (El Orfanato), El Rey, La mano arriba", "Cintura sola, Da media vuelta, Danza kuduro, No te canse' ahora, Que esto solo empieza, Mueve la cabeza, Danza kuduro, La mano arriba, Cintura..."],
+		"streamCount": 973520122,
+		"hasPlayed": false,
+		"year": 2010
+	}, {
+		"artist": "Bastille",
+		"song": "Pompeii",
+		"lyrics": ["Eh-eh-oh, eh-oh, Eh-eh-oh, eh-oh, Eh-eh-oh, eh-oh", "In the city that we love, Grey clouds roll over the hills, Bringing darkness from above", "But if you close your eyes, Does it almost feel like nothing changed at all, And if you close your eyes, Does it almost feel like you've been here before?"],
+		"streamCount": 1140260367,
+		"hasPlayed": false,
+		"year": 2013
+	}, {
+		"artist": "Steve Aoki (ft. Chris Lake, Tujamo, Kid Ink)",
+		"song": "Delirious (Boneless)",
+		"lyrics": ["", "Kid Ink, Ah, h-hold up, you got me woke up, The way you roll that, sticky like okra", "Out to the sun up, Twistin' and burn up, Can't nobody stop us, (We've gone delirious), La, la, la, la, la, La la la la la la, Gimme some of that, Gimme some of that, Gimme some of that, (We've gone delirious)"],
+		"streamCount": 119552929,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "The Score",
+		"song": "Unstoppable",
+		"lyrics": ["There's a moment in your bones when, when the fire takes over", "...knocking out bodies, Standing on top like a champion (oh-oh), Keep your silver, give me that gold, You will remember when I say", "We can be heroes everywhere we go, Keeping us down is impossible, We're unstoppable, Oh woah, we're unstoppable, Oh woah, we're unstoppable, Oh woah, we're unstoppable"],
+		"streamCount": 212812637,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Taio Cruz",
+		"song": "Dynamite",
+		"lyrics": ["I came to dance, dance, dance, dance (yeah), I hit the floor 'cause that's my plans, plans...", "I throw my hands up in the air sometimes, Saying, Ayo, gotta let go", "'Cause we gon' rock this club, we gon' go all night, We gon' light it up like it's dynamite, 'Cause I told you once, now I told you twice, We gon' light it up like it's dynamite"],
+		"streamCount": 735388888,
+		"hasPlayed": false,
+		"year": 2010
+	}, {
+		"artist": "Lukas Graham",
+		"song": "Mama Said",
+		"lyrics": ["Mama told us we were good kids, And Daddy told us, Never listen to the...", "Remember asking both my mom and dad, Why we never traveled to exotic lands, We only ever really visit friends, Nothing to tell when the summer ends", "Mama said that it was okay, Mama said that it was quite alright, Our kind of people had a bed for the night, And it was okay, Mama told us we were good kids, And Daddy told us, Never listen to..."],
+		"streamCount": 360477169,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "DNCE",
+		"song": "Cake By The Ocean",
+		"lyrics": ["Oh, no, See you walkin' 'round like it's a funeral", "Waste time with a masterpiece, don't waste time with a masterpiece (huh), You should be rollin' with me, you should be rollin' with me (ah-ah-ah), You're a real-life fantasy, you're a real-life fantasy", "Talk to me, baby, I'm goin' blind from this sweet-sweet cravin', whoa-oh, Let's lose our minds and go fuckin' crazy, I-I-I-I-I-I keep on hopin' we'll eat cake by the ocean"],
+		"streamCount": 1248411135,
+		"hasPlayed": false,
+		"year": 2016
+	}, {
+		"artist": "Ed Sheeran",
+		"song": "Shape of You",
+		"lyrics": ["The club isn't the best place to find a lover, So the bar is where I go (mm-mm)", "Now I'm singing like, Girl, you know I want your love, Your love was handmade for somebody like me, Come on now, follow my lead, I may be crazy, don't mind me", "I'm in love with the shape of you, We push and pull like a magnet do, Although my heart is falling too, I'm in love with your body, Last night you were in my room, And now my bedsheets smell like you"],
+		"streamCount": 3213850185,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Fifth Harmony (ft. Ty Dolla $ign)",
+		"song": "Work from Home",
+		"lyrics": ["I'm sittin' pretty, impatient, But I know you gotta, Put in them hours", "You don't gotta go to work, Work, work, work, work, work, work, But you gotta put in work, Work, work, work, work, work, work, You don't gotta go to work", "Let my body do the work (do work), Work, work, work, work, work, work (do work, yeah, yeah), We can work from home, oh-oh, oh-oh, We can work from home, oh-oh, oh-oh, Yeah, we can work from home"],
+		"streamCount": 1236296863,
+		"hasPlayed": false,
+		"year": 2016
+	}, {
+		"artist": "G-Eazy (ft. Bebe Rexha)",
+		"song": "Me, Myself & I",
+		"lyrics": ["Like, ba-ba-ba-ba-da-ba, Ba-ba-ba-da...", "All my life I've been told to wait, But I'mma get it now, yeah it's no debate, Yeah, Oh-oh, it's just me, myself and I, Solo ride until I die", "I don't need anything to get me through the night, Except the beat that's in my heart, Yeah, it's keeping me alive, (Keeps me alive), I don't need anything to make me satisfied (You know), 'Cause the music does me good and it gets me every time"],
+		"streamCount": 1084202159,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Imagine Dragons",
+		"song": "Demons",
+		"lyrics": ["When the days are cold, And the cards all fold", "Your eyes, they shine so bright, I wanna save that light, I can't escape this now, Unless you show me how", "When you feel my heat, look into my eyes, It's where my demons hide, It's where my demons hide, Don't get too close, it's dark inside"],
+		"streamCount": 1491961634,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "Harry Styles",
+		"song": "Watermelon Sugar",
+		"lyrics": ["Tastes like strawberries, On a summer evenin'", "Breathe me out, I don't know if I could ever go without, Watermelon sugar, High, Watermelon sugar, High", "Watermelon sugar, High, Watermelon sugar, High, Watermelon sugar (sugar), High, Watermelon sugar high (sugar), Watermelon sugar, High, Watermelon sugar, High"],
+		"streamCount": 1896067623,
+		"hasPlayed": false,
+		"year": 2019
+	}, {
+		"artist": "Maroon 5 (ft. Wiz Khalifa)",
+		"song": "Payphone",
+		"lyrics": ["Now I'm paralyzed, Still stuck in that time, when we...", "I'm at a payphone, trying to call home, All of my change I spent on you, Where have the times gone?", "If \"happy ever after\" did exist, I would still be holding you like this, All these fairy tales are full of shit, One more fucking love song, I'll be sick"],
+		"streamCount": 1146514816,
+		"hasPlayed": false,
+		"year": 2012
+	}, {
+		"artist": "Logic (ft. Alessia Cara, Khalid)",
+		"song": "1-800-273-8255",
+		"lyrics": ["I don't wanna be alive, I just wanna die today, I just wanna die", "I've been on the low, I been taking my time, I feel like I'm out of my mind, It feel like my life ain't mine, (Who can relate? Woo!), I've been on the low", "You don't gotta die, I want you to be alive, I want you to be alive, You don't gotta die, Now let me tell you why, It's the very first breath, When your head's been drownin' underwater"],
+		"streamCount": 1170227587,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Marshmello (ft. Bastille)",
+		"song": "Happier",
+		"lyrics": ["Lately, I've been, I've been thinking, I want you to be happier", "Then only for a minute, I want to change my mind, 'Cause this just don't feel right to me", "I wanna raise your spirits, I want to see you smile but, Know that means I'll have to leave"],
+		"streamCount": 1709978916,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Michael Jackson",
+		"song": "Billie Jean",
+		"lyrics": ["", "So take my strong advice, just remember to always think twice, (Don't think twice!), Do think twice! (Ah-hoo)", "Billie Jean is not my lover (hoo), She's just a girl who claims that I am the one, But the kid is not my son, No-no-no, no-no-no-no-no-no"],
+		"streamCount": 1181246036,
+		"hasPlayed": false,
+		"year": 1982
+	}, {
+		"artist": "The Chainsmokers (ft. Halsey)",
+		"song": "Closer",
+		"lyrics": ["Hey, I was doing just fine before I met you", "So, baby, pull me closer, In the back seat of your Rover, That I know you can't afford, Bite that tattoo on your shoulder", "Pull the sheets right off the corner, Of that mattress that you stole, From your roommate back in Boulder, We ain't ever getting older"],
+		"streamCount": 2344298528,
+		"hasPlayed": false,
+		"year": 2016
 	}
 	// , {
 	// 	"artist": "",

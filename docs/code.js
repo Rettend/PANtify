@@ -741,6 +741,76 @@ const songs = [
 		"streamCount": 2344298528,
 		"hasPlayed": false,
 		"year": 2016
+	}, {
+		"artist": "Avril Lavigne",
+		"song": "Complicated",
+		"lyrics": ["Chill out, what ya yellin' for? Lay back, it's all been done before", "But you become, Somebody else, 'Round everyone else, You're watching your back, Like you can't relax, You're trying to be cool, You look like a fool to me", "Why'd you have to go and make things so complicated? I see the way you're acting like you're somebody else, Gets me frustrated, Life's like this, you, And you fall, and you crawl, and you break, And you take"],
+		"streamCount": 559012215,
+		"hasPlayed": false,
+		"year": 2002
+	}, {
+		"artist": "Daft Punk (ft. Pharrell Williams, Nile Rodgers)",
+		"song": "Get Lucky",
+		"lyrics": ["", "We've come too far, To give up who we are, So let's raise the bar", "(We're up all night to get lucky), And our cups to the stars, (We're up all night to get lucky), She's up all night 'til the sun, I'm up all night to get some, She's up all night for good fun, I'm up all night to get lucky, We're up all night 'til the sun, We're up all night..."],
+		"streamCount": 769114882,
+		"hasPlayed": false,
+		"year": 2013
+	}, {
+		"artist": "Dire Straits",
+		"song": "Walk of Life",
+		"lyrics": ["", "He got the action, he got the motion, Oh yeah, the boy can play, Dedication, devotion, Turning all the night time into the day", "And after all the violence and double talk, There's just a song in all the trouble and the strife, You do the walk, yeah, you do the walk of life, Hmm, they do the walk of life, Woohoo"],
+		"streamCount": 432454976,
+		"hasPlayed": false,
+		"year": 1985
+	}, {
+		"artist": "Eminem",
+		"song": "Not Afraid",
+		"lyrics": ["All I'm tryna say is get back, click-clack, blaow, 'cause I ain't playin' around, There's a game called circle...", "Whichever comes first, for better or worse, He's married to the game, like a fuck you for Christmas, His gift is a curse, forget the Earth, he's got the urge to pull his dick from the dirt, And fuck the whole universe", "I'm not afraid (I'm not afraid), To take a stand (to take a stand), Everybody (everybody), Come take my hand (come take my hand), We'll walk this road together, through the storm, Whatever weather, cold or warm"],
+		"streamCount": 719086497,
+		"hasPlayed": false,
+		"year": 2010
+	}, {
+		"artist": "Imagine Dragons",
+		"song": "On Top Of The World",
+		"lyrics": ["If you love somebody, Better tell them why they're here 'cause...", "But don't look down, 'Cause I'm on top of the world, 'ey, I'm on top of the world, 'ey, Waiting on this for a while now, Paying my dues to the dirt", "I've been waiting to smile, 'ey, Been holding it in for a while, 'ey, Take you with me if I can, Been dreaming of this since a child, I'm on top of the world, Oh-woah, oh-oh, oh-oh"],
+		"streamCount": 676611858,
+		"hasPlayed": false,
+		"year": 2012
+	}, {
+		"artist": "Maggie Lindemann (ft. Cheat Codes, CADE)",
+		"song": "Pretty Girl",
+		"lyrics": ["I'm more than just a picture, I'm a daughter and a sister, Sometimes it's hard for me to show", "Somedays I'm strong, somedays I quit, I don't let it show, but I've been through some shit, I can swear, I can joke, I say what's on my mind", "If I drink, if I smoke, I keep up with the guys, And you'll see me holding up my middle finger to the world, Fuck your ribbons and your pearls, 'Cause I'm not just a pretty girl"],
+		"streamCount": 837244361,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Paul Simon",
+		"song": "You Can Call Me Al",
+		"lyrics": ["A man walks down the street, He says, \"Why am I soft in the middle, now?, Why am I soft in the middle?\"", "", "If you'll be my bodyguard, I can be your long lost pal, I can call you Betty, And Betty, when you call me, you can call me Al, Call me"],
+		"streamCount": 454976568,
+		"hasPlayed": false,
+		"year": 1986
+	}, {
+		"artist": "Pink Floyd",
+		"song": "Wish You Were Here",
+		"lyrics": ["", "Do you think you can tell? Did they get you to trade, Your heroes for ghosts?", "How I wish, how I wish you were here, We're just two lost souls, Swimming in a fish bowl, Year after year"],
+		"streamCount": 508127175,
+		"hasPlayed": false,
+		"year": 1975
+	}, {
+		"artist": "Pink Floyd",
+		"song": "Another Brick In The Wall",
+		"lyrics": ["We don't need no education", "We don't need no thought control, No dark sarcasm", "Hey, teacher, leave them kids alone, All in all, it's just another brick in the wall"],
+		"streamCount": 619906274,
+		"hasPlayed": false,
+		"year": 1979
+	}, {
+		"artist": "",
+		"song": "",
+		"lyrics": ["", "", ""],
+		"streamCount": 0,
+		"hasPlayed": false,
+		"year": 20
 	}
 	// , {
 	// 	"artist": "",

@@ -805,12 +805,145 @@ const songs = [
 		"hasPlayed": false,
 		"year": 1979
 	}, {
-		"artist": "",
-		"song": "",
-		"lyrics": ["", "", ""],
-		"streamCount": 0,
+		"artist": "Red Hot Chili Peppers",
+		"song": "Can't Stop",
+		"lyrics": ["", "Can't stop, addicted to the shindig, Chop Top, he says I'm gonna win big, Choose not a life of imitation, Distant cousin to the reservation", "The world I love, the tears I drop, To be part of the wave, can't stop, Ever wonder if it's all for you? The world I love, the trains I hop, To be part of the wave, can't stop"],
+		"streamCount": 793739345,
 		"hasPlayed": false,
-		"year": 20
+		"year": 2002
+	}, {
+		"artist": "Red Hot Chili Peppers",
+		"song": "Snow (Hey Oh)",
+		"lyrics": ["Hey oh, Listen what I say, oh", "The more I see, the less I know, The more I like to let it go, Hey oh, whoa", "Deep beneath the cover of another perfect wonder, Where it's so white as snow, Privately divided by a world so undecided, And there's nowhere to go"],
+		"streamCount": 803052478,
+		"hasPlayed": false,
+		"year": 2006
+	}, {
+		"artist": "Rihanna (ft. Kanye West, Paul McCartney)",
+		"song": "FourFiveSeconds",
+		"lyrics": ["'Cause all of my kindness, Is taken for weakness", "Woke up an optimist, Sun was shinin', I'm positive (We can run), Then I heard you...", "Now I'm four, five seconds from wildin', And we got three more days 'til Friday, I'm just tryna make it back home by Monday mornin', I swear I..."],
+		"streamCount": 906470311,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Train",
+		"song": "Drive By",
+		"lyrics": ["On the other side of a street I knew, Stood a girl that looked like you, I guess that's déjà vu", "Oh, I swear to you, I'll be there for you, This is not a drive by, Just a shy guy, looking for a two...", "When you move me, everything is groovy, They don't like it sue me, mhmm the way you do me, Oh, I swear to you, I'll be there for you, This is not a drive by"],
+		"streamCount": 441528278,
+		"hasPlayed": false,
+		"year": 2012
+	}, {
+		"artist": "Van Halen",
+		"song": "Jump",
+		"lyrics": ["", "I get up and nothin' gets me down, You got it tough", "Oh, can't you see what I mean? Ah, might as well jump (jump), Might as well jump, Go ahead and jump (jump)"],
+		"streamCount": 624808897,
+		"hasPlayed": false,
+		"year": 1984
+	}, {
+		"artist": "ACDC",
+		"song": "Moneytalks",
+		"lyrics": ["Tailored suits, chauffered cars, Fine hotels", "So what do you do, That's guaranteed, Hey little girl, you break the laws, You hustle, you deal, you steal from us all", "Come on, come on, love me for the money, Come on, come on, listen to the money talk, Come on, come on, love me for the money, Come on, come on, listen to the money talk"],
+		"streamCount": 73281770,
+		"hasPlayed": false,
+		"year": 1990
+	}, {
+		"artist": "C418 (Minecraft)",
+		"song": "Sweden",
+		"lyrics": ["", "", ""],
+		"streamCount": 107385534,
+		"hasPlayed": false,
+		"year": 2011
+	}, {
+		"artist": "Fish!",
+		"song": "Ne Is Figyelj Rám",
+		"lyrics": ["Egy kicsikét lentről mégis felkelek, és jól érzem magam, Vagy legalábbis azt...", "Hé állj meg! És aztán menj tovább! Nézz fel a falra, fordulj balra, aztán jobbra, és ha kell, Ne zavarj senkit, csak magadban énekelj:", "Ne is figyelj rám! Én csak táncolok az utcán. Ne is figyelj rám! És közben, fülig ér a szám. Ne is figyelj rám! Ez most egy ilyen délután. Ne is figyelj rám! Csak ne is figyelj rám! Oh..."],
+		"streamCount": 1985039,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "Michael Patrick Kelly",
+		"song": "Beautiful Madness",
+		"lyrics": ["And there's a line on the horizon", "Ooh, what a beautiful madness, Ooh, what a beautiful madness", "Now it feels like beautiful madness, Feels like never enough, Don't you know that you are the baddest, My love, my love, my love, Yeah, it feels like beautiful madness"],
+		"streamCount": 57963709,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "Oh The Larceny",
+		"song": "Man On A Mission",
+		"lyrics": ["Oh-oh", "I'm never gonna ever stop, I won't waste another minute, No I won't, I'm a man on a mission", "I don't need no permission, I'm a man on a mission, I ain't waiting and wishin' (Take it up now, take it up now), Oh I got that ambition (Take it up now, take it up)"],
+		"streamCount": 24157498,
+		"hasPlayed": false,
+		"year": 2017
+	}, {
+		"artist": "Tobu",
+		"song": "Hope",
+		"lyrics": ["", "", ""],
+		"streamCount": 35087732,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "Cartoon (ft. Daniel Levi)",
+		"song": "On & On",
+		"lyrics": ["Hold me close 'til I get up, Time is barely on our side", "And on and on we'll go, Through the wastelands, through the highways, 'Til my shadow turns to sun rays, And...", "And on and on we'll go"],
+		"streamCount": 283125476,
+		"hasPlayed": false,
+		"year": 2015
+	}, {
+		"artist": "New Radicals",
+		"song": "You Get What You Give",
+		"lyrics": ["", "Wake up, kids, We got the dreamers disease, Age 14, they got you down on your knees", "You've got the music in you, One dance left, This world is gonna pull through, Don't give up, You've got a reason to live, Can't forget, We only get what we give"],
+		"streamCount": 317233797,
+		"hasPlayed": false,
+		"year": 1998
+	}, {
+		"artist": "OMFG",
+		"song": "Hello",
+		"lyrics": ["", "", ""],
+		"streamCount": 115249177,
+		"hasPlayed": false,
+		"year": 2014
+	}, {
+		"artist": "League of Legends (ft. KDA, Madison Beer, (G)I-DLE...)",
+		"song": "POP STARS",
+		"lyrics": ["", "Can you feel the rush now? Ain't nobody bringing us, Down down down down down down, They could try but we're gonna wear the crown, You could go another round", "Wish you luck but you're not bringing us down, All we go hard till we get it, get it, We go hard, We so in it, in it, We pop stars (pop stars), Only winning winning now, Ain't nobody bringing us, Down down down down (hey!)"],
+		"streamCount": 270229967,
+		"hasPlayed": false,
+		"year": 2018
+	}, {
+		"artist": "Monty Python",
+		"song": "Always Look On The Bright Side Of Life",
+		"lyrics": ["Some things in life are bad, They can really make you mad", "Life's a piece of shit, When you look at it, Life's a laugh and death's a joke, it's true, You'll see it's all a show, Keep 'em laughin' as you go", "Always look on the right side of life, (C'mon Brian, cheer up), Always look on the bright side of life"],
+		"streamCount": 33733926,
+		"hasPlayed": false,
+		"year": 1989
+	}, {
+		"artist": "BEAUZ (ft. JVNA)",
+		"song": "Crazy",
+		"lyrics": ["When there's no hope hiding, No chance concealing", "You make me feel so crazy, Still in love with you, You make me feel amazing, When I'm next to you, You make me feel so crazy", "You make me feel so..., Make me feel so..."],
+		"streamCount": 13192249,
+		"hasPlayed": false,
+		"year": 2019
+	}, {
+		"artist": "Bloodhound Gang",
+		"song": "The Bad Touch",
+		"lyrics": ["I'd appreciate your input", "So show me yours, I'll show you mine, Tool Time, You'll Lovett just like Lyle, And then we'll do it doggy style, So we can both watch X-Files, You and me, baby, ain't nothin' but mammals", "You and me, baby, ain't nothin' but mammals, So let's do it like they do on the Discovery Channel, (Gettin' horny now)"],
+		"streamCount": 232536873,
+		"hasPlayed": false,
+		"year": 1999
+	}, {
+		"artist": "Silva Hound (ft. Michael Kovach, Chi-Chi)",
+		"song": "Addict",
+		"lyrics": ["This is a brand new start, And I think I deserve some praise", "Surrounded by fire, the passion ignites, a hit of that heaven and hell, a helluva high, I'm addicted to the madness", "I'm addicted to the feeling, Getting higher than the ceiling, And we're never gonna want, this fucking feeling to end, Just concede and give in, to your inner demons again"],
+		"streamCount": 45552194,
+		"hasPlayed": false,
+		"year": 2020
+	}, {
+		"artist": "Pharrell Williams",
+		"song": "Freedom",
+		"lyrics": ["", "Your first name is Free, Last name is Dom, We choose to believe, In where we're from", "Man's red flower, It's in every living thing, Mind, use your power, Spirit, use your wings, Freedom! Freedom!"],
+		"streamCount": 143378019,
+		"hasPlayed": false,
+		"year": 2015
 	}
 	// , {
 	// 	"artist": "",
